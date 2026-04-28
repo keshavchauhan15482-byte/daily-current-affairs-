@@ -5,9 +5,18 @@ import { fileURLToPath } from "node:url";
 import { createRequire } from "node:module";
 
 const require = createRequire(import.meta.url);
-const { createCanvas } = require("/Users/keshavchauhan18/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/@napi-rs/canvas");
-const { createWorker } = require("/Users/keshavchauhan18/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/tesseract.js");
-const pdfjs = await import("/Users/keshavchauhan18/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/pdfjs-dist/legacy/build/pdf.mjs");
+let createCanvas = null;
+let createWorker = null;
+let pdfjs = null;
+let pyqRuntimeAvailable = true;
+
+try {
+  ({ createCanvas } = require("/Users/keshavchauhan18/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/@napi-rs/canvas"));
+  ({ createWorker } = require("/Users/keshavchauhan18/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/tesseract.js"));
+  pdfjs = await import("/Users/keshavchauhan18/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/pdfjs-dist/legacy/build/pdf.mjs");
+} catch {
+  pyqRuntimeAvailable = false;
+}
 
 const currentDir = dirname(fileURLToPath(import.meta.url));
 const appDir = join(currentDir, "..");
@@ -262,6 +271,9 @@ function articleCacheKey(article, doc) {
 
 export async function annotatePyqMatches(articles) {
   if (!Array.isArray(articles) || !articles.length) {
+    return articles;
+  }
+  if (!pyqRuntimeAvailable || !createCanvas || !createWorker || !pdfjs) {
     return articles;
   }
 
