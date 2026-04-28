@@ -33,6 +33,23 @@ node server.mjs
 http://127.0.0.1:8010/
 ```
 
+## Deploy on Render
+
+1. Sign in to [Render](https://render.com/)
+2. Click **New +**
+3. Choose **Blueprint**
+4. Connect this GitHub repo:
+   `https://github.com/keshavchauhan15482-byte/daily-current-affairs-.git`
+5. Render will detect `render.yaml`
+6. Add these environment variables in Render before deploy:
+   - `GEMINI_API_KEY`
+   - `ELEVENLABS_API_KEY` (optional)
+   - `ELEVENLABS_VOICE_MALE` (optional)
+   - `ELEVENLABS_VOICE_FEMALE` (optional)
+7. Click **Apply**
+
+If you skip the voice keys, the site still deploys, but external voice features will not work.
+
 ## Files intentionally excluded from the public repo
 
 - `.env`

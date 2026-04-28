@@ -7,13 +7,13 @@ import { updateNewsStore } from "./scripts/update-news.mjs";
 
 const rootDir = fileURLToPath(new URL(".", import.meta.url));
 const env = loadEnv(join(rootDir, ".env"));
-const port = Number(env.PORT || 8010);
-const geminiApiKey = String(env.GEMINI_API_KEY || "").trim();
-const geminiModel = String(env.GEMINI_MODEL || "gemini-3-pro-preview").trim();
-const elevenLabsApiKey = String(env.ELEVENLABS_API_KEY || "").trim();
-const elevenLabsModel = String(env.ELEVENLABS_MODEL || "eleven_multilingual_v2").trim();
-const elevenLabsVoiceMale = String(env.ELEVENLABS_VOICE_MALE || "").trim();
-const elevenLabsVoiceFemale = String(env.ELEVENLABS_VOICE_FEMALE || "").trim();
+const port = Number(process.env.PORT || env.PORT || 8010);
+const geminiApiKey = String(process.env.GEMINI_API_KEY || env.GEMINI_API_KEY || "").trim();
+const geminiModel = String(process.env.GEMINI_MODEL || env.GEMINI_MODEL || "gemini-3-pro-preview").trim();
+const elevenLabsApiKey = String(process.env.ELEVENLABS_API_KEY || env.ELEVENLABS_API_KEY || "").trim();
+const elevenLabsModel = String(process.env.ELEVENLABS_MODEL || env.ELEVENLABS_MODEL || "eleven_multilingual_v2").trim();
+const elevenLabsVoiceMale = String(process.env.ELEVENLABS_VOICE_MALE || env.ELEVENLABS_VOICE_MALE || "").trim();
+const elevenLabsVoiceFemale = String(process.env.ELEVENLABS_VOICE_FEMALE || env.ELEVENLABS_VOICE_FEMALE || "").trim();
 const aiCache = new Map();
 const newsDataPath = join(rootDir, "data", "news-data.json");
 

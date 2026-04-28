@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: daily-smart-current-affairs
+    runtime: node
+    repo: https://github.com/keshavchauhan15482-byte/daily-current-affairs-.git
+    plan: free
+    buildCommand: "true"
+    startCommand: "node server.mjs"
+    envVars:
+      - key: GEMINI_MODEL
+        value: gemini-3-flash-preview
+      - key: ELEVENLABS_MODEL
+        value: eleven_multilingual_v2
