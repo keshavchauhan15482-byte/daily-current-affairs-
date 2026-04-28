@@ -5,7 +5,7 @@ services:
     repo: https://github.com/keshavchauhan15482-byte/daily-current-affairs-.git
     plan: free
     buildCommand: "true"
-    startCommand: "node server.mjs"
+    startCommand: "npm run start"
     envVars:
       - key: GEMINI_MODEL
         value: gemini-3-flash-preview
