@@ -1,0 +1,173 @@
+{
+  "updatedAt": "2026-04-28T05:59:32.620Z",
+  "articles": [
+    {
+      "id": "the-hindu-2-1777355150000",
+      "title": "13 Indian fishermen from Nagapattinam attacked, robbed of their catch mid-sea; one suspected Sri Lankan fisherman nabbed",
+      "source": "The Hindu",
+      "date": "28 Apr 2026",
+      "image": "https://th-i.thgim.com/public/incoming/wwgk28/article70914981.ece/alternates/LANDSCAPE_1200/1559_24-11-2020_19-9-30_2_PIX7.JPG",
+      "summary": "Thirteen Indian fishermen from Tamil Nadu were attacked and robbed mid-sea, leading to the capture of a suspected Sri Lankan national. The incident highlights ongoing maritime security and livelihood challenges in the Palk Strait.",
+      "explanation": "Relevant for Internal Security and IR. The India-Sri Lanka fishing dispute is a perennial issue involving the Katchatheevu island and the rights of traditional fishermen.",
+      "exams": [
+        "UPSC",
+        "PCS"
+      ],
+      "theme": "polity-rights",
+      "trend": "high",
+      "link": "https://www.thehindu.com/news/national/13nagapattinamfishermen-assaulted-mid-sea-one-suspected-sri-lankan-fisherman-nabbed/article70912148.ece"
+    },
+    {
+      "id": "pib-2-1777355949995",
+      "title": "हर राज्य के लिए अलग कृषि रोडमैप जारी करने के लिए एक उच्चस्तरीय समिति का होगा गठन- केन्द्रीय कृषि मंत्री श्री शिवराज सिंह चौहान",
+      "source": "PIB",
+      "date": "28 Apr 2026",
+      "image": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=900&q=82",
+      "summary": "The Union Agriculture Ministry has announced the formation of a high-level committee to create separate agriculture roadmaps for every state. This initiative aims to address regional agricultural challenges through tailored strategies.",
+      "explanation": "Important for Governance and Agriculture. It reflects the shift towards decentralized planning and cooperative federalism in the primary sector.",
+      "exams": [
+        "UPSC",
+        "PCS"
+      ],
+      "theme": "governance-disaster",
+      "trend": "high",
+      "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2256059"
+    },
+    {
+      "id": "seed-indian-express-maritime-defence",
+      "title": "India-France maritime logistics exercise expands Indo-Pacific focus",
+      "source": "The Indian Express",
+      "date": "27 Apr 2026",
+      "image": "https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=900&q=82",
+      "summary": "The exercise improves naval interoperability, supply coordination and maritime domain awareness.",
+      "explanation": "Maritime exercises show how logistics and interoperability support India's wider Indo-Pacific strategy.",
+      "exams": [
+        "NDA",
+        "CDS",
+        "UPSC"
+      ],
+      "theme": "defence-strategy",
+      "trend": "medium",
+      "link": "https://indianexpress.com/",
+      "pyqRef": {
+        "exam": "UPSC",
+        "year": 2025,
+        "paper": "GS3",
+        "evidence": "Official GS3 OCR includes a question on maritime and coastal security."
+      }
+    },
+    {
+      "id": "pib-19-1777355949996",
+      "title": "अर्थव्यवस्था के औपचारिक क्षेत्र में सेवा उत्पादन सूचकांक के संकलन हेतु दृष्टिकोण पत्र",
+      "source": "PIB",
+      "date": "27 Apr 2026",
+      "image": "https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=900&q=82",
+      "summary": "The government has released a concept paper for the compilation of the 'Service Production Index' for the formal sector. This index will serve as a key high-frequency indicator to track the growth of India's service economy.",
+      "explanation": "Crucial for Indian Economy. Similar to the Index of Industrial Production (IIP), this new index will provide data-driven insights into the service sector, which contributes over 50% to India's GDP.",
+      "exams": [
+        "UPSC",
+        "PCS"
+      ],
+      "theme": "governance-disaster",
+      "trend": "high",
+      "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2256000"
+    },
+    {
+      "id": "seed-hindustan-times-detention",
+      "title": "Court clarifies procedural safeguards in preventive detention review",
+      "source": "Hindustan Times",
+      "date": "26 Apr 2026",
+      "image": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=900&q=82",
+      "summary": "The ruling underlines timely communication of grounds and meaningful review by advisory boards.",
+      "explanation": "Preventive detention remains a core polity theme because liberty and security must be balanced with due process.",
+      "exams": [
+        "UPSC",
+        "PCS"
+      ],
+      "theme": "polity-rights",
+      "trend": "high",
+      "link": "https://www.hindustantimes.com/"
+    },
+    {
+      "id": "pib-9-1777355949995",
+      "title": "भारत सरकार के मत्स्य पालन, पशुपालन और डेयरी मंत्रालय के मत्स्य विभाग के केंद्रीय सचिव ने थाईलैंड में आयोजित 5वें विश्व लघु मत्स्य पालन सम्मेलन और द्विपक्षीय वार्ताओं में शामिल हुए",
+      "source": "PIB",
+      "date": "26 Apr 2026",
+      "image": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=900&q=82",
+      "summary": "India participated in the 5th World Small-Scale Fisheries Congress in Thailand to discuss sustainable practices. The delegation emphasized bilateral cooperation and the role of small-scale fisheries in the global blue economy.",
+      "explanation": "Relevant for Environment and Economy. Small-scale fisheries are vital for food security and livelihoods, often appearing in GS-3 topics related to the Blue Economy.",
+      "exams": [
+        "UPSC",
+        "PCS"
+      ],
+      "theme": "governance-disaster",
+      "trend": "high",
+      "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2256058"
+    },
+    {
+      "id": "pib-14-1777355949996",
+      "title": "भारत, रूस के बाद व्यावसायिक स्तर पर फास्ट ब्रीडर रिएक्टर संचालित करने वाला विश्व का दूसरा देश हो जाएगा; स्वदेशी रूप से डिजाइन किए गए प्रोटोटाइप फास्ट ब्रीडर रिएक्टर (पीएफबीआर) का प्रथम क्रिटिकैलिटी हासिल करना एक महत्वपूर्ण उपलब्धि है: डॉ. जितेंद्र सिंह",
+      "source": "PIB",
+      "date": "25 Apr 2026",
+      "image": "https://images.unsplash.com/photo-1527489377706-5bf97e608852?auto=format&fit=crop&w=900&q=82",
+      "summary": "India achieves a major milestone as the indigenous Prototype Fast Breeder Reactor (PFBR) reaches its first criticality. This makes India the second country after Russia to operate a fast breeder reactor at a commercial level.",
+      "explanation": "Significant for Science & Tech (Nuclear Energy). PFBR is the second stage of India's three-stage nuclear power program, utilizing Uranium-Plutonium mixed oxide fuel to enhance energy security.",
+      "exams": [
+        "UPSC",
+        "PCS"
+      ],
+      "theme": "governance-disaster",
+      "trend": "high",
+      "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2256015"
+    },
+    {
+      "id": "seed-the-hindu-rural-credit",
+      "title": "RBI paper flags rural credit digitisation gap among small borrowers",
+      "source": "The Hindu",
+      "date": "24 Apr 2026",
+      "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=82",
+      "summary": "The paper highlights digital access, banking literacy and credit transparency for rural households.",
+      "explanation": "Digital inclusion matters only when literacy, grievance redressal and transparency improve together for rural borrowers.",
+      "exams": [
+        "UPSC",
+        "SSC",
+        "PCS"
+      ],
+      "theme": "economy-inclusion",
+      "trend": "high",
+      "link": "https://www.thehindu.com/"
+    },
+    {
+      "id": "the-hindu-3-1777355013000",
+      "title": "Vote counting underway for Gujarat local body polls",
+      "source": "The Hindu",
+      "date": "23 Apr 2026",
+      "image": "https://th-i.thgim.com/public/incoming/pda42o/article70914880.ece/alternates/LANDSCAPE_1200/20260426172L.jpg",
+      "summary": "Counting of votes for the Gujarat local body elections has commenced under the supervision of the State Election Commission. These polls are a critical test for grassroots governance and political trends at the municipal and panchayat levels.",
+      "explanation": "Relevant for Polity. Local body elections fall under the 73rd and 74th Constitutional Amendments, and the role of the State Election Commission (SEC) is a frequent area of inquiry.",
+      "exams": [
+        "UPSC",
+        "PCS"
+      ],
+      "theme": "polity-rights",
+      "trend": "high",
+      "link": "https://www.thehindu.com/news/national/gujarat/gujarat-local-body-polls-updates/article70914867.ece"
+    },
+    {
+      "id": "pib-11-1777355949996",
+      "title": "भारत और न्यूजीलैंड के बीच मुक्त व्यापार समझौता (एफटीए) वस्त्र क्षेत्र के लिए एक बड़ा प्रोत्साहन",
+      "source": "PIB",
+      "date": "22 Apr 2026",
+      "image": "https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=900&q=82",
+      "summary": "India and New Zealand have finalized a landmark Free Trade Agreement (FTA) specifically targeting the textile sector. The agreement is expected to provide an unprecedented boost to bilateral trade and development partnerships.",
+      "explanation": "Relevant for International Relations and Economy. FTAs are frequent exam topics; this specific focus on textiles aligns with India's export-oriented growth strategies.",
+      "exams": [
+        "UPSC",
+        "PCS"
+      ],
+      "theme": "governance-disaster",
+      "trend": "high",
+      "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2256035"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "sources": {
+    "UPSC_CSE_GS": {
+      "label": "UPSC Civil Services Main General Studies",
+      "url": "https://upsc.gov.in/examinations/previous-question-papers",
+      "note": "Official UPSC archive page listing General Studies papers."
+    },
+    "UPSC_NDA": {
+      "label": "UPSC NDA Previous Question Papers",
+      "url": "https://upsc.gov.in/examinations/previous-question-papers?field_exam_name_value=National+Defence+Academy+",
+      "note": "Official UPSC archive page listing NDA question papers."
+    },
+    "UPSC_CDS": {
+      "label": "UPSC CDS Previous Question Papers",
+      "url": "https://upsc.gov.in/examinations/previous-question-papers?field_exam_name_value=Combined+Defence+Services",
+      "note": "Official UPSC archive page listing CDS question papers."
+    }
+  },
+  "verifiedTopicMatches": {}
+}

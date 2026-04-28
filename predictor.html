@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predictor | daily current affairs</title>
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body data-page="predictor">
+  <header class="site-header">
+    <div class="shell nav">
+      <a class="brand" href="index.html"><span class="brand-mark"></span><span><strong>daily smart current affairs</strong><small>Exam focused newsroom</small></span></a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="feed.html">Feed</a>
+        <a href="predictor.html">Predictor</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="primary-btn" data-guest href="login.html">Login</a>
+        <a class="avatar hidden" data-user href="dashboard.html"><span data-avatar>DC</span></a>
+      </div>
+    </div>
+  </header>
+  <main class="section">
+    <div class="shell">
+      <section id="gate" class="card gate">
+        <p class="eyebrow">Protected page</p>
+        <h1>Login to access this predictor page.</h1>
+        <p class="muted">Predicted questions are available after login.</p>
+        <div class="hero-actions">
+          <a class="primary-btn" href="login.html">Login</a>
+          <a class="ghost-btn" href="signup.html">Register</a>
+        </div>
+      </section>
+      <section id="protected" class="hidden">
+        <div class="split heading-row">
+          <div>
+            <p class="eyebrow">Aaj ke important questions</p>
+            <h1>Predicted questions from today&apos;s feed.</h1>
+          </div>
+        </div>
+        <div id="predictor-list" class="predictor-list"></div>
+      </section>
+    </div>
+  </main>
+  <script src="assets/site.js"></script>
+</body>
+</html>

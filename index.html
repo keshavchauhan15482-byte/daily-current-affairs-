@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>daily current affairs</title>
+  <meta name="description" content="AI-powered current affairs prep for UPSC, SSC, NDA, CDS, and PCS aspirants.">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body data-page="home">
+  <header class="site-header">
+    <div class="shell nav">
+      <a class="brand" href="index.html">
+        <span class="brand-mark"></span>
+        <span>
+          <strong>daily smart current affairs</strong>
+          <small>Exam focused newsroom</small>
+        </span>
+      </a>
+      <nav class="main-nav">
+        <a href="#feed">Weekly Top News</a>
+        <a href="#exams">How it works</a>
+        <a href="#brief">Summary</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="primary-btn" data-guest href="login.html">Login (soon)</a>
+        <a class="avatar hidden" data-user href="dashboard.html"><span data-avatar>DC</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section">
+      <div class="shell hero-grid text-entrance" data-text-entrance>
+        <div class="hero-copy">
+          <p class="eyebrow text-entrance-item" data-text-step="0">AI newsroom for aspirants</p>
+          <h1 class="text-entrance-item" data-text-step="1">Don’t just read news. <span>Study what will be asked.</span></h1>
+          <p class="lede text-entrance-item" data-text-step="2">Stop reading everything. Start studying what actually matters.<br>Our AI filters daily news, maps it to UPSC/SSC syllabus, and predicts high-probability topics using PYQ pattern analysis.</p>
+          <div class="hero-points text-entrance-item" data-text-step="3">
+            <span>Summary</span>
+            <span>Powerful</span>
+            <span>AI-Prediction</span>
+          </div>
+          <div class="hero-actions text-entrance-item" data-text-step="4">
+            <a class="primary-btn" href="#feed">Explore Weekly Top News</a>
+          </div>
+        </div>
+        <figure class="hero-image" data-hero-figure>
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80" alt="Students studying current affairs with laptops and notes">
+          <figcaption>
+            <span>Daily exam desk</span>
+            <strong>Daily Smart Current Affairs</strong>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="prep-band text-entrance" data-text-entrance>
+      <div class="shell">
+        <h2 class="text-entrance-item" data-text-step="0">Start preparing for your exam&apos;s smartly</h2>
+      </div>
+    </section>
+
+    <section class="section" id="exams">
+      <div class="shell">
+        <div class="split exam-entrance" data-exam-entrance>
+          <div>
+            <p class="eyebrow exam-entrance-item" data-exam-step="0">WHY ASPIRANTS SWITCH</p>
+            <h2 class="exam-entrance-item" data-exam-step="1">How this news becomes exam-ready — and why it matters to you</h2>
+            <div class="exam-ready-points">
+              <div class="exam-point exam-entrance-item" data-exam-step="2">
+                <p class="exam-point-title">⚡ AI-filtered from 100+ trusted sources</p>
+                <p class="exam-point-copy">Removes noise and keeps only relevant news.</p>
+              </div>
+              <div class="exam-point exam-entrance-item" data-exam-step="3">
+                <p class="exam-point-title">📊 Mapped with PYQ patterns</p>
+                <p class="exam-point-copy">Each topic is linked to previously asked questions.</p>
+              </div>
+              <div class="exam-point exam-entrance-item" data-exam-step="4">
+                <p class="exam-point-title">🎯 Probability-based prediction</p>
+                <p class="exam-point-copy">Know what has high chances of being asked.</p>
+              </div>
+              <div class="exam-point exam-entrance-item" data-exam-step="5">
+                <p class="exam-point-title">🧠 Quick Brief for fast revision</p>
+                <p class="exam-point-copy">Crisp points designed for exam recall.</p>
+              </div>
+              <div class="exam-point exam-entrance-item" data-exam-step="6">
+                <p class="exam-point-title">• 🗣️ AI Teacher explanation</p>
+                <p class="exam-point-copy">Understand topics in simple Hindi + English.</p>
+              </div>
+              <div class="exam-point exam-entrance-item" data-exam-step="7">
+                <p class="exam-point-title">📚 Syllabus tagging (UPSC / SSC / etc.)</p>
+                <p class="exam-point-copy">Built for UPSC,SSC,BANKING &amp; BEYOND.</p>
+              </div>
+            </div>
+            <p class="exam-ready-signoff exam-entrance-item" data-exam-step="8">This is not news. This is preparation</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="feed">
+      <div class="shell text-entrance" data-text-entrance>
+        <div class="split heading-row">
+          <div>
+            <p class="eyebrow text-entrance-item" data-text-step="0">Today&apos;s curated feed</p>
+            <h2 class="text-entrance-item" data-text-step="1">Only the news that can actually come in your exam.</h2>
+          </div>
+          <div class="tab-row text-entrance-item" data-text-step="2">
+            <button class="tab active" data-exam="All">All</button>
+            <button class="tab" data-exam="UPSC">UPSC</button>
+            <button class="tab" data-exam="SSC">SSC</button>
+            <button class="tab" data-exam="NDA">NDA</button>
+            <button class="tab" data-exam="CDS">CDS</button>
+            <button class="tab" data-exam="PCS">PCS</button>
+            <button class="tab" data-exam="Banking">Banking</button>
+          </div>
+        </div>
+        <div id="news-grid" class="news-grid"></div>
+      </div>
+    </section>
+
+    <section class="section accent-section">
+      <div class="shell predictor-band text-entrance" data-text-entrance>
+        <div>
+          <p class="eyebrow text-entrance-item" data-text-step="0">Aaj ke important questions</p>
+          <h2 class="text-entrance-item" data-text-step="1">Move from reading to revision.</h2>
+          <p class="muted text-entrance-item" data-text-step="2">Predicted questions turn the day&apos;s current affairs into likely exam prompts with probability and exam tags.</p>
+        </div>
+        <a class="primary-btn" href="predictor.html">Open predictor</a>
+      </div>
+    </section>
+
+    <section class="section" id="brief">
+      <div class="shell brief-grid text-entrance" data-text-entrance>
+        <article class="card brief-card">
+          <div class="split heading-row">
+            <div>
+              <p class="eyebrow text-entrance-item" data-text-step="0">Daily brief</p>
+              <h2 class="text-entrance-item" data-text-step="1">Aaj Ka Akhbaar</h2>
+            </div>
+            <span class="date-chip text-entrance-item" data-text-step="2" id="brief-date"></span>
+          </div>
+          <ol id="brief-list" class="brief-list"></ol>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal hidden" id="explain-modal">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-layout">
+      <article class="modal-card">
+        <button class="modal-close" data-close-modal>&times;</button>
+        <p class="eyebrow" id="modal-source"></p>
+        <h3 id="modal-title"></h3>
+        <p id="modal-summary" class="muted"></p>
+        <div class="stack">
+          <section>
+            <h4>Simple explanation</h4>
+            <p id="modal-explain" class="teacher-script"></p>
+          </section>
+          <section>
+            <h4>AI Summary Points</h4>
+            <ul id="modal-points" class="summary-points"></ul>
+          </section>
+          <section>
+            <h4>AI Exam Prediction</h4>
+            <div id="modal-probability-badge" class="probability-badge"></div>
+            <p id="modal-probability-reason" class="probability-reason"></p>
+            <div id="modal-exam-tags" class="glow-tags"></div>
+            <p id="modal-angle" class="prediction-highlight"></p>
+          </section>
+        </div>
+      </article>
+      <aside class="teacher-panel">
+        <div class="teacher-head">
+          <div>
+            <h4>AI Teacher Controls</h4>
+            <p class="teacher-subcopy">Choose language, voice, then start listening.</p>
+          </div>
+        </div>
+        <div class="teacher-controls teacher-controls-side">
+          <div class="teacher-group">
+            <span class="teacher-label">Language</span>
+            <div class="teacher-toggle teacher-toggle-lang" id="teacher-language-toggle">
+              <button type="button" class="teacher-chip active" data-teacher-language="english">English</button>
+              <button type="button" class="teacher-chip" data-teacher-language="hindi">Hindi</button>
+              <button type="button" class="teacher-chip" data-teacher-language="hinglish">Hinglish</button>
+            </div>
+          </div>
+          <div class="teacher-group">
+            <span class="teacher-label">Voice</span>
+            <div class="teacher-toggle" id="teacher-mode-toggle">
+              <button type="button" class="teacher-chip active" data-teacher-voice="male">Male</button>
+              <button type="button" class="teacher-chip" data-teacher-voice="female">Female</button>
+            </div>
+          </div>
+          <button type="button" class="teacher-play teacher-play-wide" id="teacher-play-btn">Start listening</button>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script src="assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feed | daily current affairs</title>
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body data-page="feed">
+  <header class="site-header">
+    <div class="shell nav">
+      <a class="brand" href="index.html"><span class="brand-mark"></span><span><strong>daily smart current affairs</strong><small>Exam focused newsroom</small></span></a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="feed.html">Feed</a>
+        <a href="predictor.html">Predictor</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="primary-btn" data-guest href="login.html">Login</a>
+        <a class="avatar hidden" data-user href="dashboard.html"><span data-avatar>DC</span></a>
+      </div>
+    </div>
+  </header>
+  <main class="section">
+    <div class="shell">
+      <section id="gate" class="card gate">
+        <p class="eyebrow">Protected page</p>
+        <h1>Login to access this feed.</h1>
+        <p class="muted">This page is reserved for signed-in current affairs users.</p>
+        <div class="hero-actions">
+          <a class="primary-btn" href="login.html">Login</a>
+          <a class="ghost-btn" href="signup.html">Register</a>
+        </div>
+      </section>
+      <section id="protected" class="hidden">
+        <div class="split heading-row">
+          <div>
+            <p class="eyebrow">Full feed</p>
+            <h1>Exam-wise current affairs stream.</h1>
+          </div>
+          <div class="tab-row">
+            <button class="tab active" data-exam="All">All</button>
+            <button class="tab" data-exam="UPSC">UPSC</button>
+            <button class="tab" data-exam="SSC">SSC</button>
+            <button class="tab" data-exam="NDA">NDA</button>
+            <button class="tab" data-exam="CDS">CDS</button>
+            <button class="tab" data-exam="PCS">PCS</button>
+          </div>
+        </div>
+        <div id="news-grid" class="news-grid"></div>
+      </section>
+    </div>
+  </main>
+  <div class="modal hidden" id="explain-modal">
+    <div class="modal-backdrop" data-close-modal></div>
+    <article class="modal-card">
+      <button class="modal-close" data-close-modal>&times;</button>
+      <p class="eyebrow" id="modal-source"></p>
+      <h3 id="modal-title"></h3>
+      <p id="modal-summary" class="muted"></p>
+      <div class="stack">
+        <section><h4>Simple explanation</h4><p id="modal-explain"></p></section>
+        <section><h4>AI Summary Points</h4><ul id="modal-points" class="summary-points"></ul></section>
+        <section><h4>AI Exam Prediction</h4><div id="modal-probability-badge" class="probability-badge"></div><p id="modal-probability-reason" class="probability-reason"></p><div id="modal-exam-tags" class="glow-tags"></div><p id="modal-angle" class="prediction-highlight"></p></section>
+      </div>
+    </article>
+  </div>
+  <script src="assets/site.js"></script>
+</body>
+</html>

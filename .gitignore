@@ -1,0 +1,11 @@
+.env
+.DS_Store
+node_modules/
+
+# Local OCR and PDF cache
+.cache-*.pdf
+.cache-*.png
+data/pyq-cache/
+
+# Temporary audio/debug output
+*.mp3
