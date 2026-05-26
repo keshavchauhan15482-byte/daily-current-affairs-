@@ -3,7 +3,7 @@ import { mkdir, readFile, stat, writeFile } from "node:fs/promises";
 import { createReadStream, readFileSync } from "node:fs";
 import { extname, join, normalize } from "node:path";
 import { fileURLToPath } from "node:url";
-import { updateNewsStore } from "./scripts/update-news.mjs";
+import { updateMonthlyArchiveStore, updateNewsStore } from "./scripts/update-news.mjs";
 
 const rootDir = fileURLToPath(new URL(".", import.meta.url));
 const env = loadEnv(join(rootDir, ".env"));
@@ -216,6 +216,110 @@ function fallbackScore(article) {
   return Math.max(12, Math.min(95, (trendMap[article.trend] || 0) + (themeMap[article.theme] || 6) + (sourceMap[article.source] || 6) + examsWeight));
 }
 
+function parseDisplayDate(value) {
+  const parsed = new Date(value);
+  return Number.isNaN(parsed.getTime()) ? null : parsed;
+}
+
+function inferScope(article) {
+  if (article.scope === "international" || article.scope === "national") {
+    return article.scope;
+  }
+  const text = `${article.title || ""} ${article.summary || ""} ${article.source || ""} ${article.theme || ""}`.toLowerCase();
+  if (
+    text.includes("indo-pacific")
+    || text.includes("maritime")
+    || text.includes("france")
+    || text.includes("world")
+    || text.includes("global")
+    || text.includes("diplomatic")
+    || text.includes("international")
+    || text.includes("leaders")
+    || article.theme === "defence-strategy"
+  ) {
+    return "international";
+  }
+  return "national";
+}
+
+function monthKeyForArticle(article) {
+  const date = parseDisplayDate(article.date);
+  if (!date) return "";
+  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}`;
+}
+
+function filterNewsArticles(articles, query) {
+  const exam = String(query.exam || "All");
+  const scope = String(query.scope || "all");
+  const period = String(query.period || "daily");
+  const month = String(query.month || "");
+  const limit = [10, 20, 50].includes(Number(query.limit)) ? Number(query.limit) : 10;
+  const ranked = articles
+    .filter((article) => exam === "All" || (Array.isArray(article.exams) && article.exams.includes(exam)))
+    .filter((article) => scope === "all" || inferScope(article) === scope)
+    .map((article) => ({
+      ...article,
+      scope: inferScope(article),
+      predictionScore: fallbackScore(article)
+    }))
+    .sort((left, right) => {
+      const scoreDelta = (right.predictionScore || 0) - (left.predictionScore || 0);
+      if (scoreDelta !== 0) {
+        return scoreDelta;
+      }
+      const rightDate = parseDisplayDate(right.date)?.getTime() || 0;
+      const leftDate = parseDisplayDate(left.date)?.getTime() || 0;
+      return rightDate - leftDate;
+    });
+
+  if (scope === "all") {
+    return ranked.slice(0, limit);
+  }
+
+  const monthCandidates = ranked.filter((article) => monthKeyForArticle(article));
+  const latestDate = parseDisplayDate(monthCandidates[0]?.date);
+  const filtered = ranked.filter((article) => {
+    const date = parseDisplayDate(article.date);
+    if (!date || !latestDate) {
+      return period !== "monthly";
+    }
+    if (period === "daily") {
+      return latestDate.getTime() - date.getTime() <= 2 * 24 * 60 * 60 * 1000;
+    }
+    if (period === "weekly") {
+      return latestDate.getTime() - date.getTime() <= 7 * 24 * 60 * 60 * 1000;
+    }
+    if (period === "monthly") {
+      return month ? monthKeyForArticle(article) === month : false;
+    }
+    if (period === "yearly") {
+      return date.getFullYear() === latestDate.getFullYear();
+    }
+    return true;
+  });
+  if (filtered.length >= limit) {
+    return filtered.slice(0, limit);
+  }
+
+  // Keep the selected timeline first, then top up with the next strongest
+  // items from the same scope so protected pages never look half-empty.
+  const seenIds = new Set(filtered.map((article) => article.id));
+  const fallbackPool = ranked.filter((article) => !seenIds.has(article.id));
+  return [...filtered, ...fallbackPool].slice(0, limit);
+}
+
+function filterMonthlyArchive(payload, query) {
+  const scope = String(query.scope || "national");
+  const month = String(query.month || "");
+  const limit = [10, 20, 50].includes(Number(query.limit)) ? Number(query.limit) : 10;
+  const exam = String(query.exam || "All");
+  const monthPayload = payload?.monthlyArchives?.[month];
+  const items = Array.isArray(monthPayload?.[scope]) ? monthPayload[scope] : [];
+  return items
+    .filter((article) => exam === "All" || (Array.isArray(article.exams) && article.exams.includes(exam)))
+    .slice(0, limit);
+}
+
 function probabilityMeta(score) {
   if (score >= 80) return { className: "high", label: "High Probability" };
   if (score >= 70) return { className: "high-medium", label: "High-Medium Probability" };
@@ -358,8 +462,31 @@ async function handleApi(req, res) {
 
 async function handleNewsApi(req, res) {
   try {
-    const payload = await readNewsData();
-    json(res, 200, { ok: true, ...payload });
+    const url = new URL(req.url || "/", `http://${req.headers.host || `127.0.0.1:${port}`}`);
+    const shouldRefresh = url.searchParams.get("fresh") === "1";
+    const query = {
+      exam: url.searchParams.get("exam") || "All",
+      scope: url.searchParams.get("scope") || "all",
+      period: url.searchParams.get("period") || "daily",
+      limit: url.searchParams.get("limit") || "10",
+      month: url.searchParams.get("month") || ""
+    };
+    const isMonthlyArchiveRequest = query.period === "monthly" && query.month && ["national", "international"].includes(query.scope);
+    const payload = isMonthlyArchiveRequest && shouldRefresh
+      ? await updateMonthlyArchiveStore(query.month)
+      : shouldRefresh
+        ? await updateNewsStore()
+        : await readNewsData();
+    const articles = Array.isArray(payload.articles) ? payload.articles : [];
+    const filteredArticles = isMonthlyArchiveRequest
+      ? filterMonthlyArchive(payload, query)
+      : filterNewsArticles(articles, query);
+    json(res, 200, {
+      ok: true,
+      updatedAt: payload.updatedAt,
+      articles: filteredArticles,
+      availableMonths: Object.keys(payload.monthlyArchives || {}).sort()
+    });
   } catch (error) {
     json(res, 500, { error: error.message || "Failed to load news data." });
   }

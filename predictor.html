@@ -11,18 +11,37 @@
 <body data-page="predictor">
   <header class="site-header">
     <div class="shell nav">
+      <button class="menu-toggle" type="button" id="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-drawer">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <a class="brand" href="index.html"><span class="brand-mark"></span><span><strong>daily smart current affairs</strong><small>Exam focused newsroom</small></span></a>
-      <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="feed.html">Feed</a>
-        <a href="predictor.html">Predictor</a>
-      </nav>
       <div class="nav-actions">
         <a class="primary-btn" data-guest href="login.html">Login</a>
         <a class="avatar hidden" data-user href="dashboard.html"><span data-avatar>DC</span></a>
       </div>
     </div>
   </header>
+  <div class="drawer-backdrop hidden" id="drawer-backdrop" data-close-drawer></div>
+  <aside class="site-drawer hidden" id="site-drawer" aria-hidden="true">
+    <div class="drawer-head">
+      <p class="eyebrow">Explore</p>
+      <button class="drawer-close" type="button" aria-label="Close navigation menu" data-close-drawer>&times;</button>
+    </div>
+    <div class="drawer-group">
+      <a class="drawer-link" href="index.html" data-close-drawer>Home</a>
+      <a class="drawer-link" href="index.html#feed" data-close-drawer>Weekly Top News</a>
+      <a class="drawer-link" href="index.html#exams" data-close-drawer>How it works</a>
+      <a class="drawer-link" href="predictor.html" data-close-drawer>Predictor</a>
+    </div>
+    <div class="drawer-group">
+      <p class="drawer-label">Current Affairs</p>
+      <a class="drawer-link" href="feed.html" data-close-drawer>All Current Affairs</a>
+      <a class="drawer-link" href="international.html" data-close-drawer>International Current Affairs</a>
+      <a class="drawer-link" href="national.html" data-close-drawer>National Current Affairs</a>
+    </div>
+  </aside>
   <main class="section">
     <div class="shell">
       <section id="gate" class="card gate">

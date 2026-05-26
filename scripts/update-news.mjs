@@ -10,42 +10,71 @@ const env = loadEnv(join(appDir, ".env"));
 const geminiApiKey = String(env.GEMINI_API_KEY || "").trim();
 const geminiModel = String(env.GEMINI_MODEL || "gemini-3-flash-preview").trim();
 const dataPath = join(appDir, "data", "news-data.json");
+const TARGET_ARTICLE_COUNT = 60;
+const GEMINI_SELECTION_COUNT = 50;
+const FEED_CANDIDATE_LIMIT = 80;
+const MONTHLY_ARCHIVE_LIMIT = 50;
 
 const FEEDS = [
   {
     source: "PIB",
     url: "https://pib.gov.in/RssMain.aspx?ModId=6&Lang=1&Regid=3",
-    themeHint: "governance-disaster"
+    themeHint: "governance-disaster",
+    scopeHint: "national"
   },
   {
     source: "The Hindu",
     url: "https://www.thehindu.com/news/national/feeder/default.rss",
-    themeHint: "polity-rights"
+    themeHint: "polity-rights",
+    scopeHint: "national"
+  },
+  {
+    source: "The Hindu",
+    url: "https://www.thehindu.com/news/international/feeder/default.rss",
+    themeHint: "defence-strategy",
+    scopeHint: "international"
   },
   {
     source: "The Indian Express",
     url: "https://indianexpress.com/section/india/feed/",
-    themeHint: "social-governance"
+    themeHint: "social-governance",
+    scopeHint: "national"
   },
   {
     source: "The Indian Express",
     url: "https://indianexpress.com/section/explained/feed/",
-    themeHint: "economy-inclusion"
+    themeHint: "economy-inclusion",
+    scopeHint: "national"
   },
   {
     source: "The Indian Express",
     url: "https://indianexpress.com/section/explained/explained-law/feed/",
-    themeHint: "polity-rights"
+    themeHint: "polity-rights",
+    scopeHint: "national"
+  },
+  {
+    source: "The Indian Express",
+    url: "https://indianexpress.com/section/world/feed/",
+    themeHint: "defence-strategy",
+    scopeHint: "international"
   },
   {
     source: "Hindustan Times",
     url: "https://www.hindustantimes.com/feeds/rss/india-news/rssfeed.xml",
-    themeHint: "social-governance"
+    themeHint: "social-governance",
+    scopeHint: "national"
   },
   {
     source: "Hindustan Times",
     url: "https://www.hindustantimes.com/feeds/rss/analysis/rssfeed.xml",
-    themeHint: "polity-rights"
+    themeHint: "polity-rights",
+    scopeHint: "national"
+  },
+  {
+    source: "Hindustan Times",
+    url: "https://www.hindustantimes.com/feeds/rss/world-news/rssfeed.xml",
+    themeHint: "defence-strategy",
+    scopeHint: "international"
   }
 ];
 
@@ -137,6 +166,26 @@ const FALLBACK_IMAGES = {
   ]
 };
 
+const VERIFIED_SEARCH_SOURCES = [
+  { source: "The Hindu", domain: "thehindu.com" },
+  { source: "The Indian Express", domain: "indianexpress.com" },
+  { source: "Hindustan Times", domain: "hindustantimes.com" },
+  { source: "PIB", domain: "pib.gov.in" }
+];
+
+const MONTHLY_SCOPE_QUERIES = {
+  national: [
+    "India policy governance economy parliament supreme court RBI scheme current affairs",
+    "India science technology environment disaster management education health current affairs",
+    "India polity federalism welfare agriculture infrastructure social justice current affairs"
+  ],
+  international: [
+    "India foreign policy international relations Indo-Pacific Quad UN geopolitics current affairs",
+    "India trade pact diplomacy strategic affairs maritime security global summit current affairs",
+    "India bilateral relations defence foreign minister critical minerals global economy current affairs"
+  ]
+};
+
 function loadEnv(filePath) {
   try {
     return readFileSync(filePath, "utf8").split(/\r?\n/).reduce((acc, line) => {
@@ -166,7 +215,30 @@ function decodeXml(value) {
 }
 
 function stripTags(value) {
-  return decodeXml(String(value || "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim());
+  return decodeXml(
+    decodeXml(String(value || ""))
+      .replace(/<[^>]+>/g, " ")
+      .replace(/&nbsp;/gi, " ")
+      .replace(/\s+/g, " ")
+      .trim()
+  );
+}
+
+function normalizeStoryKey(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/\| explained/gi, " ")
+    .replace(/\blive\b/gi, " ")
+    .replace(/[^a-z0-9\u0900-\u097f\s]/gi, " ")
+    .replace(/\b(the|a|an|what|why|how|here|says|say|meet|meeting)\b/gi, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function articleIdentity(article) {
+  const titleKey = normalizeStoryKey(article.title);
+  const summaryKey = normalizeStoryKey(article.summary).split(" ").slice(0, 12).join(" ");
+  return `${article.source || ""}::${titleKey}::${summaryKey}`;
 }
 
 function pickTheme(text, hint = "social-governance") {
@@ -174,10 +246,31 @@ function pickTheme(text, hint = "social-governance") {
   if (/(constitution|court|rights|detention|advisory board|liberty)/.test(content)) return "polity-rights";
   if (/(disaster|resilience|infrastructure|climate risk|district preparedness)/.test(content)) return "governance-disaster";
   if (/(credit|rbi|financial inclusion|rural borrowers|banking)/.test(content)) return "economy-inclusion";
-  if (/(navy|maritime|indo-pacific|defence|strategic)/.test(content)) return "defence-strategy";
+  if (/(navy|maritime|indo-pacific|defence|strategic|quad|nato|united nations|security council|ceasefire|bilateral|summit|foreign minister|trade pact|tariff|geopolitics|taiwan|south china sea|gaza|ukraine|russia|china|u\.s\.|un |diplomacy)/.test(content)) return "defence-strategy";
   if (/(satellite|isro|remote sensing|startup|geospatial|space)/.test(content)) return "science-policy";
   if (/(nutrition|dashboard|learning outcomes|social sector|district indicators)/.test(content)) return "social-governance";
   return hint;
+}
+
+function inferScope(text, hint = "national") {
+  const content = text.toLowerCase();
+  if (
+    hint === "international"
+    || /(indo-pacific|foreign|international|global|world|bilateral|cepa|fta|trade pact|diplomatic|summit|strategic|maritime|quad|nato|united nations|security council|gaza|ukraine|russia|china|canada|u\.s\.|us |europe|west asia|middle east|foreign policy)/.test(content)
+  ) {
+    return "international";
+  }
+  return "national";
+}
+
+function isExamRelevant(article) {
+  const text = `${article.title} ${article.summary} ${article.explanation}`.toLowerCase();
+  const strongSignals = /(constitution|supreme court|parliament|policy|bill|act|scheme|governance|economy|inflation|rbi|banking|science|technology|space|satellite|climate|environment|disaster|security|defence|maritime|indo-pacific|foreign policy|bilateral|trade pact|strategic|international|global|united nations|g20|summit|education policy|nutrition|health|epidemic|energy|critical minerals)/;
+  const weakOrLowValue = /(celebrity|film body|parole|breakfast with loyalists|padm awards glimpse|book launch|suvichar|poem|power cut complaint|city complaint|local turnout recorded till|washroom window escapes|controversies|photo feature)/;
+  if (weakOrLowValue.test(text)) {
+    return false;
+  }
+  return strongSignals.test(text);
 }
 
 function pickExams(theme) {
@@ -215,7 +308,7 @@ function extractFirstTag(text, tagName) {
   return plainMatch ? plainMatch[1] : "";
 }
 
-function parseRss(xml, source, themeHint) {
+function parseRss(xml, source, themeHint, scopeHint = "national") {
   const items = [...xml.matchAll(/<item\b[\s\S]*?<\/item>/gi)];
   return items.map((match, index) => {
     const raw = match[0];
@@ -228,6 +321,7 @@ function parseRss(xml, source, themeHint) {
       || (raw.match(/<media:thumbnail[^>]+url="([^"]+)"/i) || [])[1];
     const text = `${title} ${description}`;
     const theme = pickTheme(text, themeHint);
+    const scope = inferScope(text, scopeHint);
     return {
       id: `${source.toLowerCase().replace(/\s+/g, "-")}-${index}-${Date.parse(pubDate || new Date().toISOString())}`,
       title,
@@ -238,6 +332,7 @@ function parseRss(xml, source, themeHint) {
       explanation: description || title,
       exams: pickExams(theme),
       theme,
+      scope,
       trend: pickTrend(theme),
       link
     };
@@ -262,6 +357,24 @@ function formatDisplayDate(date) {
   }).format(date);
 }
 
+function monthRange(monthKey) {
+  const [yearValue, monthValue] = String(monthKey || "").split("-");
+  const year = Number(yearValue);
+  const month = Number(monthValue);
+  if (!year || !month) {
+    return null;
+  }
+  const start = new Date(Date.UTC(year, month - 1, 1));
+  const end = new Date(Date.UTC(year, month, 1));
+  const asStamp = (value) => value.toISOString().slice(0, 10);
+  return {
+    start,
+    end,
+    after: asStamp(start),
+    before: asStamp(end)
+  };
+}
+
 function currentIndiaDate() {
   const formatter = new Intl.DateTimeFormat("en-CA", {
     timeZone: "Asia/Kolkata",
@@ -276,17 +389,41 @@ function currentIndiaDate() {
   return new Date(year, month - 1, day);
 }
 
-function rollingWeekDates(referenceDate = currentIndiaDate()) {
-  return Array.from({ length: 7 }, (_, index) => {
-    const shifted = new Date(referenceDate);
-    shifted.setDate(referenceDate.getDate() - index);
-    return shifted;
-  });
-}
-
 function parseDisplayDate(value) {
   const parsed = new Date(value);
   return Number.isNaN(parsed.getTime()) ? null : parsed;
+}
+
+function parseGoogleNewsItem(raw, fallbackSource, themeHint, scopeHint, index) {
+  const titleRaw = stripTags(extractFirstTag(raw, "title"));
+  const sourceMatch = titleRaw.match(/^(.*?)(?:\s+-\s+)([^-]+)$/);
+  const title = sourceMatch ? sourceMatch[1].trim() : titleRaw;
+  const source = sourceMatch ? sourceMatch[2].trim() : fallbackSource;
+  const description = stripTags(extractFirstTag(raw, "description") || extractFirstTag(raw, "content:encoded"));
+  const link = stripTags(extractFirstTag(raw, "link"));
+  const pubDate = stripTags(extractFirstTag(raw, "pubDate") || extractFirstTag(raw, "published"));
+  const text = `${title} ${description}`;
+  const theme = pickTheme(text, themeHint);
+  const scope = inferScope(text, scopeHint);
+  return {
+    id: `googlenews-${fallbackSource.toLowerCase().replace(/\s+/g, "-")}-${index}-${Date.parse(pubDate || new Date().toISOString())}`,
+    title,
+    source,
+    date: formatDate(pubDate),
+    image: fallbackImageFor({ theme }, index),
+    summary: description || title,
+    explanation: description || title,
+    exams: pickExams(theme),
+    theme,
+    scope,
+    trend: pickTrend(theme),
+    link
+  };
+}
+
+function parseGoogleNewsRss(xml, fallbackSource, themeHint, scopeHint) {
+  const items = [...xml.matchAll(/<item\b[\s\S]*?<\/item>/gi)];
+  return items.map((match, index) => parseGoogleNewsItem(match[0], fallbackSource, themeHint, scopeHint, index)).filter((item) => item.title);
 }
 
 function isWithinRollingWeek(value, referenceDate = currentIndiaDate()) {
@@ -298,14 +435,6 @@ function isWithinRollingWeek(value, referenceDate = currentIndiaDate()) {
   const floorParsed = new Date(parsed.getFullYear(), parsed.getMonth(), parsed.getDate());
   const diffDays = Math.round((floorToday - floorParsed) / 86400000);
   return diffDays >= 0 && diffDays < 7;
-}
-
-function assignRollingDates(articles, referenceDate = currentIndiaDate()) {
-  const labels = rollingWeekDates(referenceDate).map((date) => formatDisplayDate(date));
-  return articles.map((article, index) => ({
-    ...article,
-    date: labels[index % labels.length]
-  }));
 }
 
 function sortByLatestDate(articles) {
@@ -339,10 +468,10 @@ function dedupeImages(articles) {
 
 async function geminiRankAndPolish(articles) {
   if (!geminiApiKey || !articles.length) {
-    return articles.slice(0, 10);
+    return articles.slice(0, GEMINI_SELECTION_COUNT);
   }
 
-  const compact = articles.slice(0, 24).map((item) => ({
+  const compact = articles.slice(0, FEED_CANDIDATE_LIMIT).map((item) => ({
     id: item.id,
     title: item.title,
     source: item.source,
@@ -354,7 +483,9 @@ async function geminiRankAndPolish(articles) {
 
   const prompt = [
     "You are preparing weekly top current affairs for Indian government exam aspirants.",
-    "From the provided article list, choose the 10 strongest weekly top news items based on exam relevance, topic recurrence, current trend strength, and PYQ-style significance.",
+    `From the provided article list, choose the ${GEMINI_SELECTION_COUNT} strongest current-affairs news items based on exam relevance, topic recurrence, current trend strength, and PYQ-style significance.`,
+    "Prefer verified, substantive policy/governance/economy/science/security/international-relation stories.",
+    "Avoid local crime, celebrity, ceremonial, vanity, and low-value city updates.",
     "Prefer a diverse top-paper mix instead of selecting too many articles from just one newspaper when multiple strong items are available.",
     "Return strict JSON with key articles, where articles is an array of objects with keys:",
     "id, refinedSummary, explanation.",
@@ -379,7 +510,7 @@ async function geminiRankAndPolish(articles) {
   });
 
   if (!response.ok) {
-    return articles.slice(0, 10);
+    return articles.slice(0, GEMINI_SELECTION_COUNT);
   }
 
   const payload = await response.json();
@@ -399,7 +530,7 @@ async function geminiRankAndPolish(articles) {
     };
   }).filter(Boolean);
 
-  return ranked.length ? ranked : articles.slice(0, 10);
+  return ranked.length ? ranked : articles.slice(0, GEMINI_SELECTION_COUNT);
 }
 
 function sourcePriority(article) {
@@ -448,31 +579,36 @@ function ensureSourceMix(articles) {
 
   const requiredSources = ["The Hindu", "The Indian Express", "Hindustan Times", "PIB"];
   const finalArticles = [];
-  const usedTitles = new Set();
+  const usedStories = new Set();
 
   for (const source of requiredSources) {
     const candidate = (groups.get(source) || [])[0] || (seedsBySource.get(source) || [])[0];
-    if (candidate && !usedTitles.has(candidate.title)) {
+    const storyKey = candidate ? articleIdentity(candidate) : "";
+    if (candidate && !usedStories.has(storyKey)) {
       finalArticles.push(candidate);
-      usedTitles.add(candidate.title);
+      usedStories.add(storyKey);
     }
   }
 
   const remaining = [
     ...articles,
     ...CURATED_SEED_ARTICLES
-  ].filter((article) => !usedTitles.has(article.title))
+  ].filter((article) => !usedStories.has(articleIdentity(article)))
     .sort((a, b) => articleStrength(b) - articleStrength(a));
 
   for (const article of remaining) {
-    if (finalArticles.length >= 10) {
+    if (finalArticles.length >= TARGET_ARTICLE_COUNT) {
       break;
     }
+    const storyKey = articleIdentity(article);
+    if (usedStories.has(storyKey)) {
+      continue;
+    }
     finalArticles.push(article);
-    usedTitles.add(article.title);
+    usedStories.add(storyKey);
   }
 
-  return finalArticles.slice(0, 10);
+  return finalArticles.slice(0, TARGET_ARTICLE_COUNT);
 }
 
 async function fetchWeeklyTopNews() {
@@ -485,7 +621,7 @@ async function fetchWeeklyTopNews() {
         return [];
       }
       const xml = await response.text();
-      return parseRss(xml, feed.source, feed.themeHint);
+      return parseRss(xml, feed.source, feed.themeHint, feed.scopeHint);
     } catch {
       return [];
     }
@@ -493,12 +629,13 @@ async function fetchWeeklyTopNews() {
 
   const merged = results.flat()
     .filter((item) => item.title && item.summary)
-    .filter((item, index, array) => array.findIndex((other) => other.title === item.title) === index)
+    .filter((item) => isExamRelevant(item))
+    .filter((item, index, array) => array.findIndex((other) => articleIdentity(other) === articleIdentity(item)) === index)
     .filter((item) => isWithinRollingWeek(item.date))
-    .slice(0, 24);
+    .slice(0, FEED_CANDIDATE_LIMIT);
 
   const baseArticles = merged.length ? merged : CURATED_SEED_ARTICLES;
-  const ranked = sortByLatestDate(dedupeImages(assignRollingDates(ensureSourceMix(await geminiRankAndPolish(baseArticles)), currentIndiaDate())));
+  const ranked = sortByLatestDate(dedupeImages(ensureSourceMix(await geminiRankAndPolish(baseArticles))));
   const withPyq = await annotatePyqMatches(ranked);
   return {
     updatedAt: new Date().toISOString(),
@@ -506,11 +643,104 @@ async function fetchWeeklyTopNews() {
   };
 }
 
+async function fetchMonthlyScopeNews(monthKey, scope) {
+  const range = monthRange(monthKey);
+  if (!range || !MONTHLY_SCOPE_QUERIES[scope]) {
+    return [];
+  }
+
+  const searchFeeds = VERIFIED_SEARCH_SOURCES.flatMap((entry) =>
+    MONTHLY_SCOPE_QUERIES[scope].map((query, index) => ({
+      source: entry.source,
+      themeHint: scope === "international" ? "defence-strategy" : index === 0 ? "polity-rights" : index === 1 ? "science-policy" : "social-governance",
+      scopeHint: scope,
+      url: `https://news.google.com/rss/search?q=${encodeURIComponent(`${query} site:${entry.domain} after:${range.after} before:${range.before}`)}&hl=en-IN&gl=IN&ceid=IN:en`
+    }))
+  );
+
+  const results = await Promise.all(searchFeeds.map(async (feed) => {
+    try {
+      const response = await fetch(feed.url, {
+        headers: { "User-Agent": "daily-smart-current-affairs/1.0" }
+      });
+      if (!response.ok) {
+        return [];
+      }
+      const xml = await response.text();
+      return parseGoogleNewsRss(xml, feed.source, feed.themeHint, feed.scopeHint);
+    } catch {
+      return [];
+    }
+  }));
+
+  const merged = results.flat()
+    .filter((item) => item.title && item.summary)
+    .filter((item) => item.scope === scope)
+    .filter((item) => isExamRelevant(item))
+    .filter((item, index, array) => array.findIndex((other) => articleIdentity(other) === articleIdentity(item)) === index)
+    .slice(0, FEED_CANDIDATE_LIMIT);
+
+  if (!merged.length) {
+    return [];
+  }
+
+  const ranked = sortByLatestDate(dedupeImages(ensureSourceMix(await geminiRankAndPolish(merged))));
+  const withPyq = await annotatePyqMatches(ranked);
+  return withPyq.slice(0, MONTHLY_ARCHIVE_LIMIT);
+}
+
+export async function updateMonthlyArchiveStore(monthKey) {
+  const range = monthRange(monthKey);
+  if (!range) {
+    throw new Error("Invalid month key.");
+  }
+
+  let existing = { updatedAt: "", articles: [], monthlyArchives: {} };
+  try {
+    existing = JSON.parse(readFileSync(dataPath, "utf8"));
+  } catch {
+    // fall back to empty store
+  }
+
+  const [national, international] = await Promise.all([
+    fetchMonthlyScopeNews(monthKey, "national"),
+    fetchMonthlyScopeNews(monthKey, "international")
+  ]);
+
+  const nextPayload = {
+    updatedAt: existing.updatedAt || new Date().toISOString(),
+    articles: Array.isArray(existing.articles) ? existing.articles : [],
+    monthlyArchives: {
+      ...(existing.monthlyArchives || {}),
+      [monthKey]: {
+        updatedAt: new Date().toISOString(),
+        national,
+        international
+      }
+    }
+  };
+
+  await mkdir(join(appDir, "data"), { recursive: true });
+  await writeFile(dataPath, JSON.stringify(nextPayload, null, 2));
+  return nextPayload;
+}
+
 export async function updateNewsStore() {
   const payload = await fetchWeeklyTopNews();
   await mkdir(join(appDir, "data"), { recursive: true });
-  await writeFile(dataPath, JSON.stringify(payload, null, 2));
-  return payload;
+  let existing = { monthlyArchives: {} };
+  try {
+    existing = JSON.parse(readFileSync(dataPath, "utf8"));
+  } catch {
+    // ignore
+  }
+  const nextPayload = {
+    updatedAt: payload.updatedAt,
+    articles: payload.articles,
+    monthlyArchives: existing.monthlyArchives || {}
+  };
+  await writeFile(dataPath, JSON.stringify(nextPayload, null, 2));
+  return nextPayload;
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {

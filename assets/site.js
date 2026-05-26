@@ -1,6 +1,7 @@
 const DATA = [
   {
     id: "disaster-resilience",
+    scope: "national",
     title: "PIB issues new framework for disaster-resilient public infrastructure",
     source: "PIB",
     date: "27 Apr 2026",
@@ -13,6 +14,7 @@ const DATA = [
   },
   {
     id: "rural-credit",
+    scope: "national",
     title: "RBI paper flags rural credit digitisation gap among small borrowers",
     source: "The Hindu",
     date: "27 Apr 2026",
@@ -25,6 +27,7 @@ const DATA = [
   },
   {
     id: "maritime-defence",
+    scope: "international",
     title: "India-France maritime logistics exercise expands Indo-Pacific focus",
     source: "Indian Express",
     date: "26 Apr 2026",
@@ -37,6 +40,7 @@ const DATA = [
   },
   {
     id: "preventive-detention",
+    scope: "national",
     title: "Court clarifies procedural safeguards in preventive detention review",
     source: "Hindustan Times",
     date: "26 Apr 2026",
@@ -49,6 +53,7 @@ const DATA = [
   },
   {
     id: "space-policy",
+    scope: "national",
     title: "ISRO releases draft norms for satellite data access by startups",
     source: "PIB",
     date: "25 Apr 2026",
@@ -61,6 +66,7 @@ const DATA = [
   },
   {
     id: "nutrition-dashboard",
+    scope: "national",
     title: "NITI dashboard tracks district nutrition and learning outcomes",
     source: "Dainik Bhaskar",
     date: "25 Apr 2026",
@@ -92,7 +98,20 @@ const PREDICTIONS = [
 ];
 
 const AUTH_KEY = "daily-current-affairs-user";
-const state = { exam: "All" };
+const AUTH_USERS_KEY = "daily-current-affairs-users";
+const DEMO_USER = {
+  id: "demo@dca.in",
+  password: "demo123",
+  name: "Demo Aspirant",
+  exam: "UPSC"
+};
+const state = {
+  exam: "All",
+  affairsScope: "all",
+  period: "daily",
+  limit: 10,
+  monthKey: ""
+};
 const AI_API_BASE = window.location.protocol === "file:" ? "http://127.0.0.1:8010" : "";
 const AI_CACHE_KEY = "daily-current-affairs-ai-cache-v2";
 const NEWS_API_BASE = AI_API_BASE;
@@ -105,6 +124,8 @@ let activeTeacherScripts = {
 };
 let activeTeacherAudio = null;
 let availableSpeechVoices = [];
+let newsRequestToken = 0;
+let availableArchiveMonths = [];
 
 function articlePool() {
   return Array.isArray(liveArticles) && liveArticles.length ? liveArticles : DATA;
@@ -137,6 +158,65 @@ function currentUser() {
 
 function setUser(user) {
   localStorage.setItem(AUTH_KEY, JSON.stringify(user));
+}
+
+function authUsers() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(AUTH_USERS_KEY) || "[]");
+    if (Array.isArray(parsed)) {
+      return parsed;
+    }
+  } catch (_error) {}
+  return [];
+}
+
+function writeAuthUsers(users) {
+  localStorage.setItem(AUTH_USERS_KEY, JSON.stringify(users));
+}
+
+function allAuthUsers() {
+  const users = authUsers();
+  const demoExists = users.some((user) => String(user.id || "").toLowerCase() === DEMO_USER.id.toLowerCase());
+  return demoExists ? users : [DEMO_USER, ...users];
+}
+
+function findAuthUser(id, password) {
+  const normalizedId = String(id || "").trim().toLowerCase();
+  const normalizedPassword = String(password || "");
+  return allAuthUsers().find((user) =>
+    String(user.id || "").trim().toLowerCase() === normalizedId
+    && String(user.password || "") === normalizedPassword
+  ) || null;
+}
+
+function saveAuthUser(user) {
+  const normalizedId = String(user.id || "").trim().toLowerCase();
+  const users = authUsers().filter((entry) => String(entry.id || "").trim().toLowerCase() !== normalizedId);
+  users.unshift({
+    id: normalizedId,
+    password: String(user.password || ""),
+    name: String(user.name || "Aspirant"),
+    exam: String(user.exam || "UPSC")
+  });
+  writeAuthUsers(users);
+}
+
+function setAuthMessage(text, tone = "") {
+  const node = qs("#auth-message");
+  if (!node) return;
+  node.textContent = text;
+  node.dataset.tone = tone;
+}
+
+function clearAuthMessage() {
+  const node = qs("#auth-message");
+  if (!node) return;
+  node.textContent = "";
+  node.dataset.tone = "";
+}
+
+function logoutUser() {
+  localStorage.removeItem(AUTH_KEY);
 }
 
 function readAiCache() {
@@ -280,9 +360,101 @@ function syncAuthUi() {
   });
 }
 
+function parseArticleDate(value) {
+  const parsed = new Date(value);
+  return Number.isNaN(parsed.getTime()) ? null : parsed;
+}
+
+function inferScope(item) {
+  if (item.scope === "international" || item.scope === "national") {
+    return item.scope;
+  }
+  const text = `${item.title || ""} ${item.summary || ""} ${item.source || ""} ${item.theme || ""}`.toLowerCase();
+  if (
+    text.includes("indo-pacific")
+    || text.includes("maritime")
+    || text.includes("france")
+    || text.includes("world")
+    || text.includes("global")
+    || text.includes("diplomatic")
+    || text.includes("international")
+    || text.includes("leaders")
+    || item.theme === "defence-strategy"
+  ) {
+    return "international";
+  }
+  return "national";
+}
+
+function sortedItems(items) {
+  return [...items].sort((left, right) => {
+    const rightDate = parseArticleDate(right.date)?.getTime() || 0;
+    const leftDate = parseArticleDate(left.date)?.getTime() || 0;
+    return rightDate - leftDate;
+  });
+}
+
+function availableMonthOptions(scope) {
+  if (availableArchiveMonths.length && (scope === "national" || scope === "international")) {
+    return availableArchiveMonths.map((value) => {
+      const [yearValue, monthValue] = value.split("-");
+      const label = new Intl.DateTimeFormat("en-IN", {
+        month: "long",
+        year: "numeric"
+      }).format(new Date(Number(yearValue), Number(monthValue) - 1, 1));
+      return { value, label };
+    });
+  }
+  const monthMap = new Map();
+  sortedItems(articlePool())
+    .filter((item) => scope === "all" || inferScope(item) === scope)
+    .forEach((item) => {
+      const date = parseArticleDate(item.date);
+      if (!date) return;
+      const key = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}`;
+      if (!monthMap.has(key)) {
+        monthMap.set(key, new Intl.DateTimeFormat("en-IN", { month: "long", year: "numeric" }).format(date));
+      }
+    });
+  return Array.from(monthMap.entries()).map(([value, label]) => ({ value, label }));
+}
+
 function visibleItems() {
-  const source = articlePool();
-  return source.filter((item) => state.exam === "All" || item.exams.includes(state.exam));
+  const source = sortedItems(articlePool()).filter((item) => {
+    const examMatch = state.exam === "All" || item.exams.includes(state.exam);
+    const scopeMatch = state.affairsScope === "all" || inferScope(item) === state.affairsScope;
+    return examMatch && scopeMatch;
+  });
+  if (state.affairsScope === "all") {
+    return source;
+  }
+
+  const latestDate = parseArticleDate(source[0]?.date);
+  const filtered = source.filter((item) => {
+    const date = parseArticleDate(item.date);
+    if (!date || !latestDate) {
+      return state.period !== "monthly";
+    }
+    if (state.period === "daily") {
+      return date.toDateString() === latestDate.toDateString();
+    }
+    if (state.period === "weekly") {
+      return latestDate.getTime() - date.getTime() <= 7 * 24 * 60 * 60 * 1000;
+    }
+    if (state.period === "monthly") {
+      if (!state.monthKey) {
+        return false;
+      }
+      const key = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}`;
+      return key === state.monthKey;
+    }
+    if (state.period === "yearly") {
+      return date.getFullYear() === latestDate.getFullYear();
+    }
+    return true;
+  });
+
+  return filtered.slice(0, state.limit);
 }
 
 function examToneClass(exam) {
@@ -328,7 +500,13 @@ function badgeLabel(probability) {
 function renderNews() {
   const grid = qs("#news-grid");
   if (!grid) return;
-  grid.innerHTML = visibleItems().map((item, index) => `
+  syncNewsExplorer();
+  const items = visibleItems();
+  const emptyState = qs("#news-empty-state");
+  if (emptyState) {
+    emptyState.classList.toggle("hidden", items.length > 0 || state.affairsScope === "all" || state.period !== "monthly" || !!state.monthKey);
+  }
+  grid.innerHTML = items.map((item, index) => `
     <article class="news-card feed-entrance-item" data-feed-step="${index}">
       <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}">
       <div class="news-body">
@@ -357,18 +535,44 @@ function renderNews() {
   bindFeedEntrance();
 }
 
-function renderBrief() {
-  const date = qs("#brief-date");
-  const list = qs("#brief-list");
-  if (date) {
-    date.textContent = new Intl.DateTimeFormat("en-IN", {
-      day: "2-digit",
-      month: "short",
-      year: "numeric"
-    }).format(new Date());
+function syncNewsExplorer() {
+  const explorer = qs("#news-explorer");
+  const monthWrap = qs("#month-picker-wrap");
+  const monthPicker = qs("#month-picker");
+  const titleNode = qs("#news-explorer-title");
+  const copyNode = qs("#news-explorer-copy");
+  if (!explorer) {
+    return;
   }
-  if (list) {
-    list.innerHTML = articlePool().slice(0, 6).map((item) => `<li><strong>${escapeHtml(item.source)}:</strong> ${escapeHtml(item.summary)}</li>`).join("");
+  const isScoped = state.affairsScope === "national" || state.affairsScope === "international";
+  explorer.classList.toggle("hidden", !isScoped);
+  if (!isScoped) {
+    return;
+  }
+  const scopeLabel = state.affairsScope === "international" ? "International" : "National";
+  if (titleNode) {
+    titleNode.textContent = `${scopeLabel} current affairs`;
+  }
+  if (copyNode) {
+    copyNode.textContent = `Choose daily, weekly, monthly or yearly ${scopeLabel.toLowerCase()} news, then select how many top stories you want.`;
+  }
+  qsa("[data-period]").forEach((button) => {
+    button.classList.toggle("active", button.dataset.period === state.period);
+  });
+  qsa("[data-limit]").forEach((button) => {
+    button.classList.toggle("active", Number(button.dataset.limit) === state.limit);
+  });
+  if (monthWrap) {
+    monthWrap.classList.toggle("hidden", state.period !== "monthly");
+  }
+  if (monthPicker) {
+    const options = availableMonthOptions(state.affairsScope);
+    const hasSelection = options.some((option) => option.value === state.monthKey);
+    monthPicker.innerHTML = [
+      '<option value="">Please select month</option>',
+      ...options.map((option) => `<option value="${escapeHtml(option.value)}">${escapeHtml(option.label)}</option>`)
+    ].join("");
+    monthPicker.value = hasSelection ? state.monthKey : "";
   }
 }
 
@@ -460,13 +664,60 @@ async function fetchAiInsights(item) {
   return payload.result;
 }
 
-async function fetchLiveNews() {
-  const response = await fetch(`${NEWS_API_BASE}/api/news`);
+async function fetchLiveNews(options = {}) {
+  const params = new URLSearchParams();
+  const exam = options.exam || "All";
+  const scope = options.scope || "all";
+  const period = options.period || "daily";
+  const limit = String(options.limit || 10);
+  const month = options.month || "";
+  const fresh = options.fresh ? "1" : "";
+  params.set("exam", exam);
+  params.set("scope", scope);
+  params.set("period", period);
+  params.set("limit", limit);
+  if (month) {
+    params.set("month", month);
+  }
+  if (fresh) {
+    params.set("fresh", fresh);
+  }
+  const response = await fetch(`${NEWS_API_BASE}/api/news?${params.toString()}`);
   if (!response.ok) {
     throw new Error("News fetch failed.");
   }
   const payload = await response.json();
+  availableArchiveMonths = Array.isArray(payload.availableMonths) ? payload.availableMonths : availableArchiveMonths;
   return Array.isArray(payload.articles) ? payload.articles : [];
+}
+
+async function refreshNewsFromBackend() {
+  const grid = qs("#news-grid");
+  const requestId = ++newsRequestToken;
+  if (grid) {
+    grid.innerHTML = "";
+  }
+  try {
+    const articles = await fetchLiveNews({
+      exam: state.exam,
+      scope: state.affairsScope,
+      period: state.period,
+      limit: state.limit,
+      month: state.monthKey,
+      fresh: document.body.dataset.page !== "home"
+    });
+    if (requestId !== newsRequestToken) {
+      return;
+    }
+    liveArticles = articles;
+    renderNews();
+  } catch (_error) {
+    if (requestId !== newsRequestToken) {
+      return;
+    }
+    liveArticles = null;
+    renderNews();
+  }
 }
 
 function probabilityMeta(score) {
@@ -756,7 +1007,7 @@ function bindTeacherControls() {
 
 function protectPage() {
   const page = document.body.dataset.page;
-  if (!["feed", "predictor"].includes(page)) return;
+  if (!["feed", "predictor", "national", "international"].includes(page)) return;
   const gate = qs("#gate");
   const protectedArea = qs("#protected");
   if (currentUser()) {
@@ -770,10 +1021,125 @@ function protectPage() {
 
 function bindTabs() {
   qsa(".tab").forEach((button) => {
+    if (!button.dataset.exam) {
+      return;
+    }
     button.addEventListener("click", () => {
       state.exam = button.dataset.exam;
-      qsa(".tab").forEach((node) => node.classList.toggle("active", node === button));
-      renderNews();
+      qsa(".tab[data-exam]").forEach((node) => node.classList.toggle("active", node === button));
+      refreshNewsFromBackend();
+    });
+  });
+}
+
+function bindAffairsNav() {
+  qsa("[data-affairs-scope]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const nextScope = button.dataset.affairsScope || "all";
+      const hasGrid = !!qs("#news-grid");
+      if (!hasGrid) {
+        const params = new URLSearchParams({
+          scope: nextScope,
+          period: nextScope === "all" ? "daily" : "daily",
+          limit: "10"
+        });
+        window.location.href = `feed.html?${params.toString()}`;
+        return;
+      }
+      state.affairsScope = nextScope;
+      if (state.affairsScope === "all") {
+        state.period = "daily";
+        state.monthKey = "";
+      }
+      qsa("[data-affairs-scope]").forEach((node) => node.classList.toggle("active", node.dataset.affairsScope === nextScope));
+      refreshNewsFromBackend();
+      qs("#feed")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+}
+
+function bindNewsExplorer() {
+  qsa("[data-period]").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.period = button.dataset.period || "daily";
+      if (state.period !== "monthly") {
+        state.monthKey = "";
+      }
+      refreshNewsFromBackend();
+    });
+  });
+  qsa("[data-limit]").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.limit = Number(button.dataset.limit) || 10;
+      refreshNewsFromBackend();
+    });
+  });
+  qs("#month-picker")?.addEventListener("change", (event) => {
+    state.monthKey = event.currentTarget.value || "";
+    refreshNewsFromBackend();
+  });
+}
+
+function applyRouteState() {
+  const params = new URLSearchParams(window.location.search);
+  const fixedScope = document.body.dataset.fixedScope;
+  const nextScope = params.get("scope");
+  const nextPeriod = params.get("period");
+  const nextLimit = Number(params.get("limit"));
+  const nextMonth = params.get("month");
+  if (["all", "national", "international"].includes(nextScope)) {
+    state.affairsScope = nextScope;
+  }
+  if (["national", "international"].includes(fixedScope)) {
+    state.affairsScope = fixedScope;
+  }
+  if (["daily", "weekly", "monthly", "yearly"].includes(nextPeriod)) {
+    state.period = nextPeriod;
+  }
+  if ([10, 20, 50].includes(nextLimit)) {
+    state.limit = nextLimit;
+  }
+  if (nextMonth) {
+    state.monthKey = nextMonth;
+  }
+}
+
+function closeDrawer() {
+  qs("#site-drawer")?.classList.add("hidden");
+  qs("#drawer-backdrop")?.classList.add("hidden");
+  const toggle = qs("#menu-toggle");
+  if (toggle) {
+    toggle.setAttribute("aria-expanded", "false");
+  }
+  qs("#site-drawer")?.setAttribute("aria-hidden", "true");
+}
+
+function openDrawer() {
+  qs("#site-drawer")?.classList.remove("hidden");
+  qs("#drawer-backdrop")?.classList.remove("hidden");
+  const toggle = qs("#menu-toggle");
+  if (toggle) {
+    toggle.setAttribute("aria-expanded", "true");
+  }
+  qs("#site-drawer")?.setAttribute("aria-hidden", "false");
+}
+
+function bindDrawer() {
+  const toggle = qs("#menu-toggle");
+  if (!toggle) {
+    return;
+  }
+  toggle.addEventListener("click", () => {
+    const isOpen = !qs("#site-drawer")?.classList.contains("hidden");
+    if (isOpen) {
+      closeDrawer();
+      return;
+    }
+    openDrawer();
+  });
+  qsa("[data-close-drawer]").forEach((node) => {
+    node.addEventListener("click", () => {
+      closeDrawer();
     });
   });
 }
@@ -782,18 +1148,39 @@ function bindAuthForms() {
   qs("#login-form")?.addEventListener("submit", (event) => {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
-    setUser({ name: String(form.get("name") || "Aspirant"), exam: "UPSC" });
-    window.location.href = "index.html";
+    const id = String(form.get("id") || "").trim();
+    const password = String(form.get("password") || "");
+    const user = findAuthUser(id, password);
+    if (!user) {
+      setAuthMessage("Invalid ID or password. Try the demo login shown below.", "error");
+      return;
+    }
+    clearAuthMessage();
+    setUser({ name: user.name || "Aspirant", exam: user.exam || "UPSC", id: user.id || id });
+    window.location.href = "dashboard.html";
   });
 
   qs("#signup-form")?.addEventListener("submit", (event) => {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
-    setUser({
-      name: String(form.get("name") || "Aspirant"),
-      exam: String(form.get("exam") || "UPSC")
-    });
-    window.location.href = "index.html";
+    const name = String(form.get("name") || "Aspirant").trim();
+    const exam = String(form.get("exam") || "UPSC").trim();
+    const id = String(form.get("id") || "").trim().toLowerCase();
+    const password = String(form.get("password") || "");
+    if (!id || !password) {
+      setAuthMessage("Please fill ID and password to create your demo account.", "error");
+      return;
+    }
+    saveAuthUser({ id, password, name, exam });
+    clearAuthMessage();
+    setUser({ name, exam, id });
+    window.location.href = "dashboard.html";
+  });
+
+  qs("[data-logout]")?.addEventListener("click", (event) => {
+    event.preventDefault();
+    logoutUser();
+    window.location.href = "login.html";
   });
 }
 
@@ -859,7 +1246,7 @@ function bindExamEntrance() {
 }
 
 function bindTextEntrances() {
-  const sections = qsa("[data-text-entrance]");
+  const sections = qsa("[data-text-entrance]").filter((section) => section.closest("#feed") == null);
   if (!sections.length) {
     return;
   }
@@ -896,22 +1283,7 @@ function bindFeedEntrance() {
   if (!cards.length) {
     return;
   }
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    cards.forEach((card) => card.classList.add("is-visible"));
-    return;
-  }
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-      } else {
-        entry.target.classList.remove("is-visible");
-      }
-    });
-  }, {
-    threshold: 0.18
-  });
-  cards.forEach((card) => observer.observe(card));
+  cards.forEach((card) => card.classList.add("is-visible"));
 }
 
 document.addEventListener("click", (event) => {
@@ -920,21 +1292,39 @@ document.addEventListener("click", (event) => {
   }
 });
 
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeDrawer();
+  }
+});
+
 (async function initializeApp() {
+  applyRouteState();
   syncAuthUi();
   try {
-    const news = await fetchLiveNews();
-    if (news.length) {
-      liveArticles = news;
+    if (document.body.dataset.page !== "home") {
+      const news = await fetchLiveNews({
+        exam: state.exam,
+        scope: state.affairsScope,
+        period: state.period,
+        limit: state.limit,
+        month: state.monthKey,
+        fresh: true
+      });
+      if (news.length) {
+        liveArticles = news;
+      }
     }
   } catch (_error) {
     // keep local fallback dataset
   }
   renderNews();
-  renderBrief();
   renderPredictor();
   protectPage();
   bindTabs();
+  bindAffairsNav();
+  bindNewsExplorer();
+  bindDrawer();
   bindAuthForms();
   bindTeacherControls();
   renderDashboard();

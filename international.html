@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Feed | daily current affairs</title>
+  <title>International Current Affairs | daily current affairs</title>
   <link rel="preconnect" href="https://api.fontshare.com">
   <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/site.css">
 </head>
-<body data-page="feed">
+<body data-page="international" data-fixed-scope="international">
   <header class="site-header">
     <div class="shell nav">
       <button class="menu-toggle" type="button" id="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-drawer">
@@ -31,13 +31,12 @@
     </div>
     <div class="drawer-group">
       <a class="drawer-link" href="index.html" data-close-drawer>Home</a>
-      <a class="drawer-link" href="feed.html" data-close-drawer>Weekly Top News</a>
+      <a class="drawer-link" href="feed.html" data-close-drawer>All Current Affairs</a>
       <a class="drawer-link" href="index.html#exams" data-close-drawer>How it works</a>
       <a class="drawer-link" href="predictor.html" data-close-drawer>Predictor</a>
     </div>
     <div class="drawer-group">
       <p class="drawer-label">Current Affairs</p>
-      <a class="drawer-link" href="feed.html" data-close-drawer>All Current Affairs</a>
       <a class="drawer-link" href="international.html" data-close-drawer>International Current Affairs</a>
       <a class="drawer-link" href="national.html" data-close-drawer>National Current Affairs</a>
     </div>
@@ -46,8 +45,8 @@
     <div class="shell">
       <section id="gate" class="card gate">
         <p class="eyebrow">Protected page</p>
-        <h1>Login to access this feed.</h1>
-        <p class="muted">This page is reserved for signed-in current affairs users.</p>
+        <h2 class="page-title">Login to access international current affairs.</h2>
+        <p class="muted">This page opens only after login and shows exam-important international current affairs.</p>
         <div class="hero-actions">
           <a class="primary-btn" href="login.html">Login</a>
           <a class="ghost-btn" href="signup.html">Register</a>
@@ -56,8 +55,8 @@
       <section id="protected" class="hidden">
         <div class="split heading-row">
           <div>
-            <p class="eyebrow">Full feed</p>
-            <h1>Exam-wise current affairs stream.</h1>
+            <p class="eyebrow">International Current Affairs</p>
+            <h2 class="page-title">Exam-important international news, ranked for preparation.</h2>
           </div>
           <div class="tab-row">
             <button class="tab active" data-exam="All">All</button>
@@ -68,13 +67,13 @@
             <button class="tab" data-exam="PCS">PCS</button>
           </div>
         </div>
-        <section class="news-explorer hidden" id="news-explorer">
+        <section class="news-explorer" id="news-explorer">
           <div class="news-explorer-head">
             <div>
               <p class="eyebrow">Current Affairs Explorer</p>
-              <h3 id="news-explorer-title">National current affairs</h3>
+              <h3 id="news-explorer-title">International current affairs</h3>
             </div>
-            <p class="muted" id="news-explorer-copy">Choose daily, weekly, monthly or yearly news, then select how many top stories you want.</p>
+            <p class="muted" id="news-explorer-copy">Choose daily, weekly, monthly or yearly international news, then select how many top stories you want.</p>
           </div>
           <div class="news-explorer-controls">
             <div class="news-explorer-group">
@@ -102,7 +101,7 @@
             </div>
           </div>
         </section>
-        <p class="muted hidden" id="news-empty-state">Select a month and filters to view current affairs in this category.</p>
+        <p class="muted hidden" id="news-empty-state">Select a month and filters to view international current affairs.</p>
         <div id="news-grid" class="news-grid"></div>
       </section>
     </div>

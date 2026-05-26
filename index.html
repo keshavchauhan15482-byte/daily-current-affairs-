@@ -12,6 +12,11 @@
 <body data-page="home">
   <header class="site-header">
     <div class="shell nav">
+      <button class="menu-toggle" type="button" id="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-drawer">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <a class="brand" href="index.html">
         <span class="brand-mark"></span>
         <span>
@@ -19,17 +24,30 @@
           <small>Exam focused newsroom</small>
         </span>
       </a>
-      <nav class="main-nav">
-        <a href="#feed">Weekly Top News</a>
-        <a href="#exams">How it works</a>
-        <a href="#brief">Summary</a>
-      </nav>
       <div class="nav-actions">
         <a class="primary-btn" data-guest href="login.html">Login (soon)</a>
         <a class="avatar hidden" data-user href="dashboard.html"><span data-avatar>DC</span></a>
       </div>
     </div>
   </header>
+
+  <div class="drawer-backdrop hidden" id="drawer-backdrop" data-close-drawer></div>
+  <aside class="site-drawer hidden" id="site-drawer" aria-hidden="true">
+    <div class="drawer-head">
+      <p class="eyebrow">Explore</p>
+      <button class="drawer-close" type="button" aria-label="Close navigation menu" data-close-drawer>&times;</button>
+    </div>
+    <div class="drawer-group">
+      <a class="drawer-link" href="#feed" data-close-drawer>Weekly Top News</a>
+      <a class="drawer-link" href="#exams" data-close-drawer>How it works</a>
+    </div>
+    <div class="drawer-group">
+      <p class="drawer-label">Current Affairs</p>
+      <a class="drawer-link" href="feed.html" data-close-drawer>All Current Affairs</a>
+      <a class="drawer-link" href="international.html" data-close-drawer>International Current Affairs</a>
+      <a class="drawer-link" href="national.html" data-close-drawer>National Current Affairs</a>
+    </div>
+  </aside>
 
   <main>
     <section class="hero section">
@@ -103,22 +121,22 @@
 
     <section class="section" id="feed">
       <div class="shell text-entrance" data-text-entrance>
-        <div class="split heading-row">
-          <div>
-            <p class="eyebrow text-entrance-item" data-text-step="0">Today&apos;s curated feed</p>
-            <h2 class="text-entrance-item" data-text-step="1">Only the news that can actually come in your exam.</h2>
+          <div class="split heading-row">
+            <div>
+              <p class="eyebrow text-entrance-item" data-text-step="0">Today&apos;s curated feed</p>
+              <h2 class="text-entrance-item" data-text-step="1">Only the news that can actually come in your exam.</h2>
+            </div>
+            <div class="tab-row text-entrance-item" data-text-step="2">
+              <button class="tab active" data-exam="All">All</button>
+              <button class="tab" data-exam="UPSC">UPSC</button>
+              <button class="tab" data-exam="SSC">SSC</button>
+              <button class="tab" data-exam="NDA">NDA</button>
+              <button class="tab" data-exam="CDS">CDS</button>
+              <button class="tab" data-exam="PCS">PCS</button>
+              <button class="tab" data-exam="Banking">Banking</button>
+            </div>
           </div>
-          <div class="tab-row text-entrance-item" data-text-step="2">
-            <button class="tab active" data-exam="All">All</button>
-            <button class="tab" data-exam="UPSC">UPSC</button>
-            <button class="tab" data-exam="SSC">SSC</button>
-            <button class="tab" data-exam="NDA">NDA</button>
-            <button class="tab" data-exam="CDS">CDS</button>
-            <button class="tab" data-exam="PCS">PCS</button>
-            <button class="tab" data-exam="Banking">Banking</button>
-          </div>
-        </div>
-        <div id="news-grid" class="news-grid"></div>
+          <div id="news-grid" class="news-grid"></div>
       </div>
     </section>
 
@@ -133,20 +151,6 @@
       </div>
     </section>
 
-    <section class="section" id="brief">
-      <div class="shell brief-grid text-entrance" data-text-entrance>
-        <article class="card brief-card">
-          <div class="split heading-row">
-            <div>
-              <p class="eyebrow text-entrance-item" data-text-step="0">Daily brief</p>
-              <h2 class="text-entrance-item" data-text-step="1">Aaj Ka Akhbaar</h2>
-            </div>
-            <span class="date-chip text-entrance-item" data-text-step="2" id="brief-date"></span>
-          </div>
-          <ol id="brief-list" class="brief-list"></ol>
-        </article>
-      </div>
-    </section>
   </main>
 
   <div class="modal hidden" id="explain-modal">
