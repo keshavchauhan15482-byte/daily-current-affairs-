@@ -1,31 +1,304 @@
 {
-  "updatedAt": "2026-05-26T09:20:08.501Z",
+  "updatedAt": "2026-05-28T10:47:44.360Z",
   "articles": [
     {
-      "id": "the-hindu-3-1779786601000",
-      "title": "CEC protecting vote chors and those destroying democracy: Rahul Gandhi",
+      "id": "the-hindu-7-1779956051000",
+      "title": "NASA lays out moon base plans with landers, buggies and drones",
       "source": "The Hindu",
-      "date": "26 May 2026",
-      "image": "https://th-i.thgim.com/public/news/national/u55zl5/article70064597.ece/alternates/LANDSCAPE_1200/WhatsApp%20Image%202025-09-18%20at%2011.11.08_c6dc9a1a.jpg",
-      "summary": "Congress leader cites attempted voter deletions in Karnataka and asks EC to hand over IP details from which applications were made to the CID in seven days; says non-cooperation will imply EC is “complicit in the murder of the Constitution”",
-      "explanation": "Congress leader cites attempted voter deletions in Karnataka and asks EC to hand over IP details from which applications were made to the CID in seven days; says non-cooperation will imply EC is “complicit in the murder of the Constitution”",
+      "date": "28 May 2026",
+      "image": "https://th-i.thgim.com/public/incoming/unrkde/article71032306.ece/alternates/LANDSCAPE_1200/2278345666.jpg",
+      "summary": "For next year's Artemis III, another team of astronauts will practise docking NASA's Orion capsule in orbit around Earth with the lunar landers being developed for crews by Blue Origin and Elon Musk's SpaceX",
+      "explanation": "For next year's Artemis III, another team of astronauts will practise docking NASA's Orion capsule in orbit around Earth with the lunar landers being developed for crews by Blue Origin and Elon Musk's SpaceX",
       "exams": [
         "UPSC",
+        "SSC",
         "PCS"
       ],
-      "theme": "polity-rights",
-      "scope": "national",
+      "theme": "economy-inclusion",
+      "scope": "international",
       "trend": "high",
-      "link": "https://www.thehindu.com/news/national/rahul-gandhi-voter-theft-allegation-press-conference-cec-gyanesh-kumar-aland-rajura-constituency-updates/article70064605.ece"
+      "link": "https://www.thehindu.com/sci-tech/science/nasa-lays-out-moon-base-plans-with-landers-buggies-and-drones/article71032176.ece"
     },
     {
-      "id": "the-indian-express-4-1779772677000",
-      "title": "Quad launches new maritime, critical mineral initiatives at Delhi Summit",
+      "id": "the-indian-express-11-1779925859000",
+      "title": "Constitutional defeat for Congress: BJP on SIR verdict",
       "source": "The Indian Express",
-      "date": "26 May 2026",
-      "image": "https://images.indianexpress.com/2026/05/Photo-2026-05-26T124610.093.jpg",
-      "summary": "Quad launches new maritime, critical mineral initiatives at Delhi Summit",
-      "explanation": "Quad launches new maritime, critical mineral initiatives at Delhi Summit",
+      "date": "28 May 2026",
+      "image": "https://images.indianexpress.com/2026/05/Addressed-reporters-at-BJP-office_20260527193105.jpg",
+      "summary": "Constitutional defeat for Congress: BJP on SIR verdict",
+      "explanation": "Constitutional defeat for Congress: BJP on SIR verdict",
+      "exams": [
+        "UPSC",
+        "PCS"
+      ],
+      "theme": "polity-rights",
+      "scope": "national",
+      "trend": "high",
+      "link": "https://indianexpress.com/article/india/constitutional-defeat-for-congress-bjp-on-supreme-court-sir-verdict-10711432/"
+    },
+    {
+      "id": "the-hindu-1-1779964868000",
+      "title": "Karnataka politics LIVE: I will continue in active politics, fight communal forces until my last breath: Siddaramaiah",
+      "source": "The Hindu",
+      "date": "28 May 2026",
+      "image": "https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?auto=format&fit=crop&w=900&q=82",
+      "summary": "Earlier, the AHINDA leader submitted his resignation from the Chief Minister's post to Governor's Special Secretary Prabhushankar",
+      "explanation": "Earlier, the AHINDA leader submitted his resignation from the Chief Minister's post to Governor's Special Secretary Prabhushankar",
+      "exams": [
+        "UPSC",
+        "PCS"
+      ],
+      "theme": "polity-rights",
+      "scope": "national",
+      "trend": "high",
+      "link": "https://www.thehindu.com/news/national/karnataka/karnataka-cm-news-leadership-change-live-updates-dk-shivakumar-siddaramaiah-congress-meet-rajya-sabha-seat-may-28-2026/article71029253.ece"
+    },
+    {
+      "id": "the-hindu-3-1779964448000",
+      "title": "Poultry farmers in Namakkal deny claims of long-term egg storage for noon meal scheme",
+      "source": "The Hindu",
+      "date": "28 May 2026",
+      "image": "https://th-i.thgim.com/public/incoming/3zh3s6/article71032878.ece/alternates/LANDSCAPE_1200/9868_28_3_2026_12_33_29_3_EGG_NAMAKKAL_3.JPG",
+      "summary": "In a social media post, former BJP State president K. Annamalai alleged that contractors had procured nearly 20 crore eggs when prices dropped to ₹3.70 apiece in March and stored them for long-term supply to schools",
+      "explanation": "In a social media post, former BJP State president K. Annamalai alleged that contractors had procured nearly 20 crore eggs when prices dropped to ₹3.70 apiece in March and stored them for long-term supply to schools",
+      "exams": [
+        "UPSC",
+        "PCS"
+      ],
+      "theme": "polity-rights",
+      "scope": "national",
+      "trend": "high",
+      "link": "https://www.thehindu.com/news/national/tamil-nadu/poultry-farmers-in-namakkal-deny-claims-of-long-term-egg-storage-for-noon-meal-scheme/article71032593.ece"
+    },
+    {
+      "id": "the-hindu-7-1779963729000",
+      "title": "Key KCP commander arrested in Delhi; large cache of arms, ammo seized in Manipur",
+      "source": "The Hindu",
+      "date": "28 May 2026",
+      "image": "https://th-i.thgim.com/public/incoming/4hl2ya/article71032983.ece/alternates/LANDSCAPE_1200/PTI01_01_2025_000031B.jpg",
+      "summary": "Haobijam, believed to be a key member of the proscribed outfit, was wanted in more than a dozen cases registered under the Unlawful Activities (Prevention) Act (UAPA)",
+      "explanation": "Haobijam, believed to be a key member of the proscribed outfit, was wanted in more than a dozen cases registered under the Unlawful Activities (Prevention) Act (UAPA)",
+      "exams": [
+        "UPSC",
+        "PCS"
+      ],
+      "theme": "polity-rights",
+      "scope": "national",
+      "trend": "high",
+      "link": "https://www.thehindu.com/news/national/manipur/key-kcp-commander-arrested-in-delhi-large-cache-of-arms-ammo-seized-in-manipur/article71032906.ece"
+    },
+    {
+      "id": "the-hindu-10-1779963221000",
+      "title": "Manoj Jarange Patil to begin indefinite hunger strike from May 30 over Maratha quota demands",
+      "source": "The Hindu",
+      "date": "28 May 2026",
+      "image": "https://th-i.thgim.com/public/incoming/cpwyjk/article71032455.ece/alternates/LANDSCAPE_1200/PTI08_30_2025_000428A.jpg",
+      "summary": "Maratha reservation activist says protest in Jalna will continue without food, water or shelter; seeks implementation of Kunbi certificate assurances and extension to Sandeep Shinde panel",
+      "explanation": "Maratha reservation activist says protest in Jalna will continue without food, water or shelter; seeks implementation of Kunbi certificate assurances and extension to Sandeep Shinde panel",
+      "exams": [
+        "UPSC",
+        "PCS"
+      ],
+      "theme": "polity-rights",
+      "scope": "national",
+      "trend": "high",
+      "link": "https://www.thehindu.com/news/national/maharashtra/govt-would-be-responsible-if-i-suffer-health-issues-during-fast-under-blazing-sun-says-manoj-jarange/article71032430.ece"
+    },
+    {
+      "id": "the-hindu-12-1779962693000",
+      "title": "Visakhapatnam Collector sets June 30 deadline for Bhogapuram airport roads",
+      "source": "The Hindu",
+      "date": "28 May 2026",
+      "image": "https://th-i.thgim.com/public/incoming/vkwr5k/article71014769.ece/alternates/LANDSCAPE_1200/Bhogapuram%2049.JPG",
+      "summary": "Ahead of the Alluri Sitarama Raju International Airport’s opening in early July, Collector M. Abhishikth Kishore asks departments to finish road and connectivity works to the Bhogapuram airport by June 30",
+      "explanation": "Ahead of the Alluri Sitarama Raju International Airport’s opening in early July, Collector M. Abhishikth Kishore asks departments to finish road and connectivity works to the Bhogapuram airport by June 30",
+      "exams": [
+        "UPSC",
+        "PCS"
+      ],
+      "theme": "polity-rights",
+      "scope": "international",
+      "trend": "high",
+      "link": "https://www.thehindu.com/news/national/andhra-pradesh/visakhapatnam-collector-sets-june-30-deadline-for-bhogapuram-airport-roads/article71032566.ece"
+    },
+    {
+      "id": "the-hindu-15-1779961805000",
+      "title": "WFI moves Supreme Court against HC order allowing Vinesh Phogat to participate in Asian Games selection trials",
+      "source": "The Hindu",
+      "date": "28 May 2026",
+      "image": "https://th-i.thgim.com/public/incoming/jcb2j3/article71032831.ece/alternates/LANDSCAPE_1200/Vinesh%20Phogat%20PC%2017%2001%20DELHI%206.JPG",
+      "summary": "Wrestling Federation of India argues that the Delhi HC’s decision allowing grappler Vinesh Phogat to participate in the selection trials for the Asian Games 2026 undermines its selection framework",
+      "explanation": "Wrestling Federation of India argues that the Delhi HC’s decision allowing grappler Vinesh Phogat to participate in the selection trials for the Asian Games 2026 undermines its selection framework",
+      "exams": [
+        "UPSC",
+        "PCS"
+      ],
+      "theme": "polity-rights",
+      "scope": "national",
+      "trend": "high",
+      "link": "https://www.thehindu.com/sport/other-sports/wfi-moves-supreme-court-against-hc-order-allowing-vinesh-phogat-to-participate-in-asian-games-selection-trials/article71032795.ece"
+    },
+    {
+      "id": "the-hindu-18-1779960681000",
+      "title": "Union Minister Dharmendra Pradhan takes responsibility for CBSE OSM discrepancies, assures strict action against guilty",
+      "source": "The Hindu",
+      "date": "28 May 2026",
+      "image": "https://th-i.thgim.com/public/incoming/giwti3/article71032476.ece/alternates/LANDSCAPE_1200/PTI05_17_2026_000131A.jpg",
+      "summary": "Pradhan hit at out at Congress leader Rahul Gandhi, saying he was “frustrated” and “opposed” to technological progress",
+      "explanation": "Pradhan hit at out at Congress leader Rahul Gandhi, saying he was “frustrated” and “opposed” to technological progress",
+      "exams": [
+        "UPSC",
+        "PCS"
+      ],
+      "theme": "polity-rights",
+      "scope": "national",
+      "trend": "high",
+      "link": "https://www.thehindu.com/education/union-minister-dharmendra-pradhan-takes-responsibility-for-cbse-osm-discrepancies-assures-strict-action-against-guilty/article71032444.ece"
+    },
+    {
+      "id": "the-hindu-30-1779958139000",
+      "title": "Combing operations underway to trace those held hostage by armed groups: Manipur CM",
+      "source": "The Hindu",
+      "date": "28 May 2026",
+      "image": "https://th-i.thgim.com/public/incoming/90vnz5/article71032657.ece/alternates/LANDSCAPE_1200/20260525052L.jpg",
+      "summary": "The government is taking the issue seriously, and search and combing operations by security forces are underway to trace the hostages, the Chief Minister said",
+      "explanation": "The government is taking the issue seriously, and search and combing operations by security forces are underway to trace the hostages, the Chief Minister said",
+      "exams": [
+        "UPSC",
+        "PCS"
+      ],
+      "theme": "polity-rights",
+      "scope": "national",
+      "trend": "high",
+      "link": "https://www.thehindu.com/news/national/manipur/combing-operations-underway-to-trace-those-held-hostage-by-armed-groups-manipur-cm/article71032633.ece"
+    },
+    {
+      "id": "the-hindu-41-1779955512000",
+      "title": "Two Indian peacekeepers to be honoured posthumously on International Peacekeepers Day",
+      "source": "The Hindu",
+      "date": "28 May 2026",
+      "image": "https://th-i.thgim.com/public/incoming/9crgqv/article68224990.ece/alternates/LANDSCAPE_1200/2019-08-14T204851Z_1801210560_RC13E2D7BAD0_RTRMADP_3_INDIA-KASHMIR-CHINA-UN.JPG",
+      "summary": "Nearly 180 Indian peacekeepers have made the supreme sacrifice in the line of duty, the highest number by far from any troop-contributing country",
+      "explanation": "Nearly 180 Indian peacekeepers have made the supreme sacrifice in the line of duty, the highest number by far from any troop-contributing country",
+      "exams": [
+        "UPSC",
+        "PCS"
+      ],
+      "theme": "polity-rights",
+      "scope": "international",
+      "trend": "high",
+      "link": "https://www.thehindu.com/news/international/two-indian-peacekeepers-to-be-honoured-posthumously-on-international-peacekeepers-day/article71032006.ece"
+    },
+    {
+      "id": "the-hindu-44-1779955252000",
+      "title": "AMMA to hear actor Ansiba Hassan as she calls for ‘independent, unbiased’ panel",
+      "source": "The Hindu",
+      "date": "28 May 2026",
+      "image": "https://th-i.thgim.com/public/incoming/tlcsuf/article71032357.ece/alternates/LANDSCAPE_1200/kimp_Ansiba.jpg",
+      "summary": "Ansiba Hassan has accused Tini Tom and a section of AMMA office-bearers of subjecting her to character assassination and making communal remarks against her",
+      "explanation": "Ansiba Hassan has accused Tini Tom and a section of AMMA office-bearers of subjecting her to character assassination and making communal remarks against her",
+      "exams": [
+        "UPSC",
+        "PCS"
+      ],
+      "theme": "polity-rights",
+      "scope": "national",
+      "trend": "high",
+      "link": "https://www.thehindu.com/news/national/kerala/amma-to-hear-actor-ansiba-hassan-as-she-calls-for-independent-unbiased-panel/article71032271.ece"
+    },
+    {
+      "id": "the-hindu-45-1779955197000",
+      "title": "CURE Act may replace GHMC Act for administration of tri-corporation area",
+      "source": "The Hindu",
+      "date": "28 May 2026",
+      "image": "https://images.unsplash.com/photo-1436450412740-6b988f486c6b?auto=format&fit=crop&w=900&q=82",
+      "summary": "CURE Act may replace GHMC Act for administration of tri-corporation area",
+      "explanation": "CURE Act may replace GHMC Act for administration of tri-corporation area",
+      "exams": [
+        "UPSC",
+        "PCS"
+      ],
+      "theme": "polity-rights",
+      "scope": "national",
+      "trend": "high",
+      "link": "https://www.thehindu.com/news/national/telangana/cure-act-may-replace-ghmc-act-for-administration-of-tri-commissionerate-area/article71030024.ece"
+    },
+    {
+      "id": "the-hindu-48-1779954807000",
+      "title": "Rest still a favour, not a right, for retail-staff in Chennai",
+      "source": "The Hindu",
+      "date": "28 May 2026",
+      "image": "https://th-i.thgim.com/public/news/national/7b1x6d/article70917493.ece/alternates/LANDSCAPE_1200/1000355729.jpg",
+      "summary": "Five years after Tamil Nadu legislated on the ‘right to sit’ provision within the Tamil Nadu Shops and Establishments Act, 1947, the law remains a luxury for many. From high-end coffee shops to bustling textile showrooms, Chennai’s retail workers continue to trade their long-term health for long shifts on their feet",
+      "explanation": "Five years after Tamil Nadu legislated on the ‘right to sit’ provision within the Tamil Nadu Shops and Establishments Act, 1947, the law remains a luxury for many. From high-end coffee shops to bustling textile showrooms, Chennai’s retail workers continue to trade their long-term health for long shifts on their feet",
+      "exams": [
+        "UPSC",
+        "PCS"
+      ],
+      "theme": "polity-rights",
+      "scope": "national",
+      "trend": "high",
+      "link": "https://www.thehindu.com/news/national/rest-still-a-favour-not-a-right-for-retail-staff-in-chennai/article70917511.ece"
+    },
+    {
+      "id": "the-hindu-55-1779952935000",
+      "title": "Strict vigil across U.P. on Bakrid, police conduct flag march, foot patrols in sensitive districts",
+      "source": "The Hindu",
+      "date": "28 May 2026",
+      "image": "https://th-i.thgim.com/public/incoming/z1pbxt/article71032334.ece/alternates/LANDSCAPE_1200/PTI05_27_2026_000368B.jpg",
+      "summary": "Special security arrangements are likely to be put in place in districts such as Sambhal, Meerut, Saharanpur, Rampur, Moradabad, Aligarh, Bareilly, Bahraich, Varanasi and Ayodhya",
+      "explanation": "Special security arrangements are likely to be put in place in districts such as Sambhal, Meerut, Saharanpur, Rampur, Moradabad, Aligarh, Bareilly, Bahraich, Varanasi and Ayodhya",
+      "exams": [
+        "UPSC",
+        "PCS"
+      ],
+      "theme": "polity-rights",
+      "scope": "national",
+      "trend": "high",
+      "link": "https://www.thehindu.com/news/national/uttar-pradesh/strict-vigil-across-up-on-bakrid-police-conduct-flag-march-foot-patrols-in-sensitive-districts/article71030306.ece"
+    },
+    {
+      "id": "the-hindu-59-1779951662000",
+      "title": "International experts ‘satisfied’ with Polavaram project work pace, quality",
+      "source": "The Hindu",
+      "date": "28 May 2026",
+      "image": "https://th-i.thgim.com/public/incoming/knd5a4/article70995313.ece/alternates/LANDSCAPE_1200/DSC_0973.JPG",
+      "summary": "A three-day review by international expert Sean Hinchberger began on Wednesday; the team said earlier technical recommendations on the project had been carried out",
+      "explanation": "A three-day review by international expert Sean Hinchberger began on Wednesday; the team said earlier technical recommendations on the project had been carried out",
+      "exams": [
+        "UPSC",
+        "PCS"
+      ],
+      "theme": "polity-rights",
+      "scope": "international",
+      "trend": "high",
+      "link": "https://www.thehindu.com/news/national/andhra-pradesh/international-experts-satisfied-with-polavaram-project-work-pace-quality/article71029831.ece"
+    },
+    {
+      "id": "the-indian-express-12-1779925817000",
+      "title": "Madhya Pradesh HC refuses 24&#215;7 police protection plea by interfaith couple &#8212; ‘Courts can’t become security establishment’",
+      "source": "The Indian Express",
+      "date": "28 May 2026",
+      "image": "https://images.indianexpress.com/2026/05/interfaith_856dc0_20260527192233.jpg",
+      "summary": "Madhya Pradesh HC refuses 24&#215;7 police protection plea by interfaith couple &#8212; ‘Courts can’t become security establishment’",
+      "explanation": "Madhya Pradesh HC refuses 24&#215;7 police protection plea by interfaith couple &#8212; ‘Courts can’t become security establishment’",
+      "exams": [
+        "UPSC",
+        "PCS"
+      ],
+      "theme": "polity-rights",
+      "scope": "national",
+      "trend": "high",
+      "link": "https://indianexpress.com/article/india/madhya-pradesh-high-court-interfaith-couple-protection-10711424/"
+    },
+    {
+      "id": "the-hindu-8-1779955826000",
+      "title": "India's energy investment to hit $170 billion in 2026 on solar, grid and refining push: International Energy Agency",
+      "source": "The Hindu",
+      "date": "28 May 2026",
+      "image": "https://th-i.thgim.com/public/incoming/d6vwws/article71032199.ece/alternates/LANDSCAPE_1200/2026-05-20T043202Z_1250949344_RC2UY9A88U1O_RTRMADP_3_INDIA-RENEWABLES.JPG",
+      "summary": "‘Investment in solar PV grew annually by 25% in this period, and oil refining by 23%. Together, these two sectors contributed to one-fourth of India's energy investment growth,’ said the International Energy Agency",
+      "explanation": "‘Investment in solar PV grew annually by 25% in this period, and oil refining by 23%. Together, these two sectors contributed to one-fourth of India's energy investment growth,’ said the International Energy Agency",
       "exams": [
         "NDA",
         "CDS",
@@ -34,311 +307,16 @@
       "theme": "defence-strategy",
       "scope": "international",
       "trend": "medium",
-      "link": "https://indianexpress.com/article/india/quad-issues-joint-statement-jaishankar-says-talks-highlighted-need-for-safe-unimpeded-maritime-commerce-10708092/",
-      "pyqRef": {
-        "exam": "UPSC",
-        "year": 2025,
-        "paper": "GS3",
-        "evidence": "Official GS3 OCR includes a question on maritime and coastal security."
-      }
+      "link": "https://www.thehindu.com/business/Industry/indias-energy-investment-to-hit-170-billion-in-2026-on-solar-grid-and-refining-push-international-energy-agency/article71032005.ece"
     },
     {
-      "id": "the-hindu-5-1779786479000",
-      "title": "BJP leaders extend support to demand by advocates for HC circuit bench in Shivamogga",
+      "id": "the-hindu-11-1779951320000",
+      "title": "U.S. envoy warns Spain to be 'very careful' in deepening ties with China",
       "source": "The Hindu",
-      "date": "26 May 2026",
-      "image": "https://th-i.thgim.com/public/incoming/fw3zlm/article71024298.ece/alternates/LANDSCAPE_1200/9911_26_5_2026_13_36_35_1_ADVOCATES18.JPG",
-      "summary": "Member of Parliament B.Y. Raghavendra led a delegation of party leaders to the district court premises on May 26",
-      "explanation": "Member of Parliament B.Y. Raghavendra led a delegation of party leaders to the district court premises on May 26",
-      "exams": [
-        "UPSC",
-        "PCS"
-      ],
-      "theme": "polity-rights",
-      "scope": "national",
-      "trend": "high",
-      "link": "https://www.thehindu.com/news/national/karnataka/bjp-leaders-extend-support-to-demand-by-advocates-for-hc-circuit-bench-in-shivamogga/article71024164.ece"
-    },
-    {
-      "id": "the-hindu-12-1779786013000",
-      "title": "Odisha train accident | PM inspects site, takes stock of situation; assures stringent action against guilty",
-      "source": "The Hindu",
-      "date": "26 May 2026",
-      "image": "https://th-i.thgim.com/public/incoming/7kdfif/article66927325.ece/alternates/LANDSCAPE_1200/WhatsApp%20Image%202023-06-03%20at%204.42.18%20PM.jpeg",
-      "summary": "Prime Minister Narendra Modi on June 3 inspected the triple train accident site at Bahanaga in Odisha’s Balasore district",
-      "explanation": "Prime Minister Narendra Modi on June 3 inspected the triple train accident site at Bahanaga in Odisha’s Balasore district",
-      "exams": [
-        "UPSC",
-        "PCS"
-      ],
-      "theme": "polity-rights",
-      "scope": "national",
-      "trend": "high",
-      "link": "https://www.thehindu.com/news/national/other-states/odisha-train-accident-pm-inspects-site-takes-stock-of-situation/article66927315.ece"
-    },
-    {
-      "id": "the-hindu-16-1779785723000",
-      "title": "Revanth Reddy hails BC caste census announcement, offers Telangana model as blueprint",
-      "source": "The Hindu",
-      "date": "26 May 2026",
-      "image": "https://th-i.thgim.com/public/news/national/nnquhx/article69517727.ece/alternates/LANDSCAPE_1200/WhatsApp%20Image%202025-05-01%20at%2012.53.16%20PM.jpeg",
-      "summary": "Highlighting Telangana’s proactive role, Mr. Reddy said the State not only passed a resolution in its Assembly but also executed a comprehensive caste census",
-      "explanation": "Highlighting Telangana’s proactive role, Mr. Reddy said the State not only passed a resolution in its Assembly but also executed a comprehensive caste census",
-      "exams": [
-        "UPSC",
-        "PCS"
-      ],
-      "theme": "polity-rights",
-      "scope": "international",
-      "trend": "high",
-      "link": "https://www.thehindu.com/news/national/telangana/revanth-reddy-hails-bc-caste-census-announcement-offers-telangana-model-as-blueprint/article69514452.ece"
-    },
-    {
-      "id": "the-hindu-23-1779784493000",
-      "title": "NGO asks Chief Justice of India Surya Kant to withdraw remarks against environmentalists",
-      "source": "The Hindu",
-      "date": "26 May 2026",
-      "image": "https://th-i.thgim.com/public/incoming/jnv79o/article71023871.ece/alternates/LANDSCAPE_1200/DSC_8328A.JPG",
-      "summary": "They pointed out that the Constitution of India recognises the importance of environmental protection",
-      "explanation": "They pointed out that the Constitution of India recognises the importance of environmental protection",
-      "exams": [
-        "UPSC",
-        "PCS"
-      ],
-      "theme": "polity-rights",
-      "scope": "national",
-      "trend": "high",
-      "link": "https://www.thehindu.com/news/national/karnataka/ngo-asks-chief-justice-of-india-surya-kant-to-withdraw-remarks-against-environmentalists/article71023817.ece"
-    },
-    {
-      "id": "the-hindu-24-1779783801000",
-      "title": "Supreme Court notice to Centre on plea highlighting vacancies in Income Tax Appellate Tribunal",
-      "source": "The Hindu",
-      "date": "26 May 2026",
-      "image": "https://th-i.thgim.com/public/incoming/8tt6um/article70298070.ece/alternates/LANDSCAPE_1200/vbk-stock-supreme%20court-sc4-2019-02-12T155705Z_468587102_RC1D209BE9D0_RTRMADP_3_INDIA-COURT.JPG",
-      "summary": "Senior advocate Mukul Rohatgi, appearing for the petitioner, submitted all posts of officers, including registrars, that are lying vacant for a number of years",
-      "explanation": "Senior advocate Mukul Rohatgi, appearing for the petitioner, submitted all posts of officers, including registrars, that are lying vacant for a number of years",
-      "exams": [
-        "UPSC",
-        "PCS"
-      ],
-      "theme": "polity-rights",
-      "scope": "national",
-      "trend": "high",
-      "link": "https://www.thehindu.com/news/national/supreme-court-notice-to-centre-on-plea-highlighting-vacancies-in-income-tax-appellate-tribunal/article71023972.ece"
-    },
-    {
-      "id": "the-hindu-25-1779783599000",
-      "title": "PFI in Kerala disbands itself?",
-      "source": "The Hindu",
-      "date": "26 May 2026",
-      "image": "https://th-i.thgim.com/public/incoming/flj9nu/article65946740.ece/alternates/LANDSCAPE_1200/80692_28_9_2022_18_29_1_1_29TVKZPFI2.JPG",
-      "summary": "A press release issued in the name of the PFI State general secretary asked cadres to halt political activities and organisation work.",
-      "explanation": "A press release issued in the name of the PFI State general secretary asked cadres to halt political activities and organisation work.",
-      "exams": [
-        "UPSC",
-        "PCS"
-      ],
-      "theme": "polity-rights",
-      "scope": "national",
-      "trend": "high",
-      "link": "https://www.thehindu.com/news/national/kerala/pfi-in-kerala-disbands-itself/article65946038.ece"
-    },
-    {
-      "id": "the-hindu-26-1779783540000",
-      "title": "Budget 2024: Finance Minister Nirmala Sitharaman announces special schemes for Bihar",
-      "source": "The Hindu",
-      "date": "26 May 2026",
-      "image": "https://th-i.thgim.com/public/incoming/g2ivfe/article68435640.ece/alternates/LANDSCAPE_1200/PTI06_19_2024_RPT117B.jpg",
-      "summary": "The schemes for Bihar announced by Nirmala Sitharaman in Union Budget 2024-25 are part of a larger plan called ‘Purvodaya’ to facilitate development of eastern India",
-      "explanation": "The schemes for Bihar announced by Nirmala Sitharaman in Union Budget 2024-25 are part of a larger plan called ‘Purvodaya’ to facilitate development of eastern India",
-      "exams": [
-        "UPSC",
-        "PCS"
-      ],
-      "theme": "polity-rights",
-      "scope": "national",
-      "trend": "high",
-      "link": "https://www.thehindu.com/business/budget/budget-2024-finance-minister-nirmala-sitharaman-announces-special-schemes-for-bihar/article68435519.ece"
-    },
-    {
-      "id": "the-hindu-34-1779782769000",
-      "title": "Ending uncertainty, Suresh Gopi signals he will continue as Minister in Modi 3.0 government",
-      "source": "The Hindu",
-      "date": "26 May 2026",
-      "image": "https://th-i.thgim.com/public/incoming/6h965k/article68273157.ece/alternates/LANDSCAPE_1200/IMG_80688_4_6_2024_20_9__2_1_0MCSQ1D6.jpg",
-      "summary": "Actor-turned-politician Suresh Gopi has seemingly flip-flopped on his earlier assertion that BJP’s national leadership would relieve him of his ministerial responsibility and permit him to honour his cinema commitments",
-      "explanation": "Actor-turned-politician Suresh Gopi has seemingly flip-flopped on his earlier assertion that BJP’s national leadership would relieve him of his ministerial responsibility and permit him to honour his cinema commitments",
-      "exams": [
-        "UPSC",
-        "PCS"
-      ],
-      "theme": "polity-rights",
-      "scope": "national",
-      "trend": "high",
-      "link": "https://www.thehindu.com/news/national/bjp-leader-and-actor-suresh-gopi-signals-hesitation-about-continuing-as-union-minister-a-day-after-after-swearing-in/article68273150.ece"
-    },
-    {
-      "id": "the-hindu-37-1779782550000",
-      "title": "Supreme Court declares electoral bonds scheme unconstitutional",
-      "source": "The Hindu",
-      "date": "26 May 2026",
-      "image": "https://th-i.thgim.com/public/incoming/s2kr3w/article67850102.ece/alternates/LANDSCAPE_1200/20240215071L.jpg",
-      "summary": "Amendments to the law, which allowed companies to make unlimited financial contributions to political parties under the cover of absolute anonymity, declared ‘manifestly arbitrary’",
-      "explanation": "Amendments to the law, which allowed companies to make unlimited financial contributions to political parties under the cover of absolute anonymity, declared ‘manifestly arbitrary’",
-      "exams": [
-        "UPSC",
-        "PCS"
-      ],
-      "theme": "polity-rights",
-      "scope": "national",
-      "trend": "high",
-      "link": "https://www.thehindu.com/news/national/electoral-bonds-scheme-unconstitutional-sbi-should-reveal-the-details-of-donors-rules-sc/article67848211.ece"
-    },
-    {
-      "id": "the-hindu-38-1779782531000",
-      "title": "Govt. will work to make Assam ₹10 lakh crore economy by 2028, says CM Himanta Biswa Sarma",
-      "source": "The Hindu",
-      "date": "26 May 2026",
-      "image": "https://th-i.thgim.com/public/incoming/tgm80x/article71024091.ece/alternates/LANDSCAPE_1200/20260512279L.jpg",
-      "summary": "‘Tabling of the UCC bill proves our government's commitment to work for the rights of women belonging to the minority community,’ says Assam CM Himanta Biswa Sarma",
-      "explanation": "‘Tabling of the UCC bill proves our government's commitment to work for the rights of women belonging to the minority community,’ says Assam CM Himanta Biswa Sarma",
-      "exams": [
-        "UPSC",
-        "PCS"
-      ],
-      "theme": "polity-rights",
-      "scope": "national",
-      "trend": "high",
-      "link": "https://www.thehindu.com/elections/assam-assembly/govt-will-work-to-make-assam-10-lakh-crore-economy-by-2028-says-cm-himanta-biswa-sarma/article71023969.ece"
-    },
-    {
-      "id": "the-hindu-40-1779782330000",
-      "title": "Masjids turn learning hubs: innovative education initiative empowering local students",
-      "source": "The Hindu",
-      "date": "26 May 2026",
-      "image": "https://th-i.thgim.com/public/todays-paper/tp-miscellaneous/tp-others/n5fpjy/article68398746.ece/alternates/LANDSCAPE_1200/InFocus-MasjidsGP4D223GV.3.jpg.jpg",
-      "summary": "In Akbarnagar area of Hyderabad’s Old City, mosques have been transformed into part-time schools, or maktabs, teaching subjects like math, science, English and Telugu. This initiative, started by a group of techies offers free education to children from local government and budget schools",
-      "explanation": "In Akbarnagar area of Hyderabad’s Old City, mosques have been transformed into part-time schools, or maktabs, teaching subjects like math, science, English and Telugu. This initiative, started by a group of techies offers free education to children from local government and budget schools",
-      "exams": [
-        "UPSC",
-        "PCS"
-      ],
-      "theme": "polity-rights",
-      "scope": "national",
-      "trend": "high",
-      "link": "https://www.thehindu.com/news/national/telangana/hyderabad-mosques-teach-maths-science-english-and-telugu/article68392947.ece"
-    },
-    {
-      "id": "the-hindu-41-1779782207000",
-      "title": "Dial 1912 for power complaints during heatwave, says Andhra Pradesh Energy Minister",
-      "source": "The Hindu",
-      "date": "26 May 2026",
-      "image": "https://th-i.thgim.com/public/news/national/andhra-pradesh/c9kg9s/article71024137.ece/alternates/LANDSCAPE_1200/Meeting.jpeg",
-      "summary": "Energy Minister Gottipati Ravi Kumar asked consumers to dial the toll-free 1912 helpline for power complaints during heatwave-related outages across Andhra Pradesh",
-      "explanation": "Energy Minister Gottipati Ravi Kumar asked consumers to dial the toll-free 1912 helpline for power complaints during heatwave-related outages across Andhra Pradesh",
-      "exams": [
-        "UPSC",
-        "PCS"
-      ],
-      "theme": "polity-rights",
-      "scope": "national",
-      "trend": "high",
-      "link": "https://www.thehindu.com/news/national/andhra-pradesh/dial-1912-for-power-complaints-during-heatwave-says-andhra-pradesh-energy-minister/article71023776.ece"
-    },
-    {
-      "id": "the-hindu-45-1779781628000",
-      "title": "Another blow to AIADMK as fourth MLA Esakki Subaya resigns post in Tamil Nadu",
-      "source": "The Hindu",
-      "date": "26 May 2026",
-      "image": "https://th-i.thgim.com/public/news/cities/chennai/oxctq9/article71023955.ece/alternates/LANDSCAPE_1200/WhatsApp%20Image%202026-05-26%20at%2012.13.25.jpeg",
-      "summary": "Meanwhile, AIADMK legislators belonging to the faction led by party general secretary Edappadi K. Palaniswami met the Speaker and submitted a petition requesting him to withdraw the acceptance of the resignations tendered by three of the party’s MLAs",
-      "explanation": "Meanwhile, AIADMK legislators belonging to the faction led by party general secretary Edappadi K. Palaniswami met the Speaker and submitted a petition requesting him to withdraw the acceptance of the resignations tendered by three of the party’s MLAs",
-      "exams": [
-        "UPSC",
-        "PCS"
-      ],
-      "theme": "polity-rights",
-      "scope": "national",
-      "trend": "high",
-      "link": "https://www.thehindu.com/news/national/tamil-nadu/aiadmk-faces-another-setback-as-esakki-subaya-becomes-fourth-mla-to-resign-post/article71023917.ece"
-    },
-    {
-      "id": "the-hindu-54-1779779364000",
-      "title": "Supreme Court refuses urgent hearing of PIL seeking complete ban on cow slaughter",
-      "source": "The Hindu",
-      "date": "26 May 2026",
-      "image": "https://th-i.thgim.com/public/news/national/lxrt66/article66353937.ece/alternates/LANDSCAPE_1200/IMG_thvli-supreme-court-_2_1_7IA6L7U0.jpg",
-      "summary": "The plea seeks directions to enforce anti-slaughter laws to protect the cow and its progeny from slaughter",
-      "explanation": "The plea seeks directions to enforce anti-slaughter laws to protect the cow and its progeny from slaughter",
-      "exams": [
-        "UPSC",
-        "PCS"
-      ],
-      "theme": "polity-rights",
-      "scope": "national",
-      "trend": "high",
-      "link": "https://www.thehindu.com/news/national/supreme-court-refuses-urgent-hearing-of-pil-seeking-complete-ban-on-cow-slaughter/article71023916.ece"
-    },
-    {
-      "id": "the-hindu-55-1779778433000",
-      "title": "What is the Supreme Court’s clarification on sedition law? | Explained",
-      "source": "The Hindu",
-      "date": "26 May 2026",
-      "image": "https://th-i.thgim.com/public/incoming/v9z04e/article71023909.ece/alternates/LANDSCAPE_1200/SC%20explainer.png",
-      "summary": "The Supreme Court has allowed sedition cases to resume, but only if the accused agrees. What does this mean for Section 124A, which was put on hold in 2022? Here’s a breakdown of the law, the controversy, and the latest developments.",
-      "explanation": "The Supreme Court has allowed sedition cases to resume, but only if the accused agrees. What does this mean for Section 124A, which was put on hold in 2022? Here’s a breakdown of the law, the controversy, and the latest developments.",
-      "exams": [
-        "UPSC",
-        "PCS"
-      ],
-      "theme": "polity-rights",
-      "scope": "national",
-      "trend": "high",
-      "link": "https://www.thehindu.com/videos/what-is-the-supreme-courts-clarification-on-sedition-law-explained/article71023913.ece"
-    },
-    {
-      "id": "the-hindu-59-1779775065000",
-      "title": "Canada PM's visit to India built strong foundation for truly renewed partnership: Modi",
-      "source": "The Hindu",
-      "date": "26 May 2026",
-      "image": "https://th-i.thgim.com/public/incoming/161z2n/article70700910.ece/alternates/LANDSCAPE_1200/2th-suhasini-InG4BFLMNDP.3.jpg.jpg",
-      "summary": "The Canadian Prime Minister was in India from February 27 to March 2, during which India and Canada sealed key pacts on supplies of Uranium and critical minerals and agreed to conclude a comprehensive economic partnership agreement soon.",
-      "explanation": "The Canadian Prime Minister was in India from February 27 to March 2, during which India and Canada sealed key pacts on supplies of Uranium and critical minerals and agreed to conclude a comprehensive economic partnership agreement soon.",
-      "exams": [
-        "UPSC",
-        "PCS"
-      ],
-      "theme": "polity-rights",
-      "scope": "international",
-      "trend": "high",
-      "link": "https://www.thehindu.com/news/national/canada-pms-visit-to-india-built-strong-foundation-for-truly-renewed-partnership-modi/article70700904.ece"
-    },
-    {
-      "id": "the-hindu-4-1779786508000",
-      "title": "Wayanad landslide: A restaurant suspends operations to cook free meals for landslide survivors",
-      "source": "The Hindu",
-      "date": "26 May 2026",
-      "image": "https://th-i.thgim.com/public/news/national/kerala/p8668a/article68466172.ece/alternates/LANDSCAPE_1200/RESTAURANT.jpg",
-      "summary": "The restaurant at Sultan Bathery in Wayanad, which was soft-launched a few weeks ago, has been converted into a place to cook for the survivors of the disaster",
-      "explanation": "The restaurant at Sultan Bathery in Wayanad, which was soft-launched a few weeks ago, has been converted into a place to cook for the survivors of the disaster",
-      "exams": [
-        "UPSC",
-        "PCS"
-      ],
-      "theme": "governance-disaster",
-      "scope": "national",
-      "trend": "high",
-      "link": "https://www.thehindu.com/news/national/kerala/a-restaurant-suspends-operation-to-cook-free-meals-for-landslide-survivors/article68465868.ece"
-    },
-    {
-      "id": "the-hindu-6-1779786415000",
-      "title": "Lok Sabha erupts as BJP MP links Rahul to U.S. billionaire Soros",
-      "source": "The Hindu",
-      "date": "26 May 2026",
-      "image": "https://th-i.thgim.com/public/news/national/gacwmg/article68951626.ece/alternates/LANDSCAPE_1200/protest.jpg",
-      "summary": "Congress, Soros and the investigative platform OCCRP funded by him are trying to derail India’s success story, says BJP leader Nishikant Dubey",
-      "explanation": "Congress, Soros and the investigative platform OCCRP funded by him are trying to derail India’s success story, says BJP leader Nishikant Dubey",
+      "date": "28 May 2026",
+      "image": "https://th-i.thgim.com/public/incoming/mvmpor/article71029625.ece/alternates/LANDSCAPE_1200/Screenshot%202026-05-27%20at%206.48.24%E2%80%AFPM.png",
+      "summary": "U.S. Ambassador Benjamin Leon cautioned Spain against allowing Chinese companies greater access to strategic sectors such as telecommunications and defence",
+      "explanation": "U.S. Ambassador Benjamin Leon cautioned Spain against allowing Chinese companies greater access to strategic sectors such as telecommunications and defence",
       "exams": [
         "NDA",
         "CDS",
@@ -347,22 +325,16 @@
       "theme": "defence-strategy",
       "scope": "international",
       "trend": "medium",
-      "link": "https://www.thehindu.com/news/national/lok-sabha-erupts-as-bjp-mp-links-rahul-to-us-billionaire-soros/article68951549.ece",
-      "pyqRef": {
-        "exam": "UPSC",
-        "year": 2025,
-        "paper": "GS3",
-        "evidence": "Official GS3 OCR includes a question on maritime and coastal security."
-      }
+      "link": "https://www.thehindu.com/news/international/us-envoy-warns-spain-to-be-very-careful-in-deepening-ties-with-china/article71029306.ece"
     },
     {
-      "id": "the-hindu-15-1779785841000",
-      "title": "Quad Foreign Ministers meet LIVE: Quad ramps up Indo-Pacific surveillance, critical mineral cooperation",
+      "id": "the-hindu-13-1779942572000",
+      "title": "Iran forces fired at four ships attempting to cross Hormuz: state broadcaster",
       "source": "The Hindu",
-      "date": "26 May 2026",
-      "image": "https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=900&q=82",
-      "summary": "U.S. Secretary of State Marco Rubio announces launch of Indo-Pacific Maritime Surveillance Co-operation initiative",
-      "explanation": "U.S. Secretary of State Marco Rubio announces launch of Indo-Pacific Maritime Surveillance Co-operation initiative",
+      "date": "28 May 2026",
+      "image": "https://th-i.thgim.com/public/incoming/yfdn8a/article71031894.ece/alternates/LANDSCAPE_1200/Trump-says-hesGV1G0JR6B.3.jpg.jpg",
+      "summary": "“Four vessels attempted to cross the Strait of Hormuz and enter the Persian Gulf without coordination with the security forces,” IRIB posted on Telegram",
+      "explanation": "“Four vessels attempted to cross the Strait of Hormuz and enter the Persian Gulf without coordination with the security forces,” IRIB posted on Telegram",
       "exams": [
         "NDA",
         "CDS",
@@ -371,211 +343,13 @@
       "theme": "defence-strategy",
       "scope": "international",
       "trend": "medium",
-      "link": "https://www.thehindu.com/news/national/quad-foreign-ministers-meet-s-jaishankar-indo-pacific-ties-delhi-live-updates-may-26-2026/article71023497.ece",
-      "pyqRef": {
-        "exam": "UPSC",
-        "year": 2025,
-        "paper": "GS3",
-        "evidence": "Official GS3 OCR includes a question on maritime and coastal security."
-      }
+      "link": "https://www.thehindu.com/news/international/iran-forces-fired-at-four-ships-attempting-to-cross-hormuz-state-broadcaster/article71031890.ece"
     },
     {
-      "id": "the-hindu-18-1779785594000",
-      "title": "Defence Minister Rajnath Singh participates in cleanliness drive at the Hanuman Setu temple",
-      "source": "The Hindu",
-      "date": "26 May 2026",
-      "image": "https://th-i.thgim.com/public/lit-for-life/gx1aqs/article67743551.ece/alternates/LANDSCAPE_1200/rajnath%20singh%20cleaniness%20drive%201.jpg",
-      "summary": "Defence Minister Rajnath Singh participated in a cleanliness drive at a temple in Lucknow ahead of the January 22 consecration ceremony at the Ram temple in Ayodhya",
-      "explanation": "Defence Minister Rajnath Singh participated in a cleanliness drive at a temple in Lucknow ahead of the January 22 consecration ceremony at the Ram temple in Ayodhya",
-      "exams": [
-        "NDA",
-        "CDS",
-        "UPSC"
-      ],
-      "theme": "defence-strategy",
-      "scope": "national",
-      "trend": "medium",
-      "link": "https://www.thehindu.com/news/national/other-states/defence-minister-rajnath-singh-participates-in-cleanliness-drive-at-the-hanuman-setu-temple/article67743544.ece",
-      "pyqRef": {
-        "exam": "UPSC",
-        "year": 2025,
-        "paper": "GS3",
-        "evidence": "Official GS3 OCR includes a question on maritime and coastal security."
-      }
-    },
-    {
-      "id": "the-hindu-20-1779784862000",
-      "title": "India, U.S. strike Critical Minerals deal amid China concerns",
-      "source": "The Hindu",
-      "date": "26 May 2026",
-      "image": "https://th-i.thgim.com/public/incoming/mhb2g1/article71024052.ece/alternates/LANDSCAPE_1200/India_United_States_Rubio_62148.jpg",
-      "summary": "The framework on securing supplies of mining and processing of critical minerals was signed on the sidelines of the Quad Foreign Ministers' meeting in New Delhi",
-      "explanation": "The framework on securing supplies of mining and processing of critical minerals was signed on the sidelines of the Quad Foreign Ministers' meeting in New Delhi",
-      "exams": [
-        "NDA",
-        "CDS",
-        "UPSC"
-      ],
-      "theme": "defence-strategy",
-      "scope": "international",
-      "trend": "medium",
-      "link": "https://www.thehindu.com/news/national/india-us-strike-critical-minerals-deal-amid-china-concerns/article71024045.ece",
-      "pyqRef": {
-        "exam": "UPSC",
-        "year": 2025,
-        "paper": "GS3",
-        "evidence": "Official GS3 OCR includes a question on maritime and coastal security."
-      }
-    },
-    {
-      "id": "the-hindu-27-1779783522000",
-      "title": "India, Canada looking at concluding trade pact talks by year end",
-      "source": "The Hindu",
-      "date": "26 May 2026",
-      "image": "https://th-i.thgim.com/public/incoming/4c72ey/article71023792.ece/alternates/LANDSCAPE_1200/PTI05_26_2026_000023B.jpg",
-      "summary": "India and Canada are negotiating a Comprehensive Economic Partnership Agreement (CEPA); two rounds of negotiations have been completed",
-      "explanation": "India and Canada are negotiating a Comprehensive Economic Partnership Agreement (CEPA); two rounds of negotiations have been completed",
-      "exams": [
-        "NDA",
-        "CDS",
-        "UPSC"
-      ],
-      "theme": "defence-strategy",
-      "scope": "international",
-      "trend": "medium",
-      "link": "https://www.thehindu.com/news/national/india-canada-looking-at-concluding-trade-pact-talks-by-year-end/article71023775.ece",
-      "pyqRef": {
-        "exam": "UPSC",
-        "year": 2025,
-        "paper": "GS3",
-        "evidence": "Official GS3 OCR includes a question on maritime and coastal security."
-      }
-    },
-    {
-      "id": "the-hindu-28-1779783506000",
-      "title": "Mallikarjun Kharge slams Modi government over fuel prices, questions lack of relief despite fall in crude oil rates",
-      "source": "The Hindu",
-      "date": "26 May 2026",
-      "image": "https://th-i.thgim.com/public/incoming/12n4hg/article71023828.ece/alternates/LANDSCAPE_1200/PTI02_10_2026_000352B.jpg",
-      "summary": "From transportation to food commodities, the burden of inflation on the common man continues to intensify. Despite this, the government's profiteering continues unabated, says Congress president Mallikarjun Kharge",
-      "explanation": "From transportation to food commodities, the burden of inflation on the common man continues to intensify. Despite this, the government's profiteering continues unabated, says Congress president Mallikarjun Kharge",
-      "exams": [
-        "NDA",
-        "CDS",
-        "UPSC"
-      ],
-      "theme": "defence-strategy",
-      "scope": "national",
-      "trend": "medium",
-      "link": "https://www.thehindu.com/news/national/mallikarjun-kharge-slams-modi-government-over-fuel-prices-questions-lack-of-relief-despite-fall-in-crude-oil-rates/article71023818.ece",
-      "pyqRef": {
-        "exam": "UPSC",
-        "year": 2025,
-        "paper": "GS3",
-        "evidence": "Official GS3 OCR includes a question on maritime and coastal security."
-      }
-    },
-    {
-      "id": "the-hindu-49-1779780791000",
-      "title": "Quad Foreign Ministers meet: Indo-Pacific must remain driver for global growth: Jaishankar",
-      "source": "The Hindu",
-      "date": "26 May 2026",
-      "image": "https://th-i.thgim.com/public/incoming/ncarlx/article71023741.ece/alternates/LANDSCAPE_1200/2026-05-26T052417Z_1655507872_RC2TGLA3357W_RTRMADP_3_INDIA-QUAD.JPG",
-      "summary": "In his opening remarks at the Quad Foreign Ministers' meeting, EAM S. Jaishankar specifically called for \"trusted and transparent\" partnerships to bring peace and prosperity to the Indo-Pacific",
-      "explanation": "In his opening remarks at the Quad Foreign Ministers' meeting, EAM S. Jaishankar specifically called for \"trusted and transparent\" partnerships to bring peace and prosperity to the Indo-Pacific",
-      "exams": [
-        "NDA",
-        "CDS",
-        "UPSC"
-      ],
-      "theme": "defence-strategy",
-      "scope": "international",
-      "trend": "medium",
-      "link": "https://www.thehindu.com/news/national/quad-foreign-ministers-meeting-delhi-s-jaishankar-marco-rubio-penny-wong-toshimitsu-motegi-address-updates/article71023725.ece",
-      "pyqRef": {
-        "exam": "UPSC",
-        "year": 2025,
-        "paper": "GS3",
-        "evidence": "Official GS3 OCR includes a question on maritime and coastal security."
-      }
-    },
-    {
-      "id": "the-hindu-4-1779780050000",
-      "title": "Not in favour of Pakistan joining Abraham Accords: Defence Minister Khawaja Asif",
-      "source": "The Hindu",
-      "date": "26 May 2026",
-      "image": "https://th-i.thgim.com/public/incoming/f118dr/article71023907.ece/alternates/LANDSCAPE_1200/2025-10-20T113953Z_1744509148_RC2KFHA71L6B_RTRMADP_3_PAKISTAN-AFGHANISTAN-MINISTER.JPG",
-      "summary": "‘Personally, I don’t think we should join any such accord which clashes with our fundamental ideologies,’ says Pakistan’s Defence Minister Khawaja Asif",
-      "explanation": "‘Personally, I don’t think we should join any such accord which clashes with our fundamental ideologies,’ says Pakistan’s Defence Minister Khawaja Asif",
-      "exams": [
-        "NDA",
-        "CDS",
-        "UPSC"
-      ],
-      "theme": "defence-strategy",
-      "scope": "international",
-      "trend": "medium",
-      "link": "https://www.thehindu.com/news/international/not-in-favour-of-pakistan-joining-abraham-accords-defence-minister-khawaja-asif/article71023827.ece",
-      "pyqRef": {
-        "exam": "UPSC",
-        "year": 2025,
-        "paper": "GS3",
-        "evidence": "Official GS3 OCR includes a question on maritime and coastal security."
-      }
-    },
-    {
-      "id": "the-hindu-10-1779774644000",
-      "title": "Sri Lanka jolts markets with outsized 100-bp rate hike to counter crisis in West Asia",
-      "source": "The Hindu",
-      "date": "26 May 2026",
-      "image": "https://th-i.thgim.com/public/news/national/d9dtu5/article71023773.ece/alternates/LANDSCAPE_1200/iStock-1372521126.jpg",
-      "summary": "The Central Bank of Sri Lanka (CBSL) raised the overnight policy rate to 8.75% ‌from 7.75%, blaming higher inflation and a depreciating rupee due to the U.S.-Israeli war ‌with Iran",
-      "explanation": "The Central Bank of Sri Lanka (CBSL) raised the overnight policy rate to 8.75% ‌from 7.75%, blaming higher inflation and a depreciating rupee due to the U.S.-Israeli war ‌with Iran",
-      "exams": [
-        "NDA",
-        "CDS",
-        "UPSC"
-      ],
-      "theme": "defence-strategy",
-      "scope": "international",
-      "trend": "medium",
-      "link": "https://www.thehindu.com/news/international/sri-lanka-jolts-markets-with-outsized-100-bp-rate-hike-to-counter-crisis-in-west-asia/article71023742.ece",
-      "pyqRef": {
-        "exam": "UPSC",
-        "year": 2025,
-        "paper": "GS3",
-        "evidence": "Official GS3 OCR includes a question on maritime and coastal security."
-      }
-    },
-    {
-      "id": "the-hindu-11-1779774618000",
-      "title": "Canada PM Carney’s visit to India reset ties after 2023 killing of Sikh activist, Piyush Goyal says",
-      "source": "The Hindu",
-      "date": "26 May 2026",
-      "image": "https://th-i.thgim.com/public/incoming/7tbr7c/article71023491.ece/alternates/LANDSCAPE_1200/2th-suhasini-InG4BFLMNDP.3.jpg.jpg",
-      "summary": "The ties were strained under Mark Carney's predecessor in the wake of the 2023 killing of Sikh activist Hareep Singh Nijjar in Canada",
-      "explanation": "The ties were strained under Mark Carney's predecessor in the wake of the 2023 killing of Sikh activist Hareep Singh Nijjar in Canada",
-      "exams": [
-        "NDA",
-        "CDS",
-        "UPSC"
-      ],
-      "theme": "defence-strategy",
-      "scope": "international",
-      "trend": "medium",
-      "link": "https://www.thehindu.com/news/national/canada-pm-carneys-visit-to-india-reset-ties-after-2023-killing-of-sikh-activist-piyush-goyal-says/article71023488.ece",
-      "pyqRef": {
-        "exam": "UPSC",
-        "year": 2025,
-        "paper": "GS3",
-        "evidence": "Official GS3 OCR includes a question on maritime and coastal security."
-      }
-    },
-    {
-      "id": "the-hindu-14-1779767951000",
+      "id": "the-hindu-16-1779938457000",
       "title": "U.S. Military carries out ‘self-defence’ strikes in Iran, including on missile launch sites",
       "source": "The Hindu",
-      "date": "26 May 2026",
+      "date": "28 May 2026",
       "image": "https://th-i.thgim.com/public/incoming/rjtb4f/article71023469.ece/alternates/LANDSCAPE_1200/2026-02-03T203616Z_1133507265_RC2W7FAU6WQB_RTRMADP_3_GLOBAL-OIL.JPG",
       "summary": "The strikes were done “to protect our troops from threats posed by Iranian forces”, but the military was “using restraint during the ongoing ceasefire”",
       "explanation": "The strikes were done “to protect our troops from threats posed by Iranian forces”, but the military was “using restraint during the ongoing ceasefire”",
@@ -587,94 +361,33 @@
       "theme": "defence-strategy",
       "scope": "international",
       "trend": "medium",
-      "link": "https://www.thehindu.com/news/international/us-military-self-defence-strikes-in-iran-missile-launch-sites-may-26-2026/article71023465.ece",
-      "pyqRef": {
-        "exam": "UPSC",
-        "year": 2025,
-        "paper": "GS3",
-        "evidence": "Official GS3 OCR includes a question on maritime and coastal security."
-      }
+      "link": "https://www.thehindu.com/news/international/us-military-self-defence-strikes-in-iran-missile-launch-sites-may-26-2026/article71023465.ece"
     },
     {
-      "id": "the-hindu-19-1779740444000",
-      "title": "Iran's president orders reopening of international internet access, state media reports",
+      "id": "the-hindu-10-1779952561000",
+      "title": "SpaceX's Starship rockets grounded pending investigation after test flight",
       "source": "The Hindu",
-      "date": "26 May 2026",
-      "image": "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=900&q=82",
-      "summary": "Authorities ⁠initially imposed an internet blackout from January 8 in response to nationwide ‌anti-government protests before a new blackout was initiated following the start of U.S. and Israeli strikes against Iran on ‌February 28",
-      "explanation": "Authorities ⁠initially imposed an internet blackout from January 8 in response to nationwide ‌anti-government protests before a new blackout was initiated following the start of U.S. and Israeli strikes against Iran on ‌February 28",
+      "date": "28 May 2026",
+      "image": "https://th-i.thgim.com/public/incoming/24d7oa/article71032275.ece/alternates/LANDSCAPE_1200/2026-05-27T060136Z_387484952_RC2MELA3148F_RTRMADP_3_SPACEX-IPO-STARSHIP.JPG",
+      "summary": "The spacecraft continued around the world, releasing 20 mock satellites before ending the mission as planned with a fiery splashdown in the Indian Ocean",
+      "explanation": "The spacecraft continued around the world, releasing 20 mock satellites before ending the mission as planned with a fiery splashdown in the Indian Ocean",
       "exams": [
-        "NDA",
-        "CDS",
-        "UPSC"
+        "UPSC",
+        "SSC"
       ],
-      "theme": "defence-strategy",
+      "theme": "science-policy",
       "scope": "international",
       "trend": "medium",
-      "link": "https://www.thehindu.com/news/international/irans-president-orders-reopening-of-international-internet-access-state-media-reports/article71022650.ece",
-      "pyqRef": {
-        "exam": "UPSC",
-        "year": 2025,
-        "paper": "GS3",
-        "evidence": "Official GS3 OCR includes a question on maritime and coastal security."
-      }
+      "link": "https://www.thehindu.com/sci-tech/science/spacexs-starship-rockets-grounded-pending-investigation-after-test-flight/article71032266.ece"
     },
     {
-      "id": "the-indian-express-9-1779768403000",
-      "title": "Piyush Goyal, Mark Carney hold talks to boost India-Canada bilateral ties",
+      "id": "the-indian-express-0-1779964647000",
+      "title": "Sharp rise in out-of-pocket health spending, 11% fall in government expenditure in FY23: Ministry report",
       "source": "The Indian Express",
-      "date": "26 May 2026",
-      "image": "https://images.indianexpress.com/2026/05/Photo-2026-05-26T074237.391.jpg",
-      "summary": "Piyush Goyal, Mark Carney hold talks to boost India-Canada bilateral ties",
-      "explanation": "Piyush Goyal, Mark Carney hold talks to boost India-Canada bilateral ties",
-      "exams": [
-        "NDA",
-        "CDS",
-        "UPSC"
-      ],
-      "theme": "defence-strategy",
-      "scope": "international",
-      "trend": "medium",
-      "link": "https://indianexpress.com/article/india/piyush-goyal-mark-carney-hold-talks-to-boost-india-canada-bilateral-ties-10707968/",
-      "pyqRef": {
-        "exam": "UPSC",
-        "year": 2025,
-        "paper": "GS3",
-        "evidence": "Official GS3 OCR includes a question on maritime and coastal security."
-      }
-    },
-    {
-      "id": "the-indian-express-19-1779749022000",
-      "title": "Energy, maritime security in focus, Quad meets today",
-      "source": "The Indian Express",
-      "date": "26 May 2026",
-      "image": "https://images.indianexpress.com/2026/05/US-Secretary-of-State-Marco-Rubio-with-Minister-of-External-Affairs-S-Jaishankar-in-New-Delhi-Sunday.-AP.jpg",
-      "summary": "Energy, maritime security in focus, Quad meets today",
-      "explanation": "Energy, maritime security in focus, Quad meets today",
-      "exams": [
-        "NDA",
-        "CDS",
-        "UPSC"
-      ],
-      "theme": "defence-strategy",
-      "scope": "international",
-      "trend": "medium",
-      "link": "https://indianexpress.com/article/india/energy-maritime-security-in-focus-quad-meets-today-10707754/",
-      "pyqRef": {
-        "exam": "UPSC",
-        "year": 2025,
-        "paper": "GS3",
-        "evidence": "Official GS3 OCR includes a question on maritime and coastal security."
-      }
-    },
-    {
-      "id": "the-indian-express-18-1779749299000",
-      "title": "PIPAVAV Project case: Citizen groups push back against SC remarks on green activists &#038; ‘stalling’",
-      "source": "The Indian Express",
-      "date": "26 May 2026",
-      "image": "https://images.indianexpress.com/2026/05/surya-kant-1_20260509005755_20260525224747.jpg",
-      "summary": "PIPAVAV Project case: Citizen groups push back against SC remarks on green activists &#038; ‘stalling’",
-      "explanation": "PIPAVAV Project case: Citizen groups push back against SC remarks on green activists &#038; ‘stalling’",
+      "date": "28 May 2026",
+      "image": "https://images.indianexpress.com/2026/05/OOPE-health.jpg",
+      "summary": "Sharp rise in out-of-pocket health spending, 11% fall in government expenditure in FY23: Ministry report",
+      "explanation": "Sharp rise in out-of-pocket health spending, 11% fall in government expenditure in FY23: Ministry report",
       "exams": [
         "UPSC",
         "SSC",
@@ -683,16 +396,16 @@
       "theme": "social-governance",
       "scope": "national",
       "trend": "medium-low",
-      "link": "https://indianexpress.com/article/india/pipavav-project-case-citizen-groups-push-back-against-sc-remarks-on-green-activists-stalling-10707746/"
+      "link": "https://indianexpress.com/article/india/india-out-of-pocket-health-expenditure-rises-fy23-10712298/"
     },
     {
-      "id": "the-indian-express-20-1779748234000",
-      "title": "Nation’s best DMs: Entries for Indian Express Governance Awards open until June 30",
+      "id": "the-indian-express-15-1779919373000",
+      "title": "Class 12 on-screen marking row: Contract given to firm with questionable record, says Rahul; CBSE says claim ‘misleading’",
       "source": "The Indian Express",
-      "date": "26 May 2026",
-      "image": "https://images.indianexpress.com/2026/05/The-Indian-Express-Excellence-in-Governance-Awards.jpg",
-      "summary": "Nation’s best DMs: Entries for Indian Express Governance Awards open until June 30",
-      "explanation": "Nation’s best DMs: Entries for Indian Express Governance Awards open until June 30",
+      "date": "28 May 2026",
+      "image": "https://images.indianexpress.com/2026/05/rahul-4col.jpg",
+      "summary": "Class 12 on-screen marking row: Contract given to firm with questionable record, says Rahul; CBSE says claim ‘misleading’",
+      "explanation": "Class 12 on-screen marking row: Contract given to firm with questionable record, says Rahul; CBSE says claim ‘misleading’",
       "exams": [
         "UPSC",
         "SSC",
@@ -701,50 +414,50 @@
       "theme": "social-governance",
       "scope": "national",
       "trend": "medium-low",
-      "link": "https://indianexpress.com/article/india/nations-best-dms-entries-for-indian-express-governance-awards-open-until-june-30-10707732/"
+      "link": "https://indianexpress.com/article/india/class-12-on-screen-marking-row-contract-given-to-firm-with-questionable-record-says-rahul-cbse-says-claim-misleading-10711501/"
     },
     {
-      "id": "the-hindu-29-1779714007000",
-      "title": "Pakistan train bombing kills more than 30 people, official says",
+      "id": "the-hindu-28-1779888586000",
+      "title": "Hungary's Parliament votes to remain member of International Criminal Court",
       "source": "The Hindu",
-      "date": "25 May 2026",
-      "image": "https://th-i.thgim.com/public/incoming/h7pg26/article71021282.ece/alternates/LANDSCAPE_1200/AP05_24_2026_000127B.jpg",
-      "summary": "Pakistan’s government and military have not released an official death count from the attack, which was the latest in a series of strikes on ​trains, security forces and ‌infrastructure",
-      "explanation": "Pakistan’s government and military have not released an official death count from the attack, which was the latest in a series of strikes on ​trains, security forces and ‌infrastructure",
+      "date": "27 May 2026",
+      "image": "https://th-i.thgim.com/public/incoming/zgtfil/article71029280.ece/alternates/LANDSCAPE_1200/2026-05-26T122523Z_1799484702_RC20HLA271SD_RTRMADP_3_HUNGARY-POLITICS-EU-FUNDS.JPG",
+      "summary": "The Hungarian Parliament has backed legislation maintaining the country’s membership in the International Criminal Court, the world’s permanent tribunal for war crimes and genocide",
+      "explanation": "The Hungarian Parliament has backed legislation maintaining the country’s membership in the International Criminal Court, the world’s permanent tribunal for war crimes and genocide",
       "exams": [
         "UPSC",
         "PCS"
       ],
-      "theme": "governance-disaster",
+      "theme": "polity-rights",
       "scope": "international",
       "trend": "high",
-      "link": "https://www.thehindu.com/news/international/pakistan-train-bombing-kills-more-than-30-people-official-says/article71021242.ece"
+      "link": "https://www.thehindu.com/news/international/hungarys-parliament-votes-to-remain-member-of-international-criminal-court/article71029194.ece"
     },
     {
-      "id": "the-hindu-43-1779687969000",
-      "title": "Energy infrastructure damaged in missile attack on Russia's Belgorod region",
-      "source": "The Hindu",
-      "date": "25 May 2026",
-      "image": "https://th-i.thgim.com/public/incoming/esfo6q/article71019956.ece/alternates/LANDSCAPE_1200/2026-05-24T145343Z_1060816867_RC2MFLAG8MD5_RTRMADP_3_UKRAINE-CRISIS-ATTACK-KYIV.JPG",
-      "summary": "The ‌casualties were the result of the drone and missile ‌strike, the missiles cut power ‌and ⁠water supplies, authorities said",
-      "explanation": "The ‌casualties were the result of the drone and missile ‌strike, the missiles cut power ‌and ⁠water supplies, authorities said",
+      "id": "the-indian-express-18-1779896422000",
+      "title": "Collegium recommends elevation of 5 as Supreme Court judge",
+      "source": "The Indian Express",
+      "date": "27 May 2026",
+      "image": "https://images.indianexpress.com/2026/05/supreme-court-12.jpg",
+      "summary": "Collegium recommends elevation of 5 as Supreme Court judge",
+      "explanation": "Collegium recommends elevation of 5 as Supreme Court judge",
       "exams": [
         "UPSC",
         "PCS"
       ],
-      "theme": "governance-disaster",
-      "scope": "international",
+      "theme": "polity-rights",
+      "scope": "national",
       "trend": "high",
-      "link": "https://www.thehindu.com/news/international/energy-infrastructure-damaged-in-missile-attack-on-russias-belgorod-region/article71019938.ece"
+      "link": "https://indianexpress.com/article/india/collegium-recommends-elevation-of-5-as-supreme-court-judge-10711197/"
     },
     {
-      "id": "the-hindu-20-1779730564000",
-      "title": "Israeli right-wing Ministers urge Netanyahu to resume Beirut strikes to counter Hezbollah drone attacks",
+      "id": "the-hindu-27-1779889879000",
+      "title": "China asks Quad to stop meddling in maritime affairs in its neighbourhood",
       "source": "The Hindu",
-      "date": "25 May 2026",
-      "image": "https://th-i.thgim.com/public/incoming/ni10t6/article71022564.ece/alternates/LANDSCAPE_1200/2026-05-25T162223Z_591007958_RC2DGLAAKTGY_RTRMADP_3_IRAN-CRISIS-LEBANON-ISRAEL.JPG",
-      "summary": "Israeli finance minister Bezalel Smotrich, leader of a small ‌far-right ⁠party in Mr. Netanyahu’s cabinet, has frequently made comments that go beyond official Israeli ⁠policy, including that Israel must annex southern Lebanon and Gaza",
-      "explanation": "Israeli finance minister Bezalel Smotrich, leader of a small ‌far-right ⁠party in Mr. Netanyahu’s cabinet, has frequently made comments that go beyond official Israeli ⁠policy, including that Israel must annex southern Lebanon and Gaza",
+      "date": "27 May 2026",
+      "image": "https://th-i.thgim.com/public/incoming/xerrb3/article71029291.ece/alternates/LANDSCAPE_1200/China_Philippines_20369.jpg",
+      "summary": "Certain countries should stop meddling in maritime affairs in China's neighbourhood and earnestly respect regional countries’ efforts to safeguard peace and stability, says Chinese Foreign Ministry spokesperson Mao Ning",
+      "explanation": "Certain countries should stop meddling in maritime affairs in China's neighbourhood and earnestly respect regional countries’ efforts to safeguard peace and stability, says Chinese Foreign Ministry spokesperson Mao Ning",
       "exams": [
         "NDA",
         "CDS",
@@ -753,22 +466,52 @@
       "theme": "defence-strategy",
       "scope": "international",
       "trend": "medium",
-      "link": "https://www.thehindu.com/news/international/israeli-right-wing-ministers-urge-netanyahu-to-resume-beirut-strikes-to-counter-hezbollah-drone-attacks/article71022553.ece",
-      "pyqRef": {
-        "exam": "UPSC",
-        "year": 2025,
-        "paper": "GS3",
-        "evidence": "Official GS3 OCR includes a question on maritime and coastal security."
-      }
+      "link": "https://www.thehindu.com/news/international/china-asks-quad-to-stop-meddling-in-maritime-affairs-in-its-neighbourhood/article71029271.ece"
     },
     {
-      "id": "the-hindu-22-1779729418000",
-      "title": "Iran health official says supreme leader suffered only 'superficial' wounds in U.S.-Israel strike",
+      "id": "the-hindu-30-1779884573000",
+      "title": "Bangladesh probes hospital deaths of six newborns",
       "source": "The Hindu",
-      "date": "25 May 2026",
+      "date": "27 May 2026",
+      "image": "https://th-i.thgim.com/public/sci-tech/health/yup09c/article24640273.ece/alternates/LANDSCAPE_1200/Baby",
+      "summary": "Health authorities in Bangladesh are investigating the deaths of six newborns at a private hospital in Dhaka amid reports of ventilation and air-conditioning failure",
+      "explanation": "Health authorities in Bangladesh are investigating the deaths of six newborns at a private hospital in Dhaka amid reports of ventilation and air-conditioning failure",
+      "exams": [
+        "NDA",
+        "CDS",
+        "UPSC"
+      ],
+      "theme": "defence-strategy",
+      "scope": "international",
+      "trend": "medium",
+      "link": "https://www.thehindu.com/news/international/bangladesh-probes-hospital-deaths-of-six-newborns/article71029109.ece"
+    },
+    {
+      "id": "the-hindu-34-1779880950000",
+      "title": "Russian lawmakers want banks, their staff to help fight Ukrainian drones",
+      "source": "The Hindu",
+      "date": "27 May 2026",
+      "image": "https://th-i.thgim.com/public/incoming/vwas43/article71029001.ece/alternates/LANDSCAPE_1200/2026-05-19T154107Z_1194407113_RC2DCLAIS47Z_RTRMADP_3_RUSSIA-WEATHER.JPG",
+      "summary": "Russia’s lower house of Parliament has approved a bill allowing banks to install anti-drone systems and authorise selected employees to counter incoming Ukrainian drones",
+      "explanation": "Russia’s lower house of Parliament has approved a bill allowing banks to install anti-drone systems and authorise selected employees to counter incoming Ukrainian drones",
+      "exams": [
+        "NDA",
+        "CDS",
+        "UPSC"
+      ],
+      "theme": "defence-strategy",
+      "scope": "international",
+      "trend": "medium",
+      "link": "https://www.thehindu.com/news/international/russian-lawmakers-want-banks-their-staff-to-help-fight-ukrainian-drones/article71028975.ece"
+    },
+    {
+      "id": "the-hindu-35-1779880514000",
+      "title": "Chinese dissident escapes to South Korea by rubber boat",
+      "source": "The Hindu",
+      "date": "27 May 2026",
       "image": "https://images.unsplash.com/photo-1518546305927-5a555bb7020d?auto=format&fit=crop&w=900&q=82",
-      "summary": "The 56-year-old has not appeared publicly since he was named as Iran's supreme leader on March 8, issuing only written statements, fuelling speculation about his health",
-      "explanation": "The 56-year-old has not appeared publicly since he was named as Iran's supreme leader on March 8, issuing only written statements, fuelling speculation about his health",
+      "summary": "The reported escape of veteran Chinese activist Dong Guangping to South Korea has drawn international attention to the challenges faced by political dissidents seeking asylum",
+      "explanation": "The reported escape of veteran Chinese activist Dong Guangping to South Korea has drawn international attention to the challenges faced by political dissidents seeking asylum",
       "exams": [
         "NDA",
         "CDS",
@@ -777,22 +520,16 @@
       "theme": "defence-strategy",
       "scope": "international",
       "trend": "medium",
-      "link": "https://www.thehindu.com/news/international/iran-health-official-says-supreme-leader-suffered-only-superficial-wounds-in-us-israel-strike/article71022525.ece",
-      "pyqRef": {
-        "exam": "UPSC",
-        "year": 2025,
-        "paper": "GS3",
-        "evidence": "Official GS3 OCR includes a question on maritime and coastal security."
-      }
+      "link": "https://www.thehindu.com/news/international/chinese-dissident-escapes-to-south-korea-by-rubber-boat/article71028886.ece"
     },
     {
-      "id": "the-hindu-30-1779713681000",
-      "title": "WHO chief says suspected Ebola deaths at 220 and ‘epidemic is outpacing us’",
+      "id": "the-hindu-38-1779875564000",
+      "title": "Sri Lanka parliamentary poll: President Anura’s ruling coalition wins big",
       "source": "The Hindu",
-      "date": "25 May 2026",
-      "image": "https://th-i.thgim.com/public/incoming/p7p03q/article71021265.ece/alternates/LANDSCAPE_1200/2026-05-25T083334Z_1363509190_RC2RFLAX2IBG_RTRMADP_3_HEALTH-EBOLA-DRC.JPG",
-      "summary": "“We are ⁠urgently scaling up operations, but at the moment the epidemic is outpacing ​us,” WHO chief Mr. Tedros ‌said; he urged countries bordering the Democratic Republic of Congo — the epicentre of the outbreak — to take immediate action",
-      "explanation": "“We are ⁠urgently scaling up operations, but at the moment the epidemic is outpacing ​us,” WHO chief Mr. Tedros ‌said; he urged countries bordering the Democratic Republic of Congo — the epicentre of the outbreak — to take immediate action",
+      "date": "27 May 2026",
+      "image": "https://th-i.thgim.com/public/incoming/xp6gr5/article68871423.ece/alternates/LANDSCAPE_1200/2024-11-14T114046Z_337985468_RC2S4BAEVO8Q_RTRMADP_3_SRI-LANKA-ELECTION-DISSANAYAKE.JPG",
+      "summary": "National People’s Power wins 159 seats in 225-member House, securing two-thirds majority; the historic sweep also includes impressive wins in the north and east that are home to Tamils and Muslims",
+      "explanation": "National People’s Power wins 159 seats in 225-member House, securing two-thirds majority; the historic sweep also includes impressive wins in the north and east that are home to Tamils and Muslims",
       "exams": [
         "NDA",
         "CDS",
@@ -801,22 +538,16 @@
       "theme": "defence-strategy",
       "scope": "international",
       "trend": "medium",
-      "link": "https://www.thehindu.com/sci-tech/health/who-chief-says-suspected-ebola-deaths-at-220-and-epidemic-is-outpacing-us/article71021209.ece",
-      "pyqRef": {
-        "exam": "UPSC",
-        "year": 2025,
-        "paper": "GS3",
-        "evidence": "Official GS3 OCR includes a question on maritime and coastal security."
-      }
+      "link": "https://www.thehindu.com/news/international/srilanka-parliamentary-election-2024-results/article68869751.ece"
     },
     {
-      "id": "the-hindu-32-1779710900000",
-      "title": "Iran says progress made with U.S., but agreement not imminent",
+      "id": "the-hindu-39-1779873886000",
+      "title": "Panama ties should not be subject to third-party interference, says China",
       "source": "The Hindu",
-      "date": "25 May 2026",
-      "image": "https://th-i.thgim.com/public/incoming/2qd8dn/article71020849.ece/alternates/LANDSCAPE_1200/2026-05-25T001214Z_1716291880_RC24ELA440DF_RTRMADP_3_IRAN-CRISIS-OIL-SHIPPING.JPG",
-      "summary": "Diplomatic efforts between Iran and the United States appear to be advancing, but disputes over sanctions, maritime control and Iran’s nuclear programme continue to complicate negotiations",
-      "explanation": "Diplomatic efforts between Iran and the United States appear to be advancing, but disputes over sanctions, maritime control and Iran’s nuclear programme continue to complicate negotiations",
+      "date": "27 May 2026",
+      "image": "https://th-i.thgim.com/public/incoming/ala0ue/article71028585.ece/alternates/LANDSCAPE_1200/China_Russia_Putin_63772.jpg",
+      "summary": "China and Hong Kong authorities have said they oppose the ruling against CK Hutchison's port concessions, calling ‌it an ‘act of bad faith’",
+      "explanation": "China and Hong Kong authorities have said they oppose the ruling against CK Hutchison's port concessions, calling ‌it an ‘act of bad faith’",
       "exams": [
         "NDA",
         "CDS",
@@ -825,22 +556,16 @@
       "theme": "defence-strategy",
       "scope": "international",
       "trend": "medium",
-      "link": "https://www.thehindu.com/news/international/iran-says-progress-made-with-us-but-agreement-not-imminent/article71020752.ece",
-      "pyqRef": {
-        "exam": "UPSC",
-        "year": 2025,
-        "paper": "GS3",
-        "evidence": "Official GS3 OCR includes a question on maritime and coastal security."
-      }
+      "link": "https://www.thehindu.com/news/international/panama-ties-should-not-be-subject-to-third-party-interference-says-china/article71028493.ece"
     },
     {
-      "id": "the-hindu-33-1779709062000",
-      "title": "Iran says charging fees for 'navigational services' in Hormuz",
+      "id": "the-hindu-40-1779871766000",
+      "title": "China supports 'active mediation' by Pakistan between U.S.-Iran, says Foreign Minister Wang Yi",
       "source": "The Hindu",
-      "date": "25 May 2026",
-      "image": "https://th-i.thgim.com/public/incoming/1vnm8m/article71020911.ece/alternates/LANDSCAPE_1200/2026-05-25T110508Z_795913629_RC27GLAWNH9X_RTRMADP_3_IRAN-CRISIS-OMAN-HORMUZ.JPG",
-      "summary": "Iran’s remarks come amis growing international concern over Iran’s tightening control over maritime transit through the strategically vital Strait of Hormuz",
-      "explanation": "Iran’s remarks come amis growing international concern over Iran’s tightening control over maritime transit through the strategically vital Strait of Hormuz",
+      "date": "27 May 2026",
+      "image": "https://th-i.thgim.com/public/incoming/omjyrp/article71027932.ece/alternates/LANDSCAPE_1200/2026-05-26T181748Z_1714880221_RC26HLALVYKO_RTRMADP_3_UN-CHINA.JPG",
+      "summary": "Chinese Foreign Minister Wang Yi’s remarks came as U.S. Senator Lindsey Graham said in a post on X that Pakistan, as a ‘mediator’ between the U.S. and Iran, is more than ‘problematic’",
+      "explanation": "Chinese Foreign Minister Wang Yi’s remarks came as U.S. Senator Lindsey Graham said in a post on X that Pakistan, as a ‘mediator’ between the U.S. and Iran, is more than ‘problematic’",
       "exams": [
         "NDA",
         "CDS",
@@ -849,22 +574,16 @@
       "theme": "defence-strategy",
       "scope": "international",
       "trend": "medium",
-      "link": "https://www.thehindu.com/news/international/iran-says-charging-fees-for-navigational-services-in-hormuz/article71020873.ece",
-      "pyqRef": {
-        "exam": "UPSC",
-        "year": 2025,
-        "paper": "GS3",
-        "evidence": "Official GS3 OCR includes a question on maritime and coastal security."
-      }
+      "link": "https://www.thehindu.com/news/international/china-supports-active-mediation-by-pakistan-between-us-iran-says-foreign-minister-wang-yi/article71027879.ece"
     },
     {
-      "id": "the-hindu-34-1779708612000",
-      "title": "Ugandan health officials report new Ebola virus infections, bringing cases to 7",
+      "id": "the-hindu-42-1779865597000",
+      "title": "Donald Trump declares himself in ‘perfect’ health, as 80th birthday looms",
       "source": "The Hindu",
-      "date": "25 May 2026",
-      "image": "https://th-i.thgim.com/public/incoming/bgow7d/article71020922.ece/alternates/LANDSCAPE_1200/2026-05-25T083334Z_1363509190_RC2RFLAX2IBG_RTRMADP_3_HEALTH-EBOLA-DRC.JPG",
-      "summary": "Ugandan health officials report two new Ebola cases, raising total infections to seven amid an ongoing outbreak linked to Congo",
-      "explanation": "Ugandan health officials report two new Ebola cases, raising total infections to seven amid an ongoing outbreak linked to Congo",
+      "date": "27 May 2026",
+      "image": "https://th-i.thgim.com/public/incoming/ogygja/article71028110.ece/alternates/LANDSCAPE_1200/2026-05-25T173932Z_129807179_RC2HGLA02NQN_RTRMADP_3_USA-TRUMP.JPG",
+      "summary": "‘Everything checked out PERFECTLY,’ posted U.S. President Donald Trump as he drove back to the White House from the Walter Reed Military Hospital near Washington",
+      "explanation": "‘Everything checked out PERFECTLY,’ posted U.S. President Donald Trump as he drove back to the White House from the Walter Reed Military Hospital near Washington",
       "exams": [
         "NDA",
         "CDS",
@@ -873,22 +592,16 @@
       "theme": "defence-strategy",
       "scope": "international",
       "trend": "medium",
-      "link": "https://www.thehindu.com/news/international/ugandan-health-officials-report-new-ebola-virus-infections-bringing-cases-to-7/article71020855.ece",
-      "pyqRef": {
-        "exam": "UPSC",
-        "year": 2025,
-        "paper": "GS3",
-        "evidence": "Official GS3 OCR includes a question on maritime and coastal security."
-      }
+      "link": "https://www.thehindu.com/news/international/donald-trump-declares-himself-in-perfect-health-as-80th-birthday-looms/article71027895.ece"
     },
     {
-      "id": "the-hindu-44-1779683800000",
-      "title": "What is China’s Hainan FTP initiative? | Explained",
+      "id": "the-hindu-45-1779859956000",
+      "title": "Three dead in latest strike, Israel claims Hamas military chief was targetted",
       "source": "The Hindu",
-      "date": "25 May 2026",
-      "image": "https://th-i.thgim.com/public/news/national/j3w8df/article71018682.ece/alternates/LANDSCAPE_1200/China.jpg",
-      "summary": "How has Hainan’s FTP changed tariffs and trade rules? Why is the FTP attracting new enterprises? What benefits are businesses gaining? How are the duty-free system and visa-free policy boosting tourism and consumption? What strategic role does FTP play in China’s comparison with Hong Kong?",
-      "explanation": "How has Hainan’s FTP changed tariffs and trade rules? Why is the FTP attracting new enterprises? What benefits are businesses gaining? How are the duty-free system and visa-free policy boosting tourism and consumption? What strategic role does FTP play in China’s comparison with Hong Kong?",
+      "date": "27 May 2026",
+      "image": "https://th-i.thgim.com/public/incoming/kvnipn/article71027711.ece/alternates/LANDSCAPE_1200/2026-05-25T101310Z_1635574272_RC2U7KAZP111_RTRMADP_3_IRAN-CRISIS-ISRAEL-NETANYAHU.JPG",
+      "summary": "Airstrikes targeted the new leader of Hamas' military wing, Mohammed Odeh, says Israel Prime Minister Benjamin Netanyahu and Defence Minister Israel Katz in joint statement",
+      "explanation": "Airstrikes targeted the new leader of Hamas' military wing, Mohammed Odeh, says Israel Prime Minister Benjamin Netanyahu and Defence Minister Israel Katz in joint statement",
       "exams": [
         "NDA",
         "CDS",
@@ -897,22 +610,16 @@
       "theme": "defence-strategy",
       "scope": "international",
       "trend": "medium",
-      "link": "https://www.thehindu.com/news/international/what-is-chinas-hainan-ftp-initiative-explained/article71017676.ece",
-      "pyqRef": {
-        "exam": "UPSC",
-        "year": 2025,
-        "paper": "GS3",
-        "evidence": "Official GS3 OCR includes a question on maritime and coastal security."
-      }
+      "link": "https://www.thehindu.com/news/international/three-dead-in-latest-strike-israel-claims-hamas-military-chief-was-targetted/article71027701.ece"
     },
     {
-      "id": "the-hindu-47-1779675290000",
-      "title": "‘Tactical’ relations with other countries will not come at the ‘expense’ of India ties: Marco Rubio",
+      "id": "the-hindu-46-1779855422000",
+      "title": "Under U.S. pressure, Cuba appeals for international help",
       "source": "The Hindu",
-      "date": "25 May 2026",
-      "image": "https://th-i.thgim.com/public/incoming/gla6m/article71018915.ece/alternates/LANDSCAPE_1200/India_United_States_Rubio_24529.jpg",
-      "summary": "U.S. Secretary of State underlines strategic alliance with India, calls Iran the ‘world’s leading sponsor of terrorism’, says Tehran has been holding civilian vessels hostage; S. Jaishankar calls for ‘safe and unimpeded maritime commerce’",
-      "explanation": "U.S. Secretary of State underlines strategic alliance with India, calls Iran the ‘world’s leading sponsor of terrorism’, says Tehran has been holding civilian vessels hostage; S. Jaishankar calls for ‘safe and unimpeded maritime commerce’",
+      "date": "27 May 2026",
+      "image": "https://th-i.thgim.com/public/incoming/a2wi0l/article71027511.ece/alternates/LANDSCAPE_1200/CUBA%20INDIA%20DELHI%202026_16_05_26.jpg",
+      "summary": "U.S. President Donald Trump has openly mused about taking over communist Cuba, saying that after the U.S. attack in January that ousted Nicolas Maduro in Venezuela, Havana could be his next target for military action and big change",
+      "explanation": "U.S. President Donald Trump has openly mused about taking over communist Cuba, saying that after the U.S. attack in January that ousted Nicolas Maduro in Venezuela, Havana could be his next target for military action and big change",
       "exams": [
         "NDA",
         "CDS",
@@ -921,22 +628,16 @@
       "theme": "defence-strategy",
       "scope": "international",
       "trend": "medium",
-      "link": "https://www.thehindu.com/news/international/tactical-relations-with-other-countries-will-not-come-at-the-expense-of-india-ties-marco-rubio/article71018509.ece",
-      "pyqRef": {
-        "exam": "UPSC",
-        "year": 2025,
-        "paper": "GS3",
-        "evidence": "Official GS3 OCR includes a question on maritime and coastal security."
-      }
+      "link": "https://www.thehindu.com/news/international/under-us-pressure-cuba-appeals-for-international-help/article71027501.ece"
     },
     {
-      "id": "the-hindu-53-1779663956000",
-      "title": "Ebola cases in Congo’s east climb over 900: authorities",
+      "id": "the-hindu-47-1779854851000",
+      "title": "Canada imposes Ebola-related travel ban, Bahamas to increase screening",
       "source": "The Hindu",
-      "date": "25 May 2026",
-      "image": "https://th-i.thgim.com/public/incoming/mtx6cy/article71018639.ece/alternates/LANDSCAPE_1200/2026-05-24T100105Z_742255508_RC22FLA1RSYZ_RTRMADP_3_HEALTH-EBOLA-CONGO.JPG",
-      "summary": "A Health Ministry statement said 204 deaths had been recorded in three provinces of the vast central African country, from 867 suspected cases",
-      "explanation": "A Health Ministry statement said 204 deaths had been recorded in three provinces of the vast central African country, from 867 suspected cases",
+      "date": "27 May 2026",
+      "image": "https://th-i.thgim.com/public/incoming/hdlyjf/article71027479.ece/alternates/LANDSCAPE_1200/2026-05-26T183857Z_1810368346_RC2ZGLA38BK9_RTRMADP_3_HEALTH-EBOLA-CONGO.JPG",
+      "summary": "Canadian citizens, permanent residents and other foreign nationals who have been in affected areas in ⁠recent weeks and do not have symptoms will have to quarantine for 21 days from May 30, ‌according to a statement from Canada’s public health agency",
+      "explanation": "Canadian citizens, permanent residents and other foreign nationals who have been in affected areas in ⁠recent weeks and do not have symptoms will have to quarantine for 21 days from May 30, ‌according to a statement from Canada’s public health agency",
       "exams": [
         "NDA",
         "CDS",
@@ -945,22 +646,51 @@
       "theme": "defence-strategy",
       "scope": "international",
       "trend": "medium",
-      "link": "https://www.thehindu.com/news/international/ebola-toll-tops-200-other-african-countries-seen-at-risk/article71018576.ece",
-      "pyqRef": {
-        "exam": "UPSC",
-        "year": 2025,
-        "paper": "GS3",
-        "evidence": "Official GS3 OCR includes a question on maritime and coastal security."
-      }
+      "link": "https://www.thehindu.com/news/international/canada-imposes-ebola-related-travel-ban-bahamas-to-increase-screening/article71027475.ece"
     },
     {
-      "id": "the-indian-express-25-1779705656000",
-      "title": "Rotting cow carcasses dumped at Rajasthan&#8217;s Jaisalmer landfill spark outrage, contractor blacklisted",
+      "id": "the-hindu-49-1779848124000",
+      "title": "Gaza health officials say 7 killed in Israeli airstrikes",
+      "source": "The Hindu",
+      "date": "27 May 2026",
+      "image": "https://th-i.thgim.com/public/incoming/enq5w8/article71027517.ece/alternates/LANDSCAPE_1200/Israel_Palestinians_Gaza_15717.jpg",
+      "summary": "The Israeli military said its troops identified several “armed terrorists” operating in the area of the so-called “Yellow Line” that splits Gaza into two areas: one controlled by Israeli forces and the other by Hamas",
+      "explanation": "The Israeli military said its troops identified several “armed terrorists” operating in the area of the so-called “Yellow Line” that splits Gaza into two areas: one controlled by Israeli forces and the other by Hamas",
+      "exams": [
+        "NDA",
+        "CDS",
+        "UPSC"
+      ],
+      "theme": "defence-strategy",
+      "scope": "international",
+      "trend": "medium",
+      "link": "https://www.thehindu.com/news/international/gaza-health-officials-say-7-killed-in-israeli-airstrikes/article71026954.ece"
+    },
+    {
+      "id": "the-indian-express-25-1779887121000",
+      "title": "Air India Boeing 777 develops snag over Chinese airspace, turns back to Delhi after 8 hours in air",
       "source": "The Indian Express",
-      "date": "25 May 2026",
-      "image": "https://images.indianexpress.com/2026/05/paramita-IE-FILE-PHOTO-FIX-28.jpg",
-      "summary": "Rotting cow carcasses dumped at Rajasthan&#8217;s Jaisalmer landfill spark outrage, contractor blacklisted",
-      "explanation": "Rotting cow carcasses dumped at Rajasthan&#8217;s Jaisalmer landfill spark outrage, contractor blacklisted",
+      "date": "27 May 2026",
+      "image": "https://images.indianexpress.com/2026/05/Untitled-design-21-1.jpg",
+      "summary": "Air India Boeing 777 develops snag over Chinese airspace, turns back to Delhi after 8 hours in air",
+      "explanation": "Air India Boeing 777 develops snag over Chinese airspace, turns back to Delhi after 8 hours in air",
+      "exams": [
+        "UPSC",
+        "SSC"
+      ],
+      "theme": "science-policy",
+      "scope": "national",
+      "trend": "medium",
+      "link": "https://indianexpress.com/article/india/air-india-delhi-san-francisco-flight-returns-8-hours-china-10710858/"
+    },
+    {
+      "id": "the-indian-express-20-1779895325000",
+      "title": "Assam passes UCC Bill: Opposition flags tribal exemption, Sarma says law not needed ‘where no cancer’",
+      "source": "The Indian Express",
+      "date": "27 May 2026",
+      "image": "https://images.indianexpress.com/2026/05/himanta-biswa-sarma-facebook.jpg",
+      "summary": "Assam passes UCC Bill: Opposition flags tribal exemption, Sarma says law not needed ‘where no cancer’",
+      "explanation": "Assam passes UCC Bill: Opposition flags tribal exemption, Sarma says law not needed ‘where no cancer’",
       "exams": [
         "UPSC",
         "SSC",
@@ -969,16 +699,34 @@
       "theme": "social-governance",
       "scope": "national",
       "trend": "medium-low",
-      "link": "https://indianexpress.com/article/india/rajasthan-jaisalmer-cow-carcasses-landfill-municipal-council-contractor-blacklisted-10707028/"
+      "link": "https://indianexpress.com/article/india/assam-ucc-bill-passed-live-in-rules-st-exemption-debate-10711163/"
     },
     {
-      "id": "the-indian-express-31-1779694049000",
-      "title": "From polygamy and live-in relationships to inheritance: What Assam’s sweeping UCC Bill seeks to regulate",
+      "id": "the-indian-express-22-1779889735000",
+      "title": "Demolish all illegal structures within 15 km of International Border, Amit Shah says",
       "source": "The Indian Express",
-      "date": "25 May 2026",
-      "image": "https://images.indianexpress.com/2026/05/Photo-2026-05-25T125417.170.jpg",
-      "summary": "From polygamy and live-in relationships to inheritance: What Assam’s sweeping UCC Bill seeks to regulate",
-      "explanation": "From polygamy and live-in relationships to inheritance: What Assam’s sweeping UCC Bill seeks to regulate",
+      "date": "27 May 2026",
+      "image": "https://images.indianexpress.com/2026/05/border-file-photo-express.jpg",
+      "summary": "Demolish all illegal structures within 15 km of International Border, Amit Shah says",
+      "explanation": "Demolish all illegal structures within 15 km of International Border, Amit Shah says",
+      "exams": [
+        "UPSC",
+        "SSC",
+        "PCS"
+      ],
+      "theme": "social-governance",
+      "scope": "international",
+      "trend": "medium-low",
+      "link": "https://indianexpress.com/article/india/amit-shah-border-security-review-illegal-structures-indo-pak-border-10711026/"
+    },
+    {
+      "id": "the-indian-express-23-1779889705000",
+      "title": "‘Will act against officials who demolished your homes’: J&#038;K minister to Gujjar-Bakarwals on Eid",
+      "source": "The Indian Express",
+      "date": "27 May 2026",
+      "image": "https://images.indianexpress.com/2026/05/Javed-Rana_20260527134610.jpg",
+      "summary": "‘Will act against officials who demolished your homes’: J&#038;K minister to Gujjar-Bakarwals on Eid",
+      "explanation": "‘Will act against officials who demolished your homes’: J&#038;K minister to Gujjar-Bakarwals on Eid",
       "exams": [
         "UPSC",
         "SSC",
@@ -987,16 +735,34 @@
       "theme": "social-governance",
       "scope": "national",
       "trend": "medium-low",
-      "link": "https://indianexpress.com/article/india/in-assams-ucc-bill-live-in-rules-mandatory-marriage-registration-polygamy-ban-10706726/"
+      "link": "https://indianexpress.com/article/india/jammu-raika-bandi-forest-demolition-javed-rana-gujjar-bakarwal-fra-10711023/"
     },
     {
-      "id": "the-hindu-56-1779632555000",
-      "title": "Turkish riot police enter opposition headquarters to evict ousted leadership",
+      "id": "the-indian-express-24-1779888792000",
+      "title": "Cabinet okays Rs 25,530 crore outlay to extend, modernise SARTHAK-PDS scheme till 2031",
+      "source": "The Indian Express",
+      "date": "27 May 2026",
+      "image": "https://images.indianexpress.com/2026/05/paramita-IE-FILE-PHOTO-FIX-9-2.jpg",
+      "summary": "Cabinet okays Rs 25,530 crore outlay to extend, modernise SARTHAK-PDS scheme till 2031",
+      "explanation": "Cabinet okays Rs 25,530 crore outlay to extend, modernise SARTHAK-PDS scheme till 2031",
+      "exams": [
+        "UPSC",
+        "SSC",
+        "PCS"
+      ],
+      "theme": "social-governance",
+      "scope": "national",
+      "trend": "medium-low",
+      "link": "https://indianexpress.com/article/india/sarthak-pds-cabinet-approval-food-distribution-reforms-india-10710812/"
+    },
+    {
+      "id": "the-hindu-51-1779816592000",
+      "title": "China, Pakistan agree to 'unswervingly safeguard' bilateral ties",
       "source": "The Hindu",
-      "date": "24 May 2026",
-      "image": "https://th-i.thgim.com/public/incoming/1xddhg/article71018243.ece/alternates/LANDSCAPE_1200/2026-05-24T125345Z_1798269715_RC2NFLA9IQOV_RTRMADP_3_TURKEY-OPPOSITION.JPG",
-      "summary": "Clouds of tear gas billowed within the Republican People’s Party (CHP) building while those inside shouted and threw objects at the entrance as police ‌broke through a makeshift barricade",
-      "explanation": "Clouds of tear gas billowed within the Republican People’s Party (CHP) building while those inside shouted and threw objects at the entrance as police ‌broke through a makeshift barricade",
+      "date": "26 May 2026",
+      "image": "https://th-i.thgim.com/public/incoming/ey8cbg/article71026568.ece/alternates/LANDSCAPE_1200/AP05_25_2026_000557A.jpg",
+      "summary": "Statement was issued at the end of Prime Minister Shehbaz Sharif's official visit to China from May 23-26 at invitation of Premier Li Qiang. During his visit, two sides signed a number of cooperation documents in various fields",
+      "explanation": "Statement was issued at the end of Prime Minister Shehbaz Sharif's official visit to China from May 23-26 at invitation of Premier Li Qiang. During his visit, two sides signed a number of cooperation documents in various fields",
       "exams": [
         "NDA",
         "CDS",
@@ -1005,22 +771,16 @@
       "theme": "defence-strategy",
       "scope": "international",
       "trend": "medium",
-      "link": "https://www.thehindu.com/news/international/turkish-riot-police-enter-opposition-headquarters-to-evict-ousted-leadership/article71018011.ece",
-      "pyqRef": {
-        "exam": "UPSC",
-        "year": 2025,
-        "paper": "GS3",
-        "evidence": "Official GS3 OCR includes a question on maritime and coastal security."
-      }
+      "link": "https://www.thehindu.com/news/international/china-pakistan-agree-to-unswervingly-safeguard-bilateral-ties/article71026538.ece"
     },
     {
-      "id": "the-hindu-58-1779621306000",
-      "title": "‘Every country in world has stupid people’: Rubio on racist remarks against Indians in U.S.",
+      "id": "the-hindu-53-1779815345000",
+      "title": "Iran accuses U.S. of breaking truce after new strikes",
       "source": "The Hindu",
-      "date": "24 May 2026",
-      "image": "https://th-i.thgim.com/public/incoming/bv4csf/article71017560.ece/alternates/LANDSCAPE_1200/WhatsApp%20Image%202026-05-24%20at%2013.59.52.jpeg",
-      "summary": "The U.S. Secretary of State also stated that the U.S. is modernising its migration system and changes in immigration policy were “not India-specific”",
-      "explanation": "The U.S. Secretary of State also stated that the U.S. is modernising its migration system and changes in immigration policy were “not India-specific”",
+      "date": "26 May 2026",
+      "image": "https://th-i.thgim.com/public/incoming/7vtr2k/article71026517.ece/alternates/LANDSCAPE_1200/2026-05-25T080733Z_2082015877_RC26GLAJ8QCN_RTRMADP_3_IRAN-CRISIS.JPG",
+      "summary": "Iranian state media reported overnight blasts in the southern port city of Bandar Abbas, near the Strait of Hormuz, and the country’s Revolutionary Guards said its forces had downed a U.S. drone entering its airspace and had fired at an F-35 fighter jet",
+      "explanation": "Iranian state media reported overnight blasts in the southern port city of Bandar Abbas, near the Strait of Hormuz, and the country’s Revolutionary Guards said its forces had downed a U.S. drone entering its airspace and had fired at an F-35 fighter jet",
       "exams": [
         "NDA",
         "CDS",
@@ -1029,13 +789,97 @@
       "theme": "defence-strategy",
       "scope": "international",
       "trend": "medium",
-      "link": "https://www.thehindu.com/news/national/rubio-on-racist-remarks-against-indians-in-us/article71017554.ece",
-      "pyqRef": {
-        "exam": "UPSC",
-        "year": 2025,
-        "paper": "GS3",
-        "evidence": "Official GS3 OCR includes a question on maritime and coastal security."
-      }
+      "link": "https://www.thehindu.com/news/international/iran-accuses-us-of-breaking-truce-after-new-strikes/article71026498.ece"
+    },
+    {
+      "id": "the-hindu-55-1779810197000",
+      "title": "Watch: India, U.S. strike Critical Minerals deal amid China concerns | Above the Fold | 26.05.2026",
+      "source": "The Hindu",
+      "date": "26 May 2026",
+      "image": "https://th-i.thgim.com/public/incoming/yjmwb0/article71026128.ece/alternates/LANDSCAPE_1200/WhatsApp%20Image%202026-05-26%20at%2020.41.56.jpeg",
+      "summary": "From the QUAD meeting in New Delhi and India-U.S. critical minerals deal to fresh AIADMK defections to the TVK and rising CNG prices - here are the top stories of the day.",
+      "explanation": "From the QUAD meeting in New Delhi and India-U.S. critical minerals deal to fresh AIADMK defections to the TVK and rising CNG prices - here are the top stories of the day.",
+      "exams": [
+        "NDA",
+        "CDS",
+        "UPSC"
+      ],
+      "theme": "defence-strategy",
+      "scope": "international",
+      "trend": "medium",
+      "link": "https://www.thehindu.com/videos/watch-india-us-strike-critical-minerals-deal-amid-china-concerns-above-the-fold-26052026/article71026181.ece"
+    },
+    {
+      "id": "the-hindu-56-1779800313000",
+      "title": "Iran media says negotiators seek $24 billion asset release in U.S. deal",
+      "source": "The Hindu",
+      "date": "26 May 2026",
+      "image": "https://th-i.thgim.com/public/incoming/zh5uc/article71024959.ece/alternates/LANDSCAPE_1200/2026-05-16T191938Z_1230943560_RC2FALAKY087_RTRMADP_3_IRAN-CRISIS-USA-PROTEST.JPG",
+      "summary": "Iran's frozen assets are to be released which are estimated at $24 billion in accordance with the 14-point memorandum of understanding",
+      "explanation": "Iran's frozen assets are to be released which are estimated at $24 billion in accordance with the 14-point memorandum of understanding",
+      "exams": [
+        "NDA",
+        "CDS",
+        "UPSC"
+      ],
+      "theme": "defence-strategy",
+      "scope": "international",
+      "trend": "medium",
+      "link": "https://www.thehindu.com/news/international/iran-media-says-negotiators-seek-24-billion-asset-release-in-us-deal/article71024907.ece"
+    },
+    {
+      "id": "the-hindu-57-1779800194000",
+      "title": "Exceptionally early heatwave shatters records, brings deaths in Europe",
+      "source": "The Hindu",
+      "date": "26 May 2026",
+      "image": "https://th-i.thgim.com/public/incoming/t377s/article71024932.ece/alternates/LANDSCAPE_1200/2026-05-25T143413Z_320652821_RC2EGLA6XZM4_RTRMADP_3_EUROPE-WEATHER-BRITAIN-HEATWAVE.JPG",
+      "summary": "An early spring heatwave sweeping across Europe has triggered health alerts and fatalities, highlighting the growing risks posed by extreme weather events",
+      "explanation": "An early spring heatwave sweeping across Europe has triggered health alerts and fatalities, highlighting the growing risks posed by extreme weather events",
+      "exams": [
+        "NDA",
+        "CDS",
+        "UPSC"
+      ],
+      "theme": "defence-strategy",
+      "scope": "international",
+      "trend": "medium",
+      "link": "https://www.thehindu.com/news/international/exceptionally-early-heatwave-shatters-records-brings-deaths-in-europe/article71024872.ece"
+    },
+    {
+      "id": "the-hindu-58-1779800024000",
+      "title": "OpenAI's Altman says AI unlikely to lead to 'jobs apocalypse'",
+      "source": "The Hindu",
+      "date": "26 May 2026",
+      "image": "https://th-i.thgim.com/public/incoming/4j3nx7/article71024930.ece/alternates/LANDSCAPE_1200/2026-05-26T073711Z_1570248417_RC2UMCA6GNXA_RTRMADP_3_AUSTRALIA-OPENAI.JPG",
+      "summary": "A growing number of global companies, including HSBC, Amazon, Standard Chartered and CBA have announced some ⁠jobs within their companies were being replaced by AI",
+      "explanation": "A growing number of global companies, including HSBC, Amazon, Standard Chartered and CBA have announced some ⁠jobs within their companies were being replaced by AI",
+      "exams": [
+        "NDA",
+        "CDS",
+        "UPSC"
+      ],
+      "theme": "defence-strategy",
+      "scope": "international",
+      "trend": "medium",
+      "link": "https://www.thehindu.com/news/international/openais-altman-says-ai-unlikely-to-lead-to-jobs-apocalypse/article71024867.ece"
+    },
+    {
+      "id": "the-hindu-59-1779799936000",
+      "title": "Trump, nearing eighty, to have annual physical amid scrutiny of recent ailments",
+      "source": "The Hindu",
+      "date": "26 May 2026",
+      "image": "https://th-i.thgim.com/public/incoming/qdx68z/article71024741.ece/alternates/LANDSCAPE_1200/2026-05-25T174404Z_1653865838_RC2HGLA3HEQ6_RTRMADP_3_USA-TRUMP.JPG",
+      "summary": "Following a year ​of public attention on apparently minor health issues like blotchy ‌neck rash, swollen ankles and a bruised hand; U.S. President Donald Trump to undergo his routine annual physical",
+      "explanation": "Following a year ​of public attention on apparently minor health issues like blotchy ‌neck rash, swollen ankles and a bruised hand; U.S. President Donald Trump to undergo his routine annual physical",
+      "exams": [
+        "NDA",
+        "CDS",
+        "UPSC"
+      ],
+      "theme": "defence-strategy",
+      "scope": "international",
+      "trend": "medium",
+      "link": "https://www.thehindu.com/news/international/trump-nearing-eighty-to-have-annual-physical-amid-scrutiny-of-recent-ailments/article71024728.ece"
     },
     {
       "id": "seed-pib-disaster",
@@ -1091,7 +935,7 @@
       "title": "India-France maritime logistics exercise expands Indo-Pacific focus",
       "source": "The Indian Express",
       "date": "26 Apr 2026",
-      "image": "https://images.unsplash.com/photo-1518546305927-5a555bb7020d?auto=format&fit=crop&w=900&q=82",
+      "image": "https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=900&q=82",
       "summary": "The exercise improves naval interoperability, supply coordination and maritime domain awareness.",
       "explanation": "Maritime exercises show how logistics and interoperability support India's wider Indo-Pacific strategy.",
       "exams": [
@@ -1101,13 +945,7 @@
       ],
       "theme": "defence-strategy",
       "trend": "medium",
-      "link": "https://indianexpress.com/",
-      "pyqRef": {
-        "exam": "UPSC",
-        "year": 2025,
-        "paper": "GS3",
-        "evidence": "Official GS3 OCR includes a question on maritime and coastal security."
-      }
+      "link": "https://indianexpress.com/"
     }
   ],
   "monthlyArchives": {

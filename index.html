@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>daily current affairs</title>
+  <title>ExamYatra AI</title>
   <meta name="description" content="AI-powered current affairs prep for UPSC, SSC, NDA, CDS, and PCS aspirants.">
   <link rel="preconnect" href="https://api.fontshare.com">
   <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
@@ -20,13 +20,13 @@
       <a class="brand" href="index.html">
         <span class="brand-mark"></span>
         <span>
-          <strong>daily smart current affairs</strong>
-          <small>Exam focused newsroom</small>
+          <strong>ExamYatra AI</strong>
+          <small>AI-powered exam preparation</small>
         </span>
       </a>
       <div class="nav-actions">
         <a class="primary-btn" data-guest href="login.html">Login (soon)</a>
-        <a class="avatar hidden" data-user href="dashboard.html"><span data-avatar>DC</span></a>
+        <a class="avatar hidden" data-user href="dashboard.html"><span data-avatar>EY</span></a>
       </div>
     </div>
   </header>
@@ -69,7 +69,7 @@
           <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80" alt="Students studying current affairs with laptops and notes">
           <figcaption>
             <span>Daily exam desk</span>
-            <strong>Daily Smart Current Affairs</strong>
+            <strong>ExamYatra AI</strong>
           </figcaption>
         </figure>
       </div>
@@ -105,8 +105,8 @@
                 <p class="exam-point-copy">Crisp points designed for exam recall.</p>
               </div>
               <div class="exam-point exam-entrance-item" data-exam-step="6">
-                <p class="exam-point-title">• 🗣️ AI Teacher explanation</p>
-                <p class="exam-point-copy">Understand topics in simple Hindi + English.</p>
+                <p class="exam-point-title">• 🌐 Quick Brief in your language</p>
+                <p class="exam-point-copy">Read each article in the language you select.</p>
               </div>
               <div class="exam-point exam-entrance-item" data-exam-step="7">
                 <p class="exam-point-title">📚 Syllabus tagging (UPSC / SSC / etc.)</p>
@@ -155,57 +155,32 @@
 
   <div class="modal hidden" id="explain-modal">
     <div class="modal-backdrop" data-close-modal></div>
-    <div class="modal-layout">
-      <article class="modal-card">
-        <button class="modal-close" data-close-modal>&times;</button>
-        <p class="eyebrow" id="modal-source"></p>
+    <article class="modal-card">
+      <button class="modal-close" data-close-modal>&times;</button>
+      <p class="eyebrow" id="modal-source"></p>
+      <div class="modal-brief-meta">
         <h3 id="modal-title"></h3>
-        <p id="modal-summary" class="muted"></p>
-        <div class="stack">
-          <section>
-            <h4>Simple explanation</h4>
-            <p id="modal-explain" class="teacher-script"></p>
-          </section>
-          <section>
-            <h4>AI Summary Points</h4>
-            <ul id="modal-points" class="summary-points"></ul>
-          </section>
-          <section>
-            <h4>AI Exam Prediction</h4>
-            <div id="modal-probability-badge" class="probability-badge"></div>
-            <p id="modal-probability-reason" class="probability-reason"></p>
-            <div id="modal-exam-tags" class="glow-tags"></div>
-            <p id="modal-angle" class="prediction-highlight"></p>
-          </section>
-        </div>
-      </article>
-      <aside class="teacher-panel">
-        <div class="teacher-head">
-          <div>
-            <h4>AI Teacher Controls</h4>
-            <p class="teacher-subcopy">Choose language, voice, then start listening.</p>
-          </div>
-        </div>
-        <div class="teacher-controls teacher-controls-side">
-          <div class="teacher-group">
-            <span class="teacher-label">Language</span>
-            <div class="teacher-toggle teacher-toggle-lang" id="teacher-language-toggle">
-              <button type="button" class="teacher-chip active" data-teacher-language="english">English</button>
-              <button type="button" class="teacher-chip" data-teacher-language="hindi">Hindi</button>
-              <button type="button" class="teacher-chip" data-teacher-language="hinglish">Hinglish</button>
-            </div>
-          </div>
-          <div class="teacher-group">
-            <span class="teacher-label">Voice</span>
-            <div class="teacher-toggle" id="teacher-mode-toggle">
-              <button type="button" class="teacher-chip active" data-teacher-voice="male">Male</button>
-              <button type="button" class="teacher-chip" data-teacher-voice="female">Female</button>
-            </div>
-          </div>
-          <button type="button" class="teacher-play teacher-play-wide" id="teacher-play-btn">Start listening</button>
-        </div>
-      </aside>
-    </div>
+        <span class="date-chip" id="modal-language-badge">English</span>
+      </div>
+      <p id="modal-summary" class="muted"></p>
+      <div class="stack">
+        <section>
+          <h4 id="modal-explain-heading">Simple explanation</h4>
+          <p id="modal-explain" class="teacher-script"></p>
+        </section>
+        <section>
+          <h4 id="modal-points-heading">AI Summary Points</h4>
+          <ul id="modal-points" class="summary-points"></ul>
+        </section>
+        <section>
+          <h4 id="modal-prediction-heading">AI Exam Prediction</h4>
+          <div id="modal-probability-badge" class="probability-badge"></div>
+          <p id="modal-probability-reason" class="probability-reason"></p>
+          <div id="modal-exam-tags" class="glow-tags"></div>
+          <p id="modal-angle" class="prediction-highlight"></p>
+        </section>
+      </div>
+    </article>
   </div>
 
   <script src="assets/site.js"></script>

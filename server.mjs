@@ -145,6 +145,8 @@ function articleFallback(article) {
     "Revise the governing idea, the policy shift, and why the issue matters in administration or public affairs."
   ];
   return {
+    title: article.title,
+    summary: article.summary,
     explanation: article.explanation,
     summaryPoints,
     predictionScore: score,
@@ -153,6 +155,11 @@ function articleFallback(article) {
     reason: reasonMap[article.theme] || "Reason: Topic has visible relevance in recurring PYQ-linked themes.",
     predictionText: `AI prediction: (based on topic relevance, current trend analysis, and PYQ pattern reference) ${probability.label}. This topic has visible exam value because it connects directly with recurring current-affairs themes.`,
     suggestedExams: Array.isArray(article.exams) ? article.exams : [],
+    headingExplanation: "Simple explanation",
+    headingPoints: "AI Summary Points",
+    headingPrediction: "AI Exam Prediction",
+    examsLabel: "For Which Exams",
+    languageLabel: "English",
     teacherScriptMaleEnglish: buildTeacherFallback(article, summaryPoints, probability.label, "english"),
     teacherScriptMaleHindi: buildTeacherFallback(article, summaryPoints, probability.label, "hindi"),
     teacherScriptMaleHinglish: buildTeacherFallback(article, summaryPoints, probability.label, "hinglish"),
@@ -160,6 +167,104 @@ function articleFallback(article) {
     teacherScriptFemaleHindi: buildTeacherFallback(article, summaryPoints, probability.label, "hindi"),
     teacherScriptFemaleHinglish: buildTeacherFallback(article, summaryPoints, probability.label, "hinglish")
   };
+}
+
+async function localizeBrief(article, baseResult, targetLanguage) {
+  const normalizedLanguage = String(targetLanguage || "English").trim() || "English";
+  if (/^english$/i.test(normalizedLanguage)) {
+    return {
+      ...baseResult,
+      title: article.title,
+      summary: article.summary,
+      headingExplanation: "Simple explanation",
+      headingPoints: "AI Summary Points",
+      headingPrediction: "AI Exam Prediction",
+      examsLabel: "For Which Exams",
+      languageLabel: "English"
+    };
+  }
+
+  if (!geminiApiKey) {
+    return {
+      ...baseResult,
+      title: article.title,
+      summary: article.summary,
+      languageLabel: normalizedLanguage
+    };
+  }
+
+  const cacheKey = `translate:${normalizedLanguage}:${JSON.stringify({
+    title: article.title,
+    source: article.source,
+    date: article.date,
+    summary: article.summary
+  })}`;
+  if (aiCache.has(cacheKey)) {
+    return aiCache.get(cacheKey);
+  }
+
+  const prompt = [
+    "You are translating an exam-oriented current affairs quick brief for Indian aspirants.",
+    `Translate everything into ${normalizedLanguage}.`,
+    "Return strict JSON only with keys:",
+    "title, summary, explanation, summaryPoints, predictionText, reason, headingExplanation, headingPoints, headingPrediction, examsLabel, languageLabel.",
+    "Rules:",
+    "- Keep the meaning exact and easy to understand.",
+    "- Preserve exam names, institutions, dates, abbreviations, and proper nouns accurately.",
+    "- summaryPoints must remain an array of concise exam-useful bullet strings.",
+    "- Use natural student-friendly wording, not literal robotic translation.",
+    "",
+    `Original title: ${article.title}`,
+    `Original summary: ${article.summary}`,
+    `Original explanation: ${baseResult.explanation}`,
+    `Original summary points: ${JSON.stringify(baseResult.summaryPoints || [])}`,
+    `Original prediction text: ${baseResult.predictionText}`,
+    `Original reason: ${baseResult.reason}`,
+    "Section labels to translate:",
+    "Simple explanation",
+    "AI Summary Points",
+    "AI Exam Prediction",
+    "For Which Exams"
+  ].join("\n");
+
+  const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(geminiModel)}:generateContent?key=${encodeURIComponent(geminiApiKey)}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      generationConfig: {
+        responseMimeType: "application/json",
+        temperature: 0.2
+      },
+      contents: [{ role: "user", parts: [{ text: prompt }] }]
+    })
+  });
+
+  if (!response.ok) {
+    const text = await response.text();
+    throw new Error(`Gemini translation failed: ${response.status} ${text}`);
+  }
+
+  const payload = await response.json();
+  const text = payload?.candidates?.[0]?.content?.parts?.map((part) => part.text || "").join("").trim();
+  const parsed = JSON.parse(text || "{}");
+  const localized = {
+    ...baseResult,
+    title: String(parsed.title || article.title || ""),
+    summary: String(parsed.summary || article.summary || ""),
+    explanation: String(parsed.explanation || baseResult.explanation || ""),
+    summaryPoints: Array.isArray(parsed.summaryPoints) && parsed.summaryPoints.length
+      ? parsed.summaryPoints.map((item) => String(item)).slice(0, 7)
+      : baseResult.summaryPoints,
+    predictionText: String(parsed.predictionText || baseResult.predictionText || ""),
+    reason: String(parsed.reason || baseResult.reason || ""),
+    headingExplanation: String(parsed.headingExplanation || "Simple explanation"),
+    headingPoints: String(parsed.headingPoints || "AI Summary Points"),
+    headingPrediction: String(parsed.headingPrediction || "AI Exam Prediction"),
+    examsLabel: String(parsed.examsLabel || "For Which Exams"),
+    languageLabel: String(parsed.languageLabel || normalizedLanguage)
+  };
+  aiCache.set(cacheKey, localized);
+  return localized;
 }
 
 function buildTeacherFallback(article, summaryPoints, probabilityLabel, language) {
@@ -441,11 +546,19 @@ async function handleApi(req, res) {
         json(res, 400, { error: "Article payload is required." });
         return;
       }
+      const targetLanguage = String(payload.language || "English").trim() || "English";
       try {
-        const result = await geminiInsights(article);
+        const baseResult = await geminiInsights(article);
+        const result = await localizeBrief(article, baseResult, targetLanguage);
         json(res, 200, { ok: true, result, model: geminiModel, fallback: false });
       } catch (error) {
-        const result = articleFallback(article);
+        const fallbackBase = articleFallback(article);
+        const result = await localizeBrief(article, fallbackBase, targetLanguage).catch(() => ({
+          ...fallbackBase,
+          title: article.title,
+          summary: article.summary,
+          languageLabel: targetLanguage
+        }));
         json(res, 200, {
           ok: true,
           result,

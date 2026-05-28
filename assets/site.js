@@ -100,7 +100,7 @@ const PREDICTIONS = [
 const AUTH_KEY = "daily-current-affairs-user";
 const AUTH_USERS_KEY = "daily-current-affairs-users";
 const DEMO_USER = {
-  id: "demo@dca.in",
+  id: "demo@examyatra.ai",
   password: "demo123",
   name: "Demo Aspirant",
   exam: "UPSC"
@@ -112,20 +112,38 @@ const state = {
   limit: 10,
   monthKey: ""
 };
+const UPSC_LANGUAGE_OPTIONS = [
+  "English",
+  "Hindi",
+  "Assamese",
+  "Bengali",
+  "Bodo",
+  "Dogri",
+  "Gujarati",
+  "Kannada",
+  "Kashmiri",
+  "Konkani",
+  "Maithili",
+  "Malayalam",
+  "Manipuri",
+  "Marathi",
+  "Nepali",
+  "Odia",
+  "Punjabi",
+  "Sanskrit",
+  "Santhali",
+  "Sindhi",
+  "Tamil",
+  "Telugu",
+  "Urdu"
+];
 const AI_API_BASE = window.location.protocol === "file:" ? "http://127.0.0.1:8010" : "";
 const AI_CACHE_KEY = "daily-current-affairs-ai-cache-v2";
 const NEWS_API_BASE = AI_API_BASE;
 let liveArticles = null;
-let teacherVoiceMode = "male";
-let teacherLanguageMode = "hinglish";
-let activeTeacherScripts = {
-  male: { english: "", hindi: "", hinglish: "" },
-  female: { english: "", hindi: "", hinglish: "" }
-};
-let activeTeacherAudio = null;
-let availableSpeechVoices = [];
 let newsRequestToken = 0;
 let availableArchiveMonths = [];
+let preferredBriefLanguage = "English";
 
 function articlePool() {
   return Array.isArray(liveArticles) && liveArticles.length ? liveArticles : DATA;
@@ -231,122 +249,28 @@ function writeAiCache(cache) {
   localStorage.setItem(AI_CACHE_KEY, JSON.stringify(cache));
 }
 
-function stopTeacherAudio() {
-  if (activeTeacherAudio) {
-    activeTeacherAudio.pause();
-    activeTeacherAudio.src = "";
-    activeTeacherAudio = null;
-  }
-  if ("speechSynthesis" in window) {
-    window.speechSynthesis.cancel();
-  }
-  const playButton = qs("#teacher-play-btn");
-  if (playButton) {
-    playButton.textContent = "Start listening";
-    playButton.dataset.state = "idle";
-  }
+function ensureLanguageDatalist() {
+  if (qs("#upsc-language-options")) return;
+  const datalist = document.createElement("datalist");
+  datalist.id = "upsc-language-options";
+  datalist.innerHTML = UPSC_LANGUAGE_OPTIONS
+    .map((language) => `<option value="${escapeHtml(language)}"></option>`)
+    .join("");
+  document.body.appendChild(datalist);
 }
 
-function loadSpeechVoices() {
-  if (!("speechSynthesis" in window)) return;
-  availableSpeechVoices = window.speechSynthesis.getVoices().filter(Boolean);
+function normalizeBriefLanguage(value) {
+  const normalized = String(value || "").trim().toLowerCase();
+  const matched = UPSC_LANGUAGE_OPTIONS.find((language) => language.toLowerCase() === normalized);
+  return matched || "English";
 }
 
-function voiceCandidatesForLanguage() {
-  const patterns = teacherLanguageMode === "hindi"
-    ? [/^hi\b/i, /hindi/i, /india/i]
-    : teacherLanguageMode === "english"
-      ? [/^en\b/i, /english/i, /india/i]
-      : [/^hi\b/i, /^en\b/i, /hindi/i, /english/i, /india/i];
-  const matched = availableSpeechVoices.filter((voice) => {
-    const label = `${voice.name} ${voice.lang}`;
-    return patterns.some((pattern) => pattern.test(label));
+function syncBriefLanguageInputs(nextLanguage = preferredBriefLanguage) {
+  const normalized = normalizeBriefLanguage(nextLanguage);
+  preferredBriefLanguage = normalized;
+  qsa("[data-brief-language]").forEach((input) => {
+    input.value = normalized;
   });
-  return matched.length ? matched : availableSpeechVoices;
-}
-
-function pickSpeechVoice(mode) {
-  const candidates = voiceCandidatesForLanguage();
-  const femaleHints = ["female", "woman", "samantha", "victoria", "karen", "zira", "veena", "priya", "susan", "aria", "ava", "siri"];
-  const maleHints = ["male", "man", "daniel", "alex", "aarav", "arjun", "raj", "david", "rishi", "google uk english male"];
-  const hints = mode === "female" ? femaleHints : maleHints;
-  const exact = candidates.find((voice) => hints.some((hint) => `${voice.name} ${voice.lang}`.toLowerCase().includes(hint)));
-  if (exact) {
-    return exact;
-  }
-  const fallbackByIndex = mode === "female"
-    ? candidates.find((voice, index) => index % 2 === 0)
-    : candidates.find((voice, index) => index % 2 === 1);
-  return fallbackByIndex || candidates[0] || null;
-}
-
-function teacherScriptForMode() {
-  const profile = teacherVoiceMode === "female" ? activeTeacherScripts.female : activeTeacherScripts.male;
-  return profile?.[teacherLanguageMode] || profile?.hinglish || "";
-}
-
-function renderTeacherScript() {
-  qsa("[data-teacher-voice]").forEach((button) => {
-    button.classList.toggle("active", button.dataset.teacherVoice === teacherVoiceMode);
-  });
-  qsa("[data-teacher-language]").forEach((button) => {
-    button.classList.toggle("active", button.dataset.teacherLanguage === teacherLanguageMode);
-  });
-  stopTeacherAudio();
-}
-
-async function playTeacherAudio() {
-  const script = teacherScriptForMode();
-  const playButton = qs("#teacher-play-btn");
-  if (!script) {
-    if (playButton) {
-      playButton.textContent = "Voice unavailable";
-    }
-    return;
-  }
-  if (playButton?.dataset.state === "playing") {
-    stopTeacherAudio();
-    return;
-  }
-  stopTeacherAudio();
-  if (playButton) {
-    playButton.textContent = "Loading voice...";
-    playButton.dataset.state = "loading";
-  }
-  if (!("speechSynthesis" in window)) {
-    if (playButton) {
-      playButton.textContent = "Voice unavailable";
-      playButton.dataset.state = "idle";
-    }
-    return;
-  }
-  loadSpeechVoices();
-  const selectedVoice = pickSpeechVoice(teacherVoiceMode);
-  if (!selectedVoice) {
-    if (playButton) {
-      playButton.textContent = "Voice unavailable";
-      playButton.dataset.state = "idle";
-    }
-    return;
-  }
-  const utterance = new SpeechSynthesisUtterance(script);
-  utterance.voice = selectedVoice;
-  utterance.lang = selectedVoice.lang || (teacherLanguageMode === "english" ? "en-IN" : "hi-IN");
-  utterance.rate = teacherLanguageMode === "english" ? 0.96 : 0.92;
-  utterance.pitch = teacherVoiceMode === "female" ? 1.08 : 0.94;
-  utterance.volume = 1;
-  utterance.onend = () => stopTeacherAudio();
-  utterance.onerror = () => {
-    if (playButton) {
-      playButton.textContent = "Voice unavailable";
-      playButton.dataset.state = "idle";
-    }
-  };
-  if (playButton) {
-    playButton.textContent = "Stop voice";
-    playButton.dataset.state = "playing";
-  }
-  window.speechSynthesis.speak(utterance);
 }
 
 function syncAuthUi() {
@@ -519,18 +443,36 @@ function renderNews() {
           <strong class="primary-exam-line">${escapeHtml(primaryExamLabel(item))}</strong>
           <div class="tab-row">
             <button class="outline-btn" data-summarize="${escapeHtml(item.id)}">Quick Brief</button>
-            <button class="outline-btn" data-explain="${escapeHtml(item.id)}">🗣️ Ai teacher</button>
+            <input
+              class="brief-language-search"
+              list="upsc-language-options"
+              data-brief-language="${escapeHtml(item.id)}"
+              value="${escapeHtml(preferredBriefLanguage)}"
+              placeholder="Search language"
+              aria-label="Select quick brief language"
+            >
           </div>
         </div>
       </div>
     </article>
   `).join("");
 
-  qsa("[data-explain]").forEach((button) => {
-    button.addEventListener("click", () => openModal(button.dataset.explain));
-  });
   qsa("[data-summarize]").forEach((button) => {
-    button.addEventListener("click", () => openModal(button.dataset.summarize, "summary"));
+    button.addEventListener("click", () => {
+      const card = button.closest(".news-card");
+      const input = qs("[data-brief-language]", card || document);
+      const selectedLanguage = normalizeBriefLanguage(input?.value || preferredBriefLanguage);
+      syncBriefLanguageInputs(selectedLanguage);
+      openModal(button.dataset.summarize, "summary", selectedLanguage);
+    });
+  });
+  qsa("[data-brief-language]").forEach((input) => {
+    input.addEventListener("change", () => {
+      syncBriefLanguageInputs(input.value);
+    });
+    input.addEventListener("blur", () => {
+      input.value = normalizeBriefLanguage(input.value);
+    });
   });
   bindFeedEntrance();
 }
@@ -641,8 +583,9 @@ function summaryPoints(item) {
   ];
 }
 
-async function fetchAiInsights(item) {
-  const cacheKey = `${item.id}:${item.date}`;
+async function fetchAiInsights(item, language = "English") {
+  const normalizedLanguage = normalizeBriefLanguage(language);
+  const cacheKey = `${item.id}:${item.date}:${normalizedLanguage}`;
   const localCache = readAiCache();
   if (localCache[cacheKey]) {
     return localCache[cacheKey];
@@ -651,7 +594,7 @@ async function fetchAiInsights(item) {
   const response = await fetch(`${AI_API_BASE}/api/ai/article-insights`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ article: item })
+    body: JSON.stringify({ article: item, language: normalizedLanguage })
   });
 
   if (!response.ok) {
@@ -859,30 +802,20 @@ function predictionForItem(item) {
   return buildPrediction(item, score);
 }
 
-async function openModal(id, mode = "explain") {
+async function openModal(id, mode = "summary", language = "English") {
   const item = articlePool().find((entry) => entry.id === id);
   const modal = qs("#explain-modal");
   if (!item || !modal) return;
+  const selectedLanguage = normalizeBriefLanguage(language);
   const localPrediction = predictionForItem(item);
   qs("#modal-source").textContent = `${item.source} • ${item.date}`;
-  qs("#modal-title").textContent = mode === "summary" ? `${item.title} - AI Summary` : item.title;
+  qs("#modal-title").textContent = item.title;
+  qs("#modal-language-badge").textContent = selectedLanguage;
   qs("#modal-summary").textContent = item.summary;
-  qs("#modal-explain").textContent = mode === "summary"
-    ? (item.explanation || item.summary)
-    : (item.explanation || item.summary);
-  activeTeacherScripts = {
-    male: {
-      english: "Generating AI teacher explanation...",
-      hindi: "AI teacher explanation taiyar ho raha hai...",
-      hinglish: "Generating AI teacher explanation..."
-    },
-    female: {
-      english: "Generating AI teacher explanation...",
-      hindi: "AI teacher explanation taiyar ho raha hai...",
-      hinglish: "Generating AI teacher explanation..."
-    }
-  };
-  renderTeacherScript();
+  qs("#modal-explain-heading").textContent = "Simple explanation";
+  qs("#modal-points-heading").textContent = "AI Summary Points";
+  qs("#modal-prediction-heading").textContent = "AI Exam Prediction";
+  qs("#modal-explain").textContent = item.explanation || item.summary;
   qs("#modal-angle").textContent = "Generating Gemini prediction...";
   const reasonNode = qs("#modal-probability-reason");
   if (reasonNode) {
@@ -911,20 +844,13 @@ async function openModal(id, mode = "explain") {
   document.body.classList.add("modal-open");
 
   try {
-    const ai = await fetchAiInsights(item);
-    activeTeacherScripts = {
-      male: {
-        english: String(ai.teacherScriptMaleEnglish || ai.explanation || item.explanation || ""),
-        hindi: String(ai.teacherScriptMaleHindi || ai.explanation || item.explanation || ""),
-        hinglish: String(ai.teacherScriptMaleHinglish || ai.explanation || item.explanation || "")
-      },
-      female: {
-        english: String(ai.teacherScriptFemaleEnglish || ai.explanation || item.explanation || ""),
-        hindi: String(ai.teacherScriptFemaleHindi || ai.explanation || item.explanation || ""),
-        hinglish: String(ai.teacherScriptFemaleHinglish || ai.explanation || item.explanation || "")
-      }
-    };
-    renderTeacherScript();
+    const ai = await fetchAiInsights(item, selectedLanguage);
+    qs("#modal-title").textContent = String(ai.title || item.title || "");
+    qs("#modal-summary").textContent = String(ai.summary || item.summary || "");
+    qs("#modal-explain-heading").textContent = String(ai.headingExplanation || "Simple explanation");
+    qs("#modal-points-heading").textContent = String(ai.headingPoints || "AI Summary Points");
+    qs("#modal-prediction-heading").textContent = String(ai.headingPrediction || "AI Exam Prediction");
+    qs("#modal-language-badge").textContent = String(ai.languageLabel || selectedLanguage);
     qs("#modal-explain").textContent = String(ai.explanation || item.explanation || item.summary || "");
     qs("#modal-angle").textContent = String(ai.predictionText || localPrediction.text);
     if (reasonNode) {
@@ -945,24 +871,11 @@ async function openModal(id, mode = "explain") {
     if (examTagsNode) {
       const exams = Array.isArray(ai.suggestedExams) && ai.suggestedExams.length ? ai.suggestedExams : item.exams;
       examTagsNode.innerHTML = [
-        '<span class="glow-tag glow-tag-label">For Which Exams</span>',
+        `<span class="glow-tag glow-tag-label">${escapeHtml(ai.examsLabel || "For Which Exams")}</span>`,
         ...exams.map((exam) => `<span class="glow-tag ${examToneClass(exam)}">${escapeHtml(exam)}</span>`)
       ].join("");
     }
   } catch (_error) {
-    activeTeacherScripts = {
-      male: {
-        english: item.explanation,
-        hindi: item.explanation,
-        hinglish: item.explanation
-      },
-      female: {
-        english: item.explanation,
-        hindi: item.explanation,
-        hinglish: item.explanation
-      }
-    };
-    renderTeacherScript();
     qs("#modal-explain").textContent = item.explanation || item.summary || "";
     qs("#modal-angle").textContent = localPrediction.text;
     if (reasonNode) {
@@ -976,33 +889,8 @@ async function openModal(id, mode = "explain") {
 }
 
 function closeModal() {
-  stopTeacherAudio();
   qs("#explain-modal")?.classList.add("hidden");
   document.body.classList.remove("modal-open");
-}
-
-function bindTeacherControls() {
-  qsa("[data-teacher-voice]").forEach((button) => {
-    button.addEventListener("click", () => {
-      teacherVoiceMode = button.dataset.teacherVoice || "male";
-      renderTeacherScript();
-    });
-  });
-  qsa("[data-teacher-language]").forEach((button) => {
-    button.addEventListener("click", () => {
-      teacherLanguageMode = button.dataset.teacherLanguage || "hinglish";
-      renderTeacherScript();
-    });
-  });
-  qs("#teacher-play-btn")?.addEventListener("click", () => {
-    playTeacherAudio();
-  });
-  if ("speechSynthesis" in window) {
-    loadSpeechVoices();
-    window.speechSynthesis.onvoiceschanged = () => {
-      loadSpeechVoices();
-    };
-  }
 }
 
 function protectPage() {
@@ -1301,6 +1189,8 @@ document.addEventListener("keydown", (event) => {
 (async function initializeApp() {
   applyRouteState();
   syncAuthUi();
+  ensureLanguageDatalist();
+  syncBriefLanguageInputs(preferredBriefLanguage);
   try {
     if (document.body.dataset.page !== "home") {
       const news = await fetchLiveNews({
@@ -1326,7 +1216,6 @@ document.addEventListener("keydown", (event) => {
   bindNewsExplorer();
   bindDrawer();
   bindAuthForms();
-  bindTeacherControls();
   renderDashboard();
   bindHeroMotion();
   bindExamEntrance();
