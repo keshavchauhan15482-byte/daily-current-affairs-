@@ -1,4 +1,4 @@
-name: Krishna V15 Temporal Pilot
+name: Krishna V15 GNN LSTM Pilot
 
 on:
   push:
@@ -18,7 +18,7 @@ env:
   TOKENIZERS_PARALLELISM: 'false'
 
 jobs:
-  xiiotid-pilot:
+  xiiotid-gnn-lstm:
     runs-on: ubuntu-latest
     timeout-minutes: 330
     steps:
@@ -33,26 +33,27 @@ jobs:
       - name: Install audited runtime dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install 'numpy<2.1' 'pandas<2.3' 'scikit-learn<1.7' 'torch<2.7' 'kagglehub<0.4'
+          python -m pip install 'numpy<2.1' 'pandas<2.3' 'scikit-learn<1.7' 'kagglehub<0.4'
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu 'torch==2.6.0'
 
-      - name: Run hardened real-data temporal pilot
+      - name: Run GraphSAGE plus LSTM evaluation
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p artifacts/v15
-          python krishna_v15/v15_xiiotid_pilot_v2.py 2>&1 | tee artifacts/v15/run.log
+          mkdir -p artifacts/v15_gnn
+          python krishna_v15/v15_xiiotid_gnn_lstm.py 2>&1 | tee artifacts/v15_gnn/run.log
 
-      - name: Show result report
+      - name: Show GNN result report
         if: always()
         run: |
-          test -f artifacts/v15/REPORT.md && cat artifacts/v15/REPORT.md || true
-          test -f artifacts/v15/results.json && python -m json.tool artifacts/v15/results.json | tail -n 220 || true
+          test -f artifacts/v15_gnn/REPORT.md && cat artifacts/v15_gnn/REPORT.md || true
+          test -f artifacts/v15_gnn/results.json && python -m json.tool artifacts/v15_gnn/results.json | tail -n 240 || true
 
-      - name: Upload immutable run evidence
+      - name: Upload immutable GNN evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: krishna-v15-xiiotid-evidence-v2
-          path: artifacts/v15/
+          name: krishna-v15-xiiotid-gnn-lstm-evidence
+          path: artifacts/v15_gnn/
           if-no-files-found: warn
           retention-days: 30
