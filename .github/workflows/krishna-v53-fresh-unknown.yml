@@ -1,0 +1,75 @@
+name: Krishna V53 fresh unknown benchmark
+
+on:
+  push:
+    branches: [krishna-v53-public-benchmark]
+    paths:
+      - 'krishna_benchmark/**'
+      - '.github/workflows/krishna-v53-fresh-unknown.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install 'numpy<2.1' 'pandas<2.3' 'scikit-learn<1.7' 'kagglehub<0.4'
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.6.0
+      - name: Download public X-IIoTID
+        run: |
+          mkdir -p krishna_benchmark/data krishna_benchmark/out
+          python - <<'PY'
+          import json, shutil
+          from pathlib import Path
+          import pandas as pd
+          import kagglehub
+          root = Path(kagglehub.dataset_download('munaalhawawreh/xiiotid-iiot-intrusion-dataset'))
+          matches=[]
+          for p in root.rglob('*.csv'):
+              try: cols=pd.read_csv(p,nrows=0).columns
+              except Exception: continue
+              n={''.join(ch.lower() for ch in str(c) if ch.isalnum()) for c in cols}
+              if {'class1','class2','class3'} <= n: matches.append(p)
+          if len(matches)!=1: raise RuntimeError(f'Expected one X-IIoTID CSV, found {matches}')
+          dst=Path('krishna_benchmark/data/XIIoTID.csv'); shutil.copyfile(matches[0],dst)
+          print(json.dumps({'source':str(matches[0]),'destination':str(dst),'bytes':dst.stat().st_size}))
+          PY
+      - name: Run fresh Ransomware and RDoS zero-exposure benchmark
+        run: |
+          python krishna_benchmark/v53_fresh_unknown.py \
+            --csv krishna_benchmark/data/XIIoTID.csv \
+            --out krishna_benchmark/out \
+            --epochs 12
+      - name: Print final numbers
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('krishna_benchmark/out/summary.json').read_text())
+          print(json.dumps({
+            'holdout_families':d['holdout_families'],
+            'support':d['support'],
+            'summary':d['summary'],
+            'claim_boundary':d['claim_boundary'],
+          },indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: krishna-v53-fresh-unknown-evidence
+          retention-days: 14
+          if-no-files-found: error
+          path: krishna_benchmark/out/*.json
