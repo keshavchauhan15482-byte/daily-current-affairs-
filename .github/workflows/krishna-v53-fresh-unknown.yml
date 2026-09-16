@@ -31,7 +31,8 @@ jobs:
           python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.6.0
       - name: Download public X-IIoTID
         run: |
-          mkdir -p krishna_benchmark/data krishna_benchmark/out
+          mkdir -p krishna_benchmark/data
+          rm -rf krishna_benchmark/out
           python - <<'PY'
           import json, shutil
           from pathlib import Path
@@ -48,9 +49,9 @@ jobs:
           dst=Path('krishna_benchmark/data/XIIoTID.csv'); shutil.copyfile(matches[0],dst)
           print(json.dumps({'source':str(matches[0]),'destination':str(dst),'bytes':dst.stat().st_size}))
           PY
-      - name: Run fresh Ransomware and RDoS zero-exposure benchmark
+      - name: Run fresh fine-grained zero-exposure attack benchmark
         run: |
-          python krishna_benchmark/v53_fresh_unknown.py \
+          python krishna_benchmark/v53_fresh_attack_names.py \
             --csv krishna_benchmark/data/XIIoTID.csv \
             --out krishna_benchmark/out \
             --epochs 12
